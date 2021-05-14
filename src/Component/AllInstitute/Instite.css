@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.kafedras {
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  
+  margin: auto;
+  border-radius: 15px;
+
+  box-shadow: darkgray 0 0 5px 3px;
+
+  background-color: white; 
+}
+
+.kafedras-name {
+  font-size: large;
+  color: green ;
+}
+
+.kafedras-balls {
+  color: #61dafb;
+}
+
+.page-container {
+  background-color: F4F4F4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F4F4F4;
+}

@@ -1,0 +1,44 @@
+.wrapper-1 {
+    display: grid;
+    grid-template-columns: repeat(2, [col] 1fr);
+    grid-template-rows: repeat(2, [row] 1fr);
+    color: black;
+    background-color: rgba(208,214,211,0.29);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10vh;
+}
+
+.box1 {
+    font-size: 40%;
+    grid-row: row 1 / row 1;
+    grid-column: col 1 / col 3;
+    justify-self: start;
+    align-self: center;
+    padding-left: 7%;
+    padding-top: 3%;
+    line-height: 1.4em;
+    text-indent: 4%;
+    text-align: left;
+}
+
+.box2 {
+    grid-row: row 2 / row 2;
+    grid-column: col 1 / col 2;
+    justify-self: center;
+    align-self: start;
+    font-size: 30%;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.box3 {
+    grid-row: row 2 / row 2;
+    grid-column: col 2 / col 2;
+
+}
+
+.box3 img {
+    position: relative;
+    width: 53.8%;
+    left: 10%;
+}
