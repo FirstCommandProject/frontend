@@ -1,4 +1,3 @@
-import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import './Description.css';
 
@@ -33,7 +32,6 @@ const Description = () => {
                         alt='img'/>
                 </div>
             </div>
-            <Footer />
         </>
     );
 }

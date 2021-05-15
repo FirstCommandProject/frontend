@@ -5,7 +5,6 @@ import LoginPage from "./Component/LoginPage/SignIn";
 import Main from './Component/MainPart/MainPart.js';
 import Description from './Component/DescriptionPage/Description.js';
 import AllInstitute from './Component/AllInstitute/Instite';
-import "./App.scss";
 
 const App = () => {
   return (

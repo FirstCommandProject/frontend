@@ -3,16 +3,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10vh;
   background-color: #E5E5E5;
 
-  .header-text {
+  .header-text-1 {
     font-family: Poppins;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
     line-height: 72px;
     text-align: center;
+    padding: 0 0;
+    margin: 0 0;
   }
 
   .main {
@@ -23,14 +24,12 @@
 
     .sign-up {
       width: 30vw;
-      padding-bottom: 2.5vh;
-      padding-top: 5vh;
     }
 
     .input-fields {
       margin: 0 2vw;
 
-      .input-text {
+      .input-text-1 {
         text-align: center;
         font-family: Poppins;
         font-style: normal;
@@ -38,7 +37,7 @@
         font-size: 36px;
         line-height: 54px;
         color: #000000;
-        margin: 1.5vh 0;
+        margin: 0 0;
       }
 
       .input-text-error {
@@ -73,10 +72,10 @@
       }
     }
 
-    .login {
+    .login-1 {
       display: flex;
       justify-content: center;
-      margin: 10% 2vw;
+      margin: 5% 2vw;
 
       .sign-up-btn {
         background: rgba(89, 145, 135, 0.98);
@@ -88,7 +87,7 @@
         line-height: 42px;
         color: #FFFFFF;  
         text-transform: capitalize;
-        padding: 0.5vh 3vw;
+        padding: 0vh 3vw;
       }
     }
   }
@@ -96,97 +95,19 @@
   .buttons {
     display: flex;
     justify-content: center;
-    margin: 0 2vw;
+    margin-top: 2%;
 
-    a {
-      text-decoration: none;
-    }
-
-    .sign-in-btn.MuiButton-root {
+    .text {
       font-family: Poppins;
       font-style: normal;
       font-weight: bold;
       font-size: 36px;
       line-height: 54px;
       color: #000000;
-      text-transform: none;
+      text-transform: capitalize
     }
   }
 }
-
-// .main {
-//   width: 100%;
-//   background-color: #fff;
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   margin-bottom: 10vh;
-//   box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
-//   border-radius: 5px;
-
-//   .sign-up {
-//     width: 30vw;
-//   }
-
-//   .header-text {
-//     text-align: center;
-//     color: #999a1c;
-//     font-family: "Raleway";
-//     font-weight: 300;
-//     font-size: 48px;
-//     margin: 2vh 4vw;
-//   }
-
-//   .input-fields {
-//     margin: 0 2vw;
-
-//     .input-text {
-//       color: rgba(0, 0, 0, 0.8);
-//       margin: 1vh 0;
-//       font-family: "Raleway";
-//       font-weight: 300;
-//       font-size: 24px;
-//     }
-
-//     .input {
-//       width: 100%;
-//     }
-
-//     .input .MuiOutlinedInput-root {
-//       height: 5vh;
-//     }
-//   }
-
-//   .buttons {
-//     display: flex;
-//     justify-content: space-between;
-//     margin: 4vh 2vw;
-
-//     .sign-in-btn.MuiButton-root {
-//       color: #999a1c;
-//       text-decoration: underline;
-//       font-family: "Raleway";
-//       font-weight: 500;
-//       font-style: italic;
-//       font-size: 18px;
-//       text-transform: capitalize;
-
-//       &:hover {
-//         background: none;
-//       }
-//     }
-
-//     .sign-up-btn.MuiButton-root {
-//       color: #999a1c;
-//       font-family: "Raleway";
-//       font-weight: 700;
-//       font-style: italic;
-//       font-size: 18px;
-//       text-transform: capitalize;
-//       padding: 0 3vw;
-//     }
-//   }
-// }
 
 @media screen and (max-width: 1000px) {
   .main .sign-up {

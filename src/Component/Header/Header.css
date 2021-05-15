@@ -11,10 +11,17 @@
     bottom: 0;
 }
 
+.signIn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
 .myButton {
    border: 0;
    background-color: transparent;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 25px;
 }
 
 .myButton:hover {
@@ -26,9 +33,4 @@
    float: right;
    width: 24px;
    height: 24px;
-}
-
-.container {
-    justify-content: center;
-    display: flex;
 }

@@ -39,10 +39,10 @@ const SignUp = () => {
       setErrorText("The user is successfully created!");
       setError(true);
       localStorage.setItem("user", JSON.stringify(res.data));
-      history.push("/home_page");
+      history.push("/my");
     } catch (e) {
-      setAlert("error");
-      setErrorText("Such user already exists!");
+      setAlert("Ошибка");
+      setErrorText("Такой пользователь уже существует!");
       setError(true);
     }
   };
@@ -88,11 +88,11 @@ const SignUp = () => {
 
   return (
     <div className="body">
-      <h2 className="header-text">Регистрация</h2>
+      <p className="header-text-1">Регистрация</p>
       <div className="main">
         <div className="sign-up">
           <div className="input-fields">
-            <p className="input-text">Почта</p>
+            <p className="input-text-1">Почта</p>
             <TextField
               type="email"
               className={mailError ? "input-error" : "input"}
@@ -106,14 +106,14 @@ const SignUp = () => {
             )}
           </div>
           <div className="input-fields">
-            <p className="input-text">Пароль</p>
+            <p className="input-text-1">Пароль</p>
             <PasswordInput
               value={password}
               setValue={setPassword}
             />
           </div>
           <div className="input-fields">
-            <p className="input-text">Повторите пароль</p>
+            <p className="input-text-1">Повторите пароль</p>
             <PasswordInput
               checkPassword={checkRepeatPassword}
               repeatPasswordError={repeatPasswordError}
@@ -127,7 +127,7 @@ const SignUp = () => {
             )}
           </div>
           <div className="input-fields">
-            <p className="input-text">ФИО</p>
+            <p className="input-text-1">ФИО</p>
             <TextField
               className={"input"}
               variant="outlined"
@@ -137,7 +137,7 @@ const SignUp = () => {
             />
           </div>
           <div className="input-fields">
-            <p className="input-text">ВУЗ</p>
+            <p className="input-text-1">ВУЗ</p>
             <TextField
               className={"input"}
               variant="outlined"
@@ -146,7 +146,7 @@ const SignUp = () => {
               onBlur={(e) => setUniversity(e.target.value)}
             />
           </div>
-          <div className="login">
+          <div className="login-1">
             <Button
               className="sign-up-btn"
               variant="outlined"
@@ -171,7 +171,9 @@ const SignUp = () => {
       </div>
       <div className="buttons">
         <Link to="/login">
-          <Button className="sign-in-btn">Вход</Button>
+          <Button className="text">
+            Вход
+          </Button>
         </Link>
       </div>
     </div>

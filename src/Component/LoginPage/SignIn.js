@@ -106,7 +106,7 @@ const SignIn = () => {
       </div>
       <div className="buttons">
         <Link to="/registration">
-          <Button className="create-acc-btn">Зарегистрироваться</Button>
+          <Button className="text">Зарегистрироваться</Button>
         </Link>
       </div>
       <Snackbar

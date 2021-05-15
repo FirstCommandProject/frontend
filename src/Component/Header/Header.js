@@ -17,7 +17,8 @@ function Header() {
           <button className ="myButton"> Техподдержка </button>
         </NavLink>
         <NavLink to='/login' activeClassName='activeLink'>
-          <button className ="myButton" ><span className = "icon"></span> Войти </button>
+          <button className ="myButton" >
+            <span className = "icon"></span> Войти </button>
         </NavLink>
       </div>
     );
