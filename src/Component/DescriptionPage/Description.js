@@ -28,7 +28,7 @@ const Description = () => {
 
                 <div className='box3'>
                     <img
-                        src='https://cdn.dribbble.com/users/1233499/screenshots/3900568/education.gif'
+                        src='https://sun9-37.userapi.com/c846420/v846420862/cc26/xlPyOTv5hoM.jpg'
                         alt='img'/>
                 </div>
             </div>
