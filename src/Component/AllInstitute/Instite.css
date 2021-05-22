@@ -9,12 +9,9 @@
   width: 200px;
   height: 150px;
   text-align: center;
-  
   margin: auto;
   border-radius: 15px;
-
   box-shadow: darkgray 0 0 5px 3px;
-
   background-color: white; 
 }
 
@@ -28,7 +25,7 @@
 }
 
 .page-container {
-  background-color: F4F4F4;
+  background-color: #F4F4F4;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
