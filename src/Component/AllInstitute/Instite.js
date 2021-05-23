@@ -2,8 +2,11 @@ import React from 'react'
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Instite.css";
+import {NavLink} from "react-router-dom";
 
 function PseudoServer(){
+    let id = '0';
+    let path = '/my/faculty/';
     const kafedras = [
         {
             name : "Литературовидение",
@@ -83,7 +86,9 @@ function PseudoServer(){
         <main className = "main">{
             kafedras.map((item) =>(
                          <div className="kafedras">
-                             <p className="kafedras-name">{item.name}</p>
+                             <NavLink to={path + id++} activeClassName='activeLink'>
+                                <p className="kafedras-name">{item.name}</p>
+                             </NavLink>
                              <p className="kafedras-balls">{item.balls}</p>
                              <p className = "kafedras-institute">{item.institute}</p>
                          </div>))
