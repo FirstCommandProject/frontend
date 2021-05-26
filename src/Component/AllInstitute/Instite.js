@@ -1,12 +1,13 @@
 import React from 'react'
+import { useHistory } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Instite.css";
-import {NavLink} from "react-router-dom";
+
 
 function PseudoServer(){
-    let id = '0';
-    let path = '/my/faculty/';
+    const history = useHistory();
+    const path = "/my/faculty/";
     const kafedras = [
         {
             name : "Литературовидение",
@@ -84,11 +85,9 @@ function PseudoServer(){
         <div className="page-container">
         <Header />
         <main className = "main">{
-            kafedras.map((item) =>(
-                         <div className="kafedras">
-                             <NavLink to={path + id++} activeClassName='activeLink'>
-                                <p className="kafedras-name">{item.name}</p>
-                             </NavLink>
+            kafedras.map((item, index) =>(
+                         <div onClick={() => history.push(path + index)} className="kafedras">
+                             <p className="kafedras-name">{item.name}</p>
                              <p className="kafedras-balls">{item.balls}</p>
                              <p className = "kafedras-institute">{item.institute}</p>
                          </div>))
