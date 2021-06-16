@@ -1,30 +1,39 @@
 import { NavLink } from "react-router-dom";
-import educationImg from './education.gif';
-import Footer from "../Footer/Footer";
+import MainPicture from '../../Source/images/main-img.png';
 import Header from "../Header/Header";
 import './MainPart.css';
+
 
 const MainPart = () => {
     return (
         <>
-            <Header />
-            <div className='wrapper'>
-                <div className='wrapper_name'>
-                    <span className='span1'>Экспертная система<br/></span>
-                    <span className='span2'>для поступающих в магистратуру</span>
-                </div>
+            <Header/>
+            <div className='wrapper-main'>
+                <div className='wrapper-left'>
+                    <div className='greeting-main'>
+                        <span className='greeting-main'>
+                            Добро пожаловать!
+                        </span>
 
-                <div className='ellipse'>
-                    <div className='test'>
-                        <NavLink to='/my/test' activeClassName='activeLink'>Пройти тестирование</NavLink>
+                        <p className='description-main'>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi assumenda at commodi
+                            dolorem
+                            et
+                            ex inventore itaque neque odit saepe sequi totam veritatis.
+                        </p>
+                    </div>
+
+                    <div className='ellipse-main'>
+                        <div className='test-main'>
+                            <NavLink to='/my/test'>Пройти тестирование</NavLink>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <img alt='logo' src={educationImg} />
+                <div className='wrapper-right'>
+                    <img className='img-main' alt='logo' src={MainPicture}/>
                 </div>
             </div>
-            <Footer />
         </>
     );
 }
