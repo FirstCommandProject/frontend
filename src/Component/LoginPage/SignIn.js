@@ -18,7 +18,6 @@ const SignIn = () => {
   const [openError, setError] = useState(false);
   const [errorText, setErrorText] = useState(false);
   const [alert, setAlert] = useState("");
-  const [mailError, setMailError] = useState(false);
 
   const loginUser = async () => {
     try {
@@ -55,9 +54,7 @@ const SignIn = () => {
       setAlert("error");
       setErrorText(`Например: jsmith@example.com`);
       setError(true);
-      setMailError(true);
     } else {
-      setMailError(false);
       setAlert("success");
       setErrorText(`Корректый E-mail`);
       setError(true);
@@ -74,16 +71,16 @@ const SignIn = () => {
           <div className="input-fields">
             <p className="input-text">Почта</p>
             <TextField
-              type="email"
-              className={mailError ? "input-error" : "input"}
+              label="Почта"
+              className="input"
               variant="outlined"
+              InputLabelProps={{
+                shrink: true,
+              }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => checkEmail()}
             />
-            {mailError && (
-              <p className="input-text-error">Некорректная почта</p>
-            )}
           </div>
           <div className="input-fields">
             <p className="input-text">Пароль</p>

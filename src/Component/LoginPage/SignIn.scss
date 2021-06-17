@@ -42,14 +42,6 @@
         margin: 1.5vh 0;
       }
 
-      .input-text-error {
-        color: rgba(255, 0, 0, 0.8);
-        margin: 1vh 0;
-        font-family: "Raleway";
-        font-weight: 300;
-        font-size: 12px;
-      }
-
       .input {
         width: 100%;
       }
@@ -58,19 +50,6 @@
         background: #F4F4F4;
         border-radius: 50px;
         height: 5vh;
-      }
-
-      .input-error {
-        width: 100%;
-
-        .MuiOutlinedInput-root {
-          height: 5vh;
-          border: 1px red solid;
-        }
-
-        fieldset {
-          border: none;
-        }
       }
     }
 
