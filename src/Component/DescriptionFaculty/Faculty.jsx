@@ -37,14 +37,16 @@ const Faculty = () => {
                         </div>
 
                         <div className='ref-faculty'>
-                            <a target='_black'
+                            <a
+                                target='_black'
                                href='https://sfedu.ru/www/stat_pages22.show?p=ELS/inf/D&x=ELS/-3000000000020'>Страница с
                                 кафедрой</a>
                         </div>
                     </div>
 
                     <>
-                        <img alt='Здесь должна быть фотография=)'
+                        <img
+                             alt='Здесь должна быть фотография=)'
                              src={imageMop}/>
                     </>
                 </div>

@@ -9,7 +9,8 @@ const PageNotFound = () => {
             <Header/>
             <div className='wrapper-notFound'>
                 <div>
-                    <img alt='logo'
+                    <img
+                         alt='logo'
                          src={gifNotFound}/>
                 </div>
 

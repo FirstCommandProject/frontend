@@ -15,7 +15,8 @@ const PersonalAcc = () => {
                     </div>
 
                     <div className='icon-acc'>
-                        <img alt='Здесь должна быть фотография=)'
+                        <img
+                             alt='Здесь должна быть фотография=)'
                              src={PersonIcon}/>
                     </div>
 
@@ -28,17 +29,20 @@ const PersonalAcc = () => {
                     <div className='center-acc'>
                         <ul>
                             <li>
-                                <NavLink to='/change/personal/info'
+                                <NavLink
+                                         to='/change/personal/info'
                                          activeClassName='activeLink'>Изменить данные о себе</NavLink>
                             </li>
 
                             <li>
-                                <NavLink to='/recent/results'
+                                <NavLink
+                                         to='/recent/results'
                                          activeClassName='activeLink'>Последние результаты</NavLink>
                             </li>
 
                             <li>
-                                <NavLink to='/exit'
+                                <NavLink
+                                         to='/exit'
                                          activeClassName='activeLink'>Выйти</NavLink>
                             </li>
                         </ul>
