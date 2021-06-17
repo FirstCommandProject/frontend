@@ -30,7 +30,8 @@ const MainPart = () => {
                 </div>
 
                 <div className='wrapper-right'>
-                    <img className='img-main'
+                    <img
+                         className='img-main'
                          alt='logo'
                          src={MainPicture}/>
                 </div>

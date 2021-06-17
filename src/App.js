@@ -8,7 +8,6 @@ import AllInstitute from './Component/AllInstitute/Instite';
 import DescriptionFaculty from './Component/DescriptionFaculty/Faculty';
 import PageNotFound from "./Component/PageNotFound/PageNotFound";
 
-
 const App = () => {
     return (
         <div className="App">

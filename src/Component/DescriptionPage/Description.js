@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import descriprionPicture from '../../Source/images/description-img.png';
+import descriptionPicture from '../../Source/images/description-img.png';
 import './Description.css';
 
 const Description = () => {
@@ -7,11 +7,12 @@ const Description = () => {
         <>
             <Header />
             <div className='wrapper-description'>
-                <>
-                    <img className='img-description'
+                <div>
+                    <img
+                         className='img-description'
                          alt='logo'
-                         src={descriprionPicture}/>
-                </>
+                         src={descriptionPicture}/>
+                </div>
 
                 <div className='box-description'>
                     <span>
