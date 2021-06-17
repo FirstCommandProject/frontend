@@ -1,35 +1,31 @@
 import Header from "../Header/Header";
+import descriptionPicture from '../../Source/images/description-img.png';
 import './Description.css';
 
 const Description = () => {
     return (
         <>
             <Header />
-            <div className='wrapper-1'>
-                <div className='box1'>
-                    <p> Команда "Техновизоры" была создана в рамках проектной<br/>
-                        деятельности ИКТИБ, ЮФУ. Наша экспертная система позволит<br/>
-                        определиться с выбором направления для вашего обучения в<br/>
-                        магистратуре. В разработке проекта приняли участие:
-                    </p>
-                </div>
-
-                <div className='box2'>
-                    <p> Гарнов Кирилл Максимович<br/>
-                        Зверев Алексей Евгеньевич<br/>
-                        Костылев Александр Валерьевич<br/>
-                        Палашкин Дмитрий Александрович<br/>
-                        Савосин Дмитрий Андреевич<br/>
-                        Свечникар Даниил Андреевич<br/>
-                        Чеканов Ярослав Константинович
-
-                    </p>
-                </div>
-
-                <div className='box3'>
+            <div className='wrapper-description'>
+                <div>
                     <img
-                        src='https://sun9-37.userapi.com/c846420/v846420862/cc26/xlPyOTv5hoM.jpg'
-                        alt='img'/>
+                         className='img-description'
+                         alt='logo'
+                         src={descriptionPicture}/>
+                </div>
+
+                <div className='box-description'>
+                    <span>
+                        О проекте
+                    </span>
+
+                    <p>
+                        Данная экспертная система была создана для упрощения подобра направления для поступающих на магистратуру
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
+                        Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
+                    </p>
                 </div>
             </div>
         </>
