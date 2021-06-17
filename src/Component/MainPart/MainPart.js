@@ -3,7 +3,6 @@ import MainPicture from '../../Source/images/main-img.png';
 import Header from "../Header/Header";
 import './MainPart.css';
 
-
 const MainPart = () => {
     return (
         <>
@@ -31,7 +30,9 @@ const MainPart = () => {
                 </div>
 
                 <div className='wrapper-right'>
-                    <img className='img-main' alt='logo' src={MainPicture}/>
+                    <img className='img-main'
+                         alt='logo'
+                         src={MainPicture}/>
                 </div>
             </div>
         </>

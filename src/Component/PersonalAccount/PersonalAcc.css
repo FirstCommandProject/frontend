@@ -31,7 +31,6 @@
 
 .icon-acc {
     text-align: center;
-    margin-bottom: -3%;
 }
 
 .icon-acc img {
@@ -48,10 +47,9 @@
     padding-top: 7%;
     height: 1%;
     margin-bottom: -2%;
-
 }
 
-li {
+.center-acc li {
     background-color: #599087;
     font-size: 33%;
     width: 70%;

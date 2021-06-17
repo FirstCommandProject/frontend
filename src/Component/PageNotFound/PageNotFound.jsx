@@ -3,14 +3,14 @@ import Header from "../Header/Header";
 import gifNotFound from '../../Source/images/pageNotFound.gif';
 import './PageNotFound.css';
 
-
 const PageNotFound = () => {
     return (
         <>
             <Header/>
             <div className='wrapper-notFound'>
                 <div>
-                    <img alt='logo' src={gifNotFound}/>
+                    <img alt='logo'
+                         src={gifNotFound}/>
                 </div>
 
                 <div className='description-notFound'>

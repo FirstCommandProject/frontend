@@ -1,7 +1,7 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import imageMop from '../../Source/images/MOP_EVM.jpg';
 import './Faculty.css';
-
 
 const Faculty = () => {
     return (
@@ -45,7 +45,7 @@ const Faculty = () => {
 
                     <>
                         <img alt='Здесь должна быть фотография=)'
-                             src='https://scontent-arn2-1.xx.fbcdn.net/v/t1.18169-1/c19.0.416.416a/10420331_816875101668357_2010640913126961740_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=dbb9e7&_nc_ohc=hi8ZndGqLHwAX9LeQ37&_nc_oc=AQklpKDUqalJogZqavQeba3ItxGOHL9OVlOLf7HMDeLqJXuLK8XR4iEHj5V5FuYJD3Y&_nc_ht=scontent-arn2-1.xx&tp=29&oh=d972fc6a555a16e697c2198899f56c1d&oe=60DECA16'/>
+                             src={imageMop}/>
                     </>
                 </div>
             </div>
