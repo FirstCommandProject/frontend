@@ -3,9 +3,12 @@ import "./Header.css";
 import ourLogo from "./images/NewLogo.jpg"
 function Header() {
 
-  var a = document.querySelectorAll('.navigation .butt a');
-  for (var i=a.length; i--;) {
-    if (a[i].href === window.location.pathname || a[i].href === window.location.href) a[i].className += ' active';
+  var a = document.querySelectorAll('div.mainHeader div.Buttons nav.nav ul.navigation li.butt a.c');
+  for (var i=a.length; i--;) {  
+    console.log( '!' +a[i].href);
+    console.log('http://localhost:3000'+ window.location.pathname);
+    if (a[i].href ==='http://localhost:3000'+ window.location.pathname || a[i].href === 'http://localhost:3000'+window.location.href) a[i].className += 'active';
+    console.log(a[i].className);
   }
     return (
       <div className="mainHeader">
