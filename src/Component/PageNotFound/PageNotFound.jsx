@@ -10,8 +10,8 @@ const PageNotFound = () => {
             <div className='wrapper-notFound'>
                 <div>
                     <img
-                         alt='logo'
-                         src={gifNotFound}/>
+                        alt='logo'
+                        src={gifNotFound}/>
                 </div>
 
                 <div className='description-notFound'>
@@ -25,11 +25,13 @@ const PageNotFound = () => {
                     </p>
                 </div>
 
-                <div className='ellipse-notFound'>
-                    <div className='back-notFound'>
-                        <NavLink to='/main'>Вернуться назад</NavLink>
+                <NavLink to='/main'>
+                    <div className='ellipse-notFound'>
+                        <div className='back-notFound'>
+                            Вернуться назад
+                        </div>
                     </div>
-                </div>
+                </NavLink>
             </div>
         </>
     );

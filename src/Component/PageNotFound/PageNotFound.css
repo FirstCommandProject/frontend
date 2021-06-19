@@ -10,6 +10,11 @@
     height: 90vh;
 }
 
+.wrapper-notFound a {
+    text-decoration: none;
+    color: white;
+}
+
 .wrapper-notFound img {
     position: relative;
     top: 2%;
@@ -54,9 +59,4 @@
 .back-notFound {
     font-size: 20%;
     padding: 3%;
-}
-
-.back-notFound a {
-    text-decoration: none;
-    color: white;
 }

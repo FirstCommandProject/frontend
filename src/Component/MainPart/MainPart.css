@@ -17,6 +17,11 @@
     background-color: white;
 }
 
+.wrapper-left a {
+    text-decoration: none;
+    color: white;
+}
+
 .greeting-main {
     font-size: 80%;
     font-weight: 800;
@@ -55,11 +60,6 @@
 .test-main {
     font-size: 30%;
     padding: 4%;
-}
-
-.test-main a {
-    text-decoration: none;
-    color: white;
 }
 
 .wrapper-right {
