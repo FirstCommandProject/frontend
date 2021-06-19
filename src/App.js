@@ -15,10 +15,10 @@ const App = () => {
                 <Route path="/login">
                     <LoginPage />
                 </Route>
-                <Route path="/registration">
+                <Route path="/sign/in">
                     <RegisterPage />
                 </Route>
-                <Route path='/my/institute'>
+                <Route path='/departments'>
                     <AllInstitute />
                 </Route>
                 <Route path='/my/faculty/'>

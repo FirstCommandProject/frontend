@@ -1,36 +1,56 @@
-
-.main-header {
+.main-header{
     display: flex;
-    background-color: #FFFF;
+    justify-content: space-between;
     width: 100%;
-    border-bottom: 3px solid #e5e5e5;
-    align-items: center;
-    justify-content:space-evenly;
-    height: 60px;
-    position: relative;
-    bottom: 0;
+    height: 10vh;
+    background-color: white;
 }
 
-.signIn {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+.our-icon {
+    height: 60%;
+    padding: 15%;
 }
 
-.myButton {
-   border: 0;
-   background-color: transparent;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-   font-size: 25px;
+.ellipse-header{
+    border-radius: 6px;
+    background: #215BFD;
+    width: 7em;
+    height: 4.5vh;
+    padding-top: 5%;
+
 }
 
-.myButton:hover {
-   border-bottom: 2px green solid;
+.ellipse-header:hover {
+    box-shadow: 5px -4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.myButton span.icon {
-   background: url(../../Source/images/acccircle.png) no-repeat right;
-   float: right;
-   width: 24px;
-   height: 24px;
+.ellipse-header a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    text-decoration: none;
+    color: white;
+    padding-top: 2%;
+}
+
+.right-header {
+    background-color: #F4F7FF;
+    width: 40%;
+    height:10vh;
+}
+
+.buttons li {
+    list-style:none;
+    display:inline-block;
+    margin: 2.5% 2em;
+}
+
+.butt a{
+    text-decoration: none;
+    color: #54585E;
+}
+
+.butt a.active-header {
+    color: #0066FF;
 }

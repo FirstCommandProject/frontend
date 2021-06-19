@@ -6,7 +6,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     font-size: 10vh;
-    height: 91.5vh;
+    height: 90vh;
 }
 
 .wrapper-left {
@@ -42,7 +42,7 @@
     top: 5%;
     background: #215BFD;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
+    border-radius: 12px;
     width: 48%;
     height: 18%;
 }
