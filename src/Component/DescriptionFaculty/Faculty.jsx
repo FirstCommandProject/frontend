@@ -1,5 +1,4 @@
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 import imageMop from '../../Source/images/MOP_EVM.jpg';
 import './Faculty.css';
 
@@ -51,7 +50,6 @@ const Faculty = () => {
                     </>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
-import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Instite.css";
 
@@ -93,7 +92,6 @@ function PseudoServer(){
                          </div>))
                              }
         </main>
-        <Footer />
         </div>
     );
 }
