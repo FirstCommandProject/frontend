@@ -67,10 +67,8 @@
 }
 
 .img-main {
-    min-width: 10%;
-    max-width: 100%;
-    min-height: 10%;
-    max-height: 70%;
+    width: 80%;
+    height: 70%;
     padding: 10%;
 }
 
