@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import MainPicture from '../../Source/images/main-img.png';
 import Header from "../Header/Header";
 import './MainPart.css';
