@@ -7,7 +7,12 @@
     background-color: white;
     text-align: center;
     font-size: 10vh;
-    height: 91.5vh;
+    height: 90vh;
+}
+
+.wrapper-notFound a {
+    text-decoration: none;
+    color: white;
 }
 
 .wrapper-notFound img {
@@ -56,9 +61,4 @@
     justify-content: center;
     align-items: center;
     font-size: 24px;
-}
-
-.back-notFound a {
-    text-decoration: none;
-    color: white;
 }
