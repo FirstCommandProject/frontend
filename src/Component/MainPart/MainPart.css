@@ -6,7 +6,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     font-size: 10vh;
-    height: 91.5vh;
+    height: 90vh;
 }
 
 .wrapper-left {
@@ -15,6 +15,11 @@
     grid-auto-rows: minmax(1fr, auto);
     text-align: center;
     background-color: white;
+}
+
+.wrapper-left a {
+    text-decoration: none;
+    color: white;
 }
 
 .greeting-main {
@@ -42,7 +47,7 @@
     top: 5%;
     background: #215BFD;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
+    border-radius: 12px;
     width: 48%;
     height: 18%;
 }
@@ -57,11 +62,6 @@
     padding: 4%;
 }
 
-.test-main a {
-    text-decoration: none;
-    color: white;
-}
-
 .wrapper-right {
     background-color: #F4F7FF;
 }
@@ -71,3 +71,4 @@
     height: 70%;
     padding: 10%;
 }
+

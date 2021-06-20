@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import MainPicture from '../../Source/images/main-img.png';
 import Header from "../Header/Header";
 import './MainPart.css';
@@ -22,11 +22,14 @@ const MainPart = () => {
                         </p>
                     </div>
 
-                    <div className='ellipse-main'>
-                        <div className='test-main'>
-                            <NavLink to='/my/test'>Пройти тестирование</NavLink>
+                    <NavLink to='/my/test'>
+                        <div className='ellipse-main'>
+                            <div className='test-main'>
+                                Пройти тестирование
+                            </div>
                         </div>
-                    </div>
+                    </NavLink>
+
                 </div>
 
                 <div className='wrapper-right'>
