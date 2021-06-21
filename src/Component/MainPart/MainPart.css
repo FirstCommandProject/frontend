@@ -72,3 +72,20 @@
     padding: 10%;
 }
 
+@media screen and (max-width: 1570px) {
+    .ellipse-main {
+        top: 15%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .ellipse-main {
+        top: 20%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .ellipse-main {
+        top: 35%;
+    }
+}
