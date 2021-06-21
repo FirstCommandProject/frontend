@@ -23,7 +23,7 @@
     position: relative;
     top: 26%;
     font-weight: 800;
-    font-size: 50%;
+    font-size: 60px;
     padding-right: 30%;
     color: #34363E;
     font-family: Nunito;
@@ -32,7 +32,7 @@
 .box-description p {
     position: relative;
     top: 27%;
-    font-size: 28%;
+    font-size: 24px;
     text-align: left;
     width: 80%;
     padding-right: 15%;

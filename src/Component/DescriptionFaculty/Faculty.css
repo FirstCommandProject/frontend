@@ -36,14 +36,14 @@
 .name-faculty div p {
     padding: 8%;
     font-weight: 600;
-    font-size: 22%;
+    font-size: 20px;
     color: #3877CD;
     text-align: center;
 }
 
 .name-faculty span {
     display: inline-block;
-    font-size: 65%;
+    font-size: 60px;
     vertical-align: top;
     color: #323449;
 }
@@ -87,11 +87,11 @@
     text-indent: 6%;
     margin-top: -3%;
     font-weight: bold;
-    font-size: 32%;
+    font-size: 24px;
 }
 
 .box-faculty p {
-    font-size: 22%;
+    font-size: 16px;
     color: #54585E;
     padding: 6%;
     line-height: 26px;
@@ -121,14 +121,14 @@
 .name-bottom div p {
     padding: 8%;
     font-weight: 600;
-    font-size: 22%;
+    font-size: 20px;
     color: #3877CD;
     text-align: center;
 }
 
 .name-bottom span {
     display: inline-block;
-    font-size: 65%;
+    font-size: 60px;
     vertical-align: top;
     color: #323449;
 }
@@ -148,7 +148,7 @@
     grid-template-rows: repeat(4, 1fr);
     grid-auto-rows: minmax(1fr, auto);
     box-shadow: 1px 6px 25px 1px rgba(0, 0, 0, 0.12);
-    font-size: 42%;
+    font-size: 34px;
     align-self: center;
     justify-items: center;
     border-radius: 10px;
