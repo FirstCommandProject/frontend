@@ -25,7 +25,7 @@ const PageNotFound = () => {
                     </p>
                 </div>
 
-                <NavLink to='/'>
+                <NavLink to='/main'>
                     <div className='ellipse-notFound'>
                         <div className='back-notFound'>
                             Вернуться назад
