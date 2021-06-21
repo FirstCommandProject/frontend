@@ -6,7 +6,7 @@ const Header = () => {
 
     return (
         <div className="main-header">
-            <NavLink to='/main' >
+            <NavLink to='/' >
                 <img
                     className="our-icon"
                     src={ourLogo}
@@ -21,7 +21,7 @@ const Header = () => {
                         </li>
 
                         <li className='butt'>
-                            <NavLink to='/departments' activeClassName='active-header'>Кафедры</NavLink>
+                            <NavLink to='/my/institute' activeClassName='active-header'>Кафедры</NavLink>
                         </li>
 
                         <li className='butt'>
