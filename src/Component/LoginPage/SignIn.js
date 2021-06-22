@@ -4,6 +4,8 @@ import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import PasswordInput from "../PasswordInput/PasswordInput";
+import ourLogo from '../../Source/images/NewLogo.jpg';
+import rigthImage from '../../Source/images/signInImage.jpg';
 import "./SignIn.scss";
 
 function Alert(props) {
@@ -64,12 +66,19 @@ const SignIn = () => {
   let checkDisabled = !email.match(regexpEmail);
 
   return (
-    <div className="body">
-      <h2 className="header-text">Вход</h2>
-      <div className="main">
-          <div className="sign-in">
+    <div className='all'>
+      <div className="left">
+        <div className="image-header">
+          <Link to='/' >
+            <img
+                className="our-icon"
+                src={ourLogo}
+                alt="logo"/>
+          </Link>
+        </div>
+        <h2 className="header-text">Вход в личный кабинет</h2>
+        <div className="sign-in">
           <div className="input-fields">
-            <p className="input-text">Почта</p>
             <TextField
               label="Почта"
               className="input"
@@ -83,11 +92,17 @@ const SignIn = () => {
             />
           </div>
           <div className="input-fields">
-            <p className="input-text">Пароль</p>
             <PasswordInput
               value={password}
               setValue={setPassword}
             />
+          </div>
+          <div className='memory'>
+            <input type="checkbox" className='checkbox'/>
+            <p className='left-text-checkbox'>Запомнить меня</p>
+            <Link to="/sign/in">
+              Забыли пароль?
+            </Link>
           </div>
           <div className="login">
             <Button
@@ -100,23 +115,29 @@ const SignIn = () => {
             </Button>
           </div>
         </div>
+        <div className="buttons">
+          <p>Нет аккаунта?</p>
+          <Link to="/sign/in">
+            Создать аккаунт
+          </Link>
+        </div>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          open={openError}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
+          <Alert severity={alert}>{errorText}</Alert>
+        </Snackbar>
       </div>
-      <div className="buttons">
-        <Link to="/registration">
-          <Button className="text">Зарегистрироваться</Button>
-        </Link>
+      <div className='rigth'>
+        <img
+          src={rigthImage}
+          alt="rigth"/>
       </div>
-      <Snackbar
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        open={openError}
-        autoHideDuration={6000}
-        onClose={handleClose}
-      >
-        <Alert severity={alert}>{errorText}</Alert>
-      </Snackbar>
     </div>
   );
 };

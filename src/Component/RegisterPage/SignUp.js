@@ -94,6 +94,10 @@ const SignUp = () => {
           <div className="input-fields">
             <p className="input-text-1">Почта</p>
             <TextField
+              InputLabelProps={{
+                shrink: true,
+              }}
+              label="email"
               type="email"
               className={mailError ? "input-error" : "input"}
               variant="outlined"
@@ -101,9 +105,6 @@ const SignUp = () => {
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => checkEmail()}
             />
-            {mailError && (
-              <p className="input-text-error">Некорректная почта</p>
-            )}
           </div>
           <div className="input-fields">
             <p className="input-text-1">Пароль</p>
@@ -129,6 +130,10 @@ const SignUp = () => {
           <div className="input-fields">
             <p className="input-text-1">ФИО</p>
             <TextField
+              InputLabelProps={{
+                shrink: true,
+              }}
+              label="email"
               className={"input"}
               variant="outlined"
               value={userName}
@@ -139,6 +144,10 @@ const SignUp = () => {
           <div className="input-fields">
             <p className="input-text-1">ВУЗ</p>
             <TextField
+              InputLabelProps={{
+                shrink: true,
+              }}
+              label="email"
               className={"input"}
               variant="outlined"
               value={university}

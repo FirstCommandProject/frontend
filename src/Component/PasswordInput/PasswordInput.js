@@ -3,13 +3,14 @@ import {
   IconButton,
   OutlinedInput,
   InputAdornment,
+  InputLabel,
   FormControl
 } from '@material-ui/core'
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Visibility from '@material-ui/icons/Visibility';
 import './PasswordInput.scss'
 
-const InputAdornments = ({checkPassword, repeatPasswordError, passwordError, value, setValue, placeholder}) => {
+const InputAdornments = ({checkPassword, repeatPasswordError, passwordError, value, setValue}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
@@ -25,12 +26,17 @@ const InputAdornments = ({checkPassword, repeatPasswordError, passwordError, val
   };
 
   return (
-    <FormControl className={passwordError || repeatPasswordError ? 'input-password-error' : 'input'}>
+    <FormControl variant="outlined" className={passwordError || repeatPasswordError ? 'input-password-error' : 'input'}>
+      <InputLabel 
+        shrink 
+        variant="outlined" 
+        style={{backgroundColor: 'white', padding: "0 3px"}}
+      >
+        Name
+      </InputLabel>
       <OutlinedInput
         type={showPassword ? 'text' : 'password'}
         value={value}
-        placeholder={placeholder}
-        className='input-register-pass'
         onChange={(e) => handleChange(e)}
         endAdornment={
           <InputAdornment position='end'>
