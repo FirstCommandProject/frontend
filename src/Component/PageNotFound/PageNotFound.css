@@ -28,14 +28,14 @@
 
 .description-notFound span {
     font-weight: 800;
-    font-size: 65%;
+    font-size: 60px;
     font-family: Nunito;
     color: #34363E;
 }
 
 .description-notFound p {
     margin: 0 auto;
-    font-size: 30%;
+    font-size: 26px;
     font-weight: 500;
     color: #54585E;
     width: 50%;
@@ -48,7 +48,7 @@
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     width: 25%;
-    height: 35%;
+    height: 40%;
 }
 
 .ellipse-notFound:hover {
@@ -59,6 +59,6 @@
 .back-notFound {
     display: flex;
     justify-content: center;
-    align-items: center;
     font-size: 24px;
+    padding: 1.5%;
 }

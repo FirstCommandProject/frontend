@@ -23,7 +23,7 @@
 }
 
 .greeting-main {
-    font-size: 80%;
+    font-size: 60px;
     font-weight: 800;
     font-family: Nunito;
     position: relative;
@@ -36,7 +36,7 @@
     position: relative;
     top: 25%;
     width: 65%;
-    font-size: 40%;
+    font-size: 24px;
     font-weight: 500;
     color: #54585E;
 }
@@ -58,7 +58,7 @@
 }
 
 .test-main {
-    font-size: 30%;
+    font-size: 24px;
     padding: 4%;
 }
 
