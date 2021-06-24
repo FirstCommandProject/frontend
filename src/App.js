@@ -6,9 +6,9 @@ import LoginPage from "./Component/LoginPage/SignIn";
 import Main from './Component/MainPart/MainPart.js';
 import Description from './Component/DescriptionPage/Description.js';
 import AllInstitute from './Component/AllInstitute/Instite';
-import DescriptionFaculty from './Component/DescriptionFaculty/Faculty';
-import Cab from './Component/PersonalAccount/PersonalAcc';
-import PageNotFound from "./Component/PageNotFound/PageNotFound";
+import DescriptionFaculty from './Component/DescriptionFaculty/Faculty.js';
+import Cab from './Component/PersonalData/PersonalData.js';
+import PageNotFound from "./Component/PageNotFound/PageNotFound.js";
 
 const App = () => {
     return (

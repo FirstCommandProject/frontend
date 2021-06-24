@@ -1,8 +1,18 @@
-import Header from "../Header/Header";
+/*Код для PersonalData*/
+import { useState } from "react";
+import Cab from "../PersonalData/PersonalData";
+/*Код для PersonalData*/
+
 import descriptionPicture from '../../Source/images/description-img.png';
+import Header from "../Header/Header";
 import './Description.css';
 
 const Description = () => {
+
+    {/*Код для PersonalData*/}
+    const [modalActive, setModalActive] = useState(false);
+    {/*Код для PersonalData*/}
+
     return (
         <>
             <Header />
@@ -27,6 +37,14 @@ const Description = () => {
                         Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
                     </p>
                 </div>
+
+                {/*Код для PersonalData*/}
+                <button onClick={() => setModalActive(true)}>модальное окно</button>
+                <Cab
+                    active={modalActive}
+                    setActive={setModalActive}/>
+                {/*Код для PersonalData*/}
+
             </div>
         </>
     );
