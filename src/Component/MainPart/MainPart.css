@@ -44,22 +44,22 @@
 .ellipse-main {
     margin: 0 auto;
     position: relative;
-    top: 5%;
+    top: 25%;
     background: #215BFD;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     width: 48%;
     height: 18%;
 }
 
 .ellipse-main:hover {
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 1);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
     padding: 5px;
 }
 
 .test-main {
     font-size: 24px;
-    padding: 4%;
+    padding: 3%;
 }
 
 .wrapper-right {

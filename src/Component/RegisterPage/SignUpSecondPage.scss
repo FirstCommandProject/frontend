@@ -1,10 +1,10 @@
-.first-page-sign-up {
+.second-page-sign-up {
   display: flex;
   width: 100vw;
 
   .rigth-sign-up {
     width: 55%;
-
+    
     img {
       width: 100%;
       height: 99vh;
@@ -13,7 +13,7 @@
     }
   }
 
-  .left-first-page-sign-up {
+  .left-second-page-sign-up {
     width: 35%;
     margin: 0 5%;
     margin-top: 5vh;
@@ -41,7 +41,7 @@
       padding-bottom: 2.5vh;
     }
   
-    .input-fields-sign-up {
+    .input-fields-sign-up-second-page {
       margin: 2vh 0;
   
       .input {
@@ -59,13 +59,13 @@
       }
     }
   
-    .sign-up {
+    .sign-up-second-page {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 2vh;
   
-      .sign-up-btn {
+      .sign-up-btn-second-page {
         width: 100%;
         background: #215BFD;
         mix-blend-mode: normal;
@@ -78,22 +78,6 @@
         text-transform: capitalize;
         padding: 0.5vh 0;
       }
-    }
-  }
-
-  .buttons-for-sign-up {
-    display: flex;
-    align-items: center;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
-    margin: 0;
-    
-    a {
-      padding-left: 8px;
-      text-decoration: none;
-      color: #215BFD;
     }
   }
 }

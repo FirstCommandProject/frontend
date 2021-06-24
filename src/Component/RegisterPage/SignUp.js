@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import ourLogo from '../../Source/images/NewLogo.jpg';
@@ -22,27 +21,6 @@ const SignUp = () => {
   const [errorText, setErrorText] = useState(false);
   const [alert, setAlert] = useState("");
   const [repeatPasswordError, setRepeatPasswordError] = useState(false);
-
-  const registerUser = async () => {
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/registration`,
-        {
-          email,
-          password,
-        }
-      );
-      setAlert("success");
-      setErrorText("The user is successfully created!");
-      setError(true);
-      localStorage.setItem("user", JSON.stringify(res.data));
-      history.push("/my");
-    } catch (e) {
-      setAlert("Ошибка");
-      setErrorText("Такой пользователь уже существует!");
-      setError(true);
-    }
-  };
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -76,10 +54,6 @@ const SignUp = () => {
       setRepeatPasswordError(false);
     }
   };
-
-  let checkDisabled =
-    password !== repeatPassword ||
-    !email.match(regexpEmail);
 
   return (
     <div className='first-page-sign-up'>
@@ -125,8 +99,7 @@ const SignUp = () => {
             <Button
               className="sign-up-btn"
               variant="outlined"
-              disabled={checkDisabled}
-              onClick={() => registerUser()}
+              onClick={() => history.push("/sign/up/2")}
             >
               Продолжить
             </Button>
