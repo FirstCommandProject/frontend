@@ -3,6 +3,8 @@ import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
+import ourLogo from '../../Source/images/NewLogo.jpg';
+import rigthImage from '../../Source/images/signInImage.jpg';
 import PasswordInput from "../PasswordInput/PasswordInput";
 import "./SignUp.scss";
 
@@ -13,15 +15,12 @@ function Alert(props) {
 const SignUp = () => {
   const history = useHistory();
   const regexpEmail = /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const [university, setUniversity] = useState("");
-  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [openError, setError] = useState(false);
   const [errorText, setErrorText] = useState(false);
   const [alert, setAlert] = useState("");
-  const [mailError, setMailError] = useState(false);
   const [repeatPasswordError, setRepeatPasswordError] = useState(false);
 
   const registerUser = async () => {
@@ -29,8 +28,6 @@ const SignUp = () => {
       const res = await axios.post(
         `${process.env.REACT_APP_SERVER_ENDPOINT}/registration`,
         {
-          university,
-          userName,
           email,
           password,
         }
@@ -59,9 +56,7 @@ const SignUp = () => {
       setAlert("error");
       setErrorText(`Пример: jsmith@example.com`);
       setError(true);
-      setMailError(true);
     } else {
-      setMailError(false);
       setAlert("success");
       setErrorText(`Корректый E-mail`);
       setError(true);
@@ -87,82 +82,53 @@ const SignUp = () => {
     !email.match(regexpEmail);
 
   return (
-    <div className="body">
-      <p className="header-text-1">Регистрация</p>
-      <div className="main">
-        <div className="sign-up">
-          <div className="input-fields">
-            <p className="input-text-1">Почта</p>
+    <div className='first-page-sign-up'>
+      <div className="left-first-page-sign-up">
+        <div className="image-header-sign-up">
+          <Link to='/' >
+            <img
+                className="our-icon"
+                src={ourLogo}
+                alt="logo"/>
+          </Link>
+        </div>
+        <p className="header-text-1">Регистрация</p>
+          <div className="input-fields-sign-up">
             <TextField
               InputLabelProps={{
                 shrink: true,
               }}
-              label="email"
+              label="Почта"
               type="email"
-              className={mailError ? "input-error" : "input"}
+              className="input"
               variant="outlined"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => checkEmail()}
             />
           </div>
-          <div className="input-fields">
-            <p className="input-text-1">Пароль</p>
+          <div className="input-fields-sign-up">
             <PasswordInput
               value={password}
               setValue={setPassword}
             />
           </div>
-          <div className="input-fields">
-            <p className="input-text-1">Повторите пароль</p>
+          <div className="input-fields-sign-up">
             <PasswordInput
               checkPassword={checkRepeatPassword}
               repeatPasswordError={repeatPasswordError}
               value={repeatPassword}
               setValue={setRepeatPassword}
             />
-            {repeatPasswordError && (
-              <p className="input-text-error">
-                Пароли не совпадают
-              </p>
-            )}
           </div>
-          <div className="input-fields">
-            <p className="input-text-1">ФИО</p>
-            <TextField
-              InputLabelProps={{
-                shrink: true,
-              }}
-              label="email"
-              className={"input"}
-              variant="outlined"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              onBlur={(e) => setUserName(e.target.value)}
-            />
-          </div>
-          <div className="input-fields">
-            <p className="input-text-1">ВУЗ</p>
-            <TextField
-              InputLabelProps={{
-                shrink: true,
-              }}
-              label="email"
-              className={"input"}
-              variant="outlined"
-              value={university}
-              onChange={(e) => setUniversity(e.target.value)}
-              onBlur={(e) => setUniversity(e.target.value)}
-            />
-          </div>
-          <div className="login-1">
+          <div className="sign-up">
             <Button
               className="sign-up-btn"
               variant="outlined"
               disabled={checkDisabled}
               onClick={() => registerUser()}
             >
-              Зарегистрироваться
+              Продолжить
             </Button>
           </div>
           <Snackbar
@@ -176,14 +142,17 @@ const SignUp = () => {
           >
             <Alert severity={alert}>{errorText}</Alert>
           </Snackbar>
+          <div className="buttons-for-sign-up">
+            <p>Есть аккаунт?</p>
+            <Link to="/login">
+              Войти
+            </Link>
         </div>
       </div>
-      <div className="buttons">
-        <Link to="/login">
-          <Button className="text">
-            Вход
-          </Button>
-        </Link>
+      <div className='rigth-sign-up'>
+        <img
+          src={rigthImage}
+          alt="rigth-sign-up"/>
       </div>
     </div>
   );

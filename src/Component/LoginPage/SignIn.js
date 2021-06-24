@@ -100,7 +100,7 @@ const SignIn = () => {
           <div className='memory'>
             <input type="checkbox" className='checkbox'/>
             <p className='left-text-checkbox'>Запомнить меня</p>
-            <Link to="/sign/in">
+            <Link to="/sign/up">
               Забыли пароль?
             </Link>
           </div>
@@ -117,7 +117,7 @@ const SignIn = () => {
         </div>
         <div className="buttons">
           <p>Нет аккаунта?</p>
-          <Link to="/sign/in">
+          <Link to="/sign/up">
             Создать аккаунт
           </Link>
         </div>

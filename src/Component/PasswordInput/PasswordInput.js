@@ -32,7 +32,7 @@ const InputAdornments = ({checkPassword, repeatPasswordError, passwordError, val
         variant="outlined" 
         style={{backgroundColor: 'white', padding: "0 3px"}}
       >
-        Name
+        Пароль
       </InputLabel>
       <OutlinedInput
         type={showPassword ? 'text' : 'password'}

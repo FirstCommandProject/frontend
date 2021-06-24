@@ -30,7 +30,7 @@ const Header = () => {
 
                         <li>
                             <div className='ellipse-header'>
-                                <NavLink to='/sign/in' activeClassName='active-header'>Регистрация</NavLink>
+                                <NavLink to='/sign/up' activeClassName='active-header'>Регистрация</NavLink>
                             </div>
                         </li>
                     </ul>
