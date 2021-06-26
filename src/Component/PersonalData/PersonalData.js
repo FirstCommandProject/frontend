@@ -1,7 +1,6 @@
 import personalIcon from '../../Source/images/personal-img.png';
 import { TextField } from "@material-ui/core";
 import './PersonalData.css';
-import '../LoginPage/SignIn.scss';
 
 const PersonalData = ({active, setActive}) => {
     return (
@@ -27,48 +26,66 @@ const PersonalData = ({active, setActive}) => {
                 <div>
                     <TextField
                         label="Имя"
-                        className="input"
+                        className="personal-input"
                         variant="outlined"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
                     />
                 </div>
 
                 <div>
                     <TextField
                         label="Фамилия"
-                        className="input"
+                        className="personal-input"
                         variant="outlined"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
                     />
                 </div>
 
                 <div className="span-col-2">
                     <TextField
                         label="Отчество(необязательно)"
-                        className="input"
+                        className="personal-input"
                         variant="outlined"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
                     />
                 </div>
 
                 <div className="span-col-2">
                     <TextField
                         label="ВУЗ"
-                        className="input"
+                        className="personal-input"
                         variant="outlined"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
                     />
                 </div>
 
                 <div className="span-col-2">
                     <TextField
                         label="Почта"
-                        className="input"
+                        className="personal-input"
                         variant="outlined"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
                     />
                 </div>
 
                 <div className="span-col-2">
                     <TextField
                         label="Пароль"
-                        className="input"
+                        className="personal-input"
                         variant="outlined"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
                     />
                 </div>
 

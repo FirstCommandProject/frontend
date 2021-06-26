@@ -29,7 +29,7 @@
     padding: 60px 120px 60px 120px;
     border-radius: 50px;
     background-color: white;
-    width: 55vw;
+    width: 54vw;
     height: 66vh;
     transform: scale(0.5);
     transition: 0.4s all;
@@ -42,6 +42,7 @@
 .personal-content span {
     font-size: 40px;
     font-weight: bold;
+    color: #323449;
 }
 
 .personal-content img {
@@ -61,7 +62,6 @@
 .personal-button1 {
     background: #FD218B;
     border: none;
-    box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
     width: 10vw;
     height: 6vh;
@@ -74,7 +74,6 @@
 .personal-button2 {
     background: #215BFD;
     border: none;
-    box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
     width: 10vw;
     height: 6vh;
@@ -83,3 +82,17 @@
     color: white;
 }
 .personal-button2:hover { cursor: pointer }
+
+.personal-input {
+    width: 100%;
+}
+
+.personal-input .MuiOutlinedInput-notchedOutline {
+    border: 1px solid #323449;
+}
+
+.personal-input .MuiOutlinedInput-root {
+    background: white;
+    border-radius: 10px;
+    height: 6vh;
+}
