@@ -11,7 +11,8 @@ const Faculty = () => {
                 <div className='name-faculty'>
                     <img
                         alt='logo'
-                        src={icon4}/>
+                        src={icon4}
+                    />
 
                     <div>
                         <p>
@@ -30,7 +31,8 @@ const Faculty = () => {
                     <div>
                         <img
                             alt='logo'
-                            src={icon1}/>
+                            src={icon1}
+                        />
 
                         <span>
                             Some text
@@ -46,7 +48,8 @@ const Faculty = () => {
                     <div>
                         <img
                             alt='logo'
-                            src={icon2}/>
+                            src={icon2}
+                        />
 
                         <span>
                             Ключевые области
@@ -62,7 +65,8 @@ const Faculty = () => {
                     <div>
                         <img
                             alt='logo'
-                            src={icon3}/>
+                            src={icon3}
+                        />
 
                         <span>
                             Трудоустройство

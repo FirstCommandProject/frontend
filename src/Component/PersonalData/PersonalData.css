@@ -15,6 +15,7 @@
     transition: 0.5s;
     box-sizing: border-box;
 }
+
 .wrapper-personal.active {
     opacity: 1;
     pointer-events: all;
@@ -26,7 +27,7 @@
     grid-column-gap: 20px;
     grid-row-gap: 25px;
     box-shadow: 5px 40px 100px 11px rgba(0, 0, 0, 0.25);
-    padding: 60px 120px 60px 120px;
+    padding: 60px 120px;
     border-radius: 50px;
     background-color: white;
     width: 54vw;
@@ -35,6 +36,7 @@
     transition: 0.4s all;
     font-size: 30px;
 }
+
 .personal-content.active { transform: scale(1); }
 
 .span-col-2{ grid-column: span 2 / auto; }
@@ -59,7 +61,7 @@
     align-self: end;
 }
 
-.personal-button1 {
+.button-cancel {
     background: #FD218B;
     border: none;
     border-radius: 6px;
@@ -69,9 +71,10 @@
     font-size: 16px;
     color: white;
 }
-.personal-button1:hover { cursor: pointer; }
 
-.personal-button2 {
+.button-cancel:hover { cursor: pointer; }
+
+.button-save {
     background: #215BFD;
     border: none;
     border-radius: 6px;
@@ -81,7 +84,8 @@
     font-size: 16px;
     color: white;
 }
-.personal-button2:hover { cursor: pointer }
+
+.button-save:hover { cursor: pointer }
 
 .personal-input {
     width: 100%;

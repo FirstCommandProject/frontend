@@ -11,7 +11,8 @@ const PageNotFound = () => {
                 <div>
                     <img
                         alt='logo'
-                        src={gifNotFound}/>
+                        src={gifNotFound}
+                    />
                 </div>
 
                 <div className='description-notFound'>

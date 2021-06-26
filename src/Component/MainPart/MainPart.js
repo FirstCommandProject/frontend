@@ -36,7 +36,8 @@ const MainPart = () => {
                     <img
                          className='img-main'
                          alt='logo'
-                         src={MainPicture}/>
+                         src={MainPicture}
+                    />
                 </div>
             </div>
         </>

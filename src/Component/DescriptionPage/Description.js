@@ -21,7 +21,8 @@ const Description = () => {
                     <img
                          className='img-description'
                          alt='logo'
-                         src={descriptionPicture}/>
+                         src={descriptionPicture}
+                    />
                 </div>
 
                 <div className='box-description'>

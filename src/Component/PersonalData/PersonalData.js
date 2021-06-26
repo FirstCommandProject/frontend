@@ -1,8 +1,16 @@
+import { useState } from "react";
 import personalIcon from '../../Source/images/personal-img.png';
 import { TextField } from "@material-ui/core";
 import './PersonalData.css';
 
 const PersonalData = ({active, setActive}) => {
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [patr, setPatr] = useState("");
+    const [univer, setUniver] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     return (
         <div
             className={active ? "wrapper-personal active" : "wrapper-personal"}
@@ -20,7 +28,8 @@ const PersonalData = ({active, setActive}) => {
                 <div>
                     <img
                         src={personalIcon}
-                        alt='logo'/>
+                        alt='logo'
+                    />
                 </div>
 
                 <div>
@@ -31,6 +40,8 @@ const PersonalData = ({active, setActive}) => {
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </div>
 
@@ -42,6 +53,8 @@ const PersonalData = ({active, setActive}) => {
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        value={surname}
+                        onChange={(e) => setSurname(e.target.value)}
                     />
                 </div>
 
@@ -53,6 +66,8 @@ const PersonalData = ({active, setActive}) => {
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        value={patr}
+                        onChange={(e) => setPatr(e.target.value)}
                     />
                 </div>
 
@@ -64,6 +79,8 @@ const PersonalData = ({active, setActive}) => {
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        value={univer}
+                        onChange={(e) => setUniver(e.target.value)}
                     />
                 </div>
 
@@ -75,6 +92,8 @@ const PersonalData = ({active, setActive}) => {
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
 
@@ -86,6 +105,8 @@ const PersonalData = ({active, setActive}) => {
                         InputLabelProps={{
                             shrink: true,
                         }}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
 
@@ -94,11 +115,11 @@ const PersonalData = ({active, setActive}) => {
                 </div>
 
                 <div className='personal-butt'>
-                    <button className='personal-button1'>
+                    <button className='button-cancel'>
                         Отменить
                     </button>
 
-                    <button className='personal-button2'>
+                    <button className='button-save'>
                         Сохранить
                     </button>
                 </div>
