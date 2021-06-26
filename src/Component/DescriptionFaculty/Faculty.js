@@ -9,7 +9,10 @@ const Faculty = () => {
         <div className='wrapper-faculty'>
             <div className='top-faculty'>
                 <div className='name-faculty'>
-                    <img alt='logo' src={icon4}/>
+                    <img
+                        alt='logo'
+                        src={icon4}
+                    />
 
                     <div>
                         <p>
@@ -26,7 +29,10 @@ const Faculty = () => {
 
                 <div className='box-faculty'>
                     <div>
-                        <img alt='logo' src={icon1}/>
+                        <img
+                            alt='logo'
+                            src={icon1}
+                        />
 
                         <span>
                             Some text
@@ -40,7 +46,10 @@ const Faculty = () => {
                     </div>
 
                     <div>
-                        <img alt='logo' src={icon2}/>
+                        <img
+                            alt='logo'
+                            src={icon2}
+                        />
 
                         <span>
                             Ключевые области
@@ -54,7 +63,10 @@ const Faculty = () => {
                     </div>
 
                     <div>
-                        <img alt='logo' src={icon3}/>
+                        <img
+                            alt='logo'
+                            src={icon3}
+                        />
 
                         <span>
                             Трудоустройство
