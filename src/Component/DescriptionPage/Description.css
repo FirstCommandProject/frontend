@@ -39,3 +39,82 @@
     color: #54585E;
     line-height: 1.4em;
 }
+
+@media screen and (max-width: 1024px) {
+    .img-description {
+        width: 75%;
+        height: 60%;
+        position: relative;
+        top: 20%;
+    }
+
+    .box-description span {
+        font-size: 55px;
+    }
+
+    .box-description p {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .img-description {
+        width: 78%;
+        height: 45%;
+    }
+
+    .box-description span {
+        font-size: 48px;
+    }
+
+    .box-description p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .wrapper-description {
+        display: list-item;
+    }
+
+    .img-description {
+        width: 60%;
+    }
+
+    .box-description span {
+        margin-left: 30%;
+        font-size: 35px;
+    }
+
+    .box-description p {
+        width: 80%;
+        margin-left: 15%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .box-description span {
+        font-size: 32px;
+    }
+
+    .box-description p {
+        width: 80%;
+        font-size: 16px;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .img-description {
+        width: 70%;
+    }
+
+    .box-description span {
+        font-size: 27px;
+    }
+
+    .box-description p {
+        font-size: 15px;
+    }
+}
