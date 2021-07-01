@@ -1,13 +1,14 @@
 .second-page-sign-up {
   display: flex;
   width: 100vw;
+  max-height: 100vh;
 
   .rigth-sign-up {
     width: 55%;
     
     img {
       width: 100%;
-      height: 99vh;
+      height: 100%;
       margin: 0;
       padding: 0;
     }
