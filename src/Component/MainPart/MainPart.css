@@ -133,7 +133,7 @@
     }
 }
 
-@media screen and (max-width: 451px){
+@media screen and (max-width: 451px) {
     .wrapper-right {
         display: none;
     }
@@ -166,7 +166,7 @@
     }
 }
 
-@media screen and (max-width: 376px){
+@media screen and (max-width: 376px) {
     .ellipse-main {
         height: 23%;
     }

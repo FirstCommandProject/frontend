@@ -109,7 +109,7 @@
         transform: scale(1.4);
       }
 
-      .left-text-checkbox{
+      .left-text-checkbox {
         margin-left: 10px;
       }
       
@@ -123,15 +123,143 @@
   }
 }
 
+@media screen and (max-width: 1550px) {
+  .all .left {
+    .header-text {
+      font-size: 35px;
+    }
 
-@media screen and (max-width: 1000px) {
-  .body .main .sign-in {
-    width: 40vw;
+    .memory {
+      font-size: 19px;
+    }
+
+    .buttons {
+      font-size: 20px;
+    }
   }
 }
 
-@media screen and (max-width: 715px) {
-  .body .main .sign-in {
-    width: 90vw;
+@media screen and (max-width: 1300px) {
+  .all .left {
+    .header-text {
+      font-size: 29px;
+    }
+
+    .memory {
+      font-size: 15px;
+    }
+
+    .buttons {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .all .left {
+    .header-text {
+      font-size: 25px;
+    }
+
+    .memory {
+      font-size: 12px;
+    }
+
+    .buttons {
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .all {
+    .rigth {
+      display: none;
+    } 
+
+    .left {
+      width: 90%;
+      margin: 5% 10%;
+
+      .header-text {
+        font-size: 45px;
+      }
+
+      .memory {
+        font-size: 24px;
+      }
+
+      .buttons {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .all .left {
+    .header-text {
+      font-size: 35px;
+    }
+
+    .memory {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .all .left {
+    .header-text {
+      font-size: 30px;
+    }
+
+    .memory {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .all .left {
+    .header-text {
+      font-size: 25px;
+    }
+
+    .memory {
+      font-size: 12px;
+    }
+
+    .buttons {
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .all .left {
+    .header-text {
+      font-size: 20px;
+    }
+
+    .memory {
+      font-size: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 307px) {
+  .all .left {
+    .header-text {
+      font-size: 15px;
+    }
+
+    .memory {
+      font-size: 8px;
+    }
+
+    .buttons {
+      font-size: 13px;
+    }
   }
 }
