@@ -32,7 +32,7 @@ const PersonalData = ({active, setActive}) => {
                     />
                 </div>
 
-                <div>
+                <div className='span-col-1'>
                     <TextField
                         label="Имя"
                         className="personal-input"
@@ -45,7 +45,7 @@ const PersonalData = ({active, setActive}) => {
                     />
                 </div>
 
-                <div>
+                <div className='span-col-1'>
                     <TextField
                         label="Фамилия"
                         className="personal-input"
