@@ -1,4 +1,4 @@
-.main-header{
+.main-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -7,11 +7,11 @@
 }
 
 .our-icon {
-    height: 60%;
-    padding: 15%;
+    height: 40%;
+    padding: 10px;
 }
 
-.ellipse-header{
+.ellipse-header {
     border-radius: 6px;
     background: #215BFD;
     width: 7em;
@@ -36,13 +36,13 @@
 .right-header {
     background-color: #F4F7FF;
     width: 40%;
-    height:10vh;
+    height: 10vh;
 }
 
 .buttons li {
-    list-style:none;
-    display:inline-block;
-    margin: 2.5% 2em;
+    list-style: none;
+    display: inline-block;
+    margin: 0 2em;
 }
 
 .butt a{
@@ -52,4 +52,28 @@
 
 .butt a.active-header {
     color: #0066FF;
+}
+
+@media screen and (max-width: 1500px) {
+    .right-header {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .right-header {
+        width: 80%;
+        background-color: white;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .right-header {
+        width: 90%;
+    }
+
+    .our-icon {
+        height: 20%;
+        padding: 2vh 2vw;
+    }
 }

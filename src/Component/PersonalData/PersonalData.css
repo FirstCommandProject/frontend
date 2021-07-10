@@ -35,11 +35,7 @@
     font-size: 30px;
 }
 
-.personal-content.active { transform: scale(1); }
-
 .span-col-2 { grid-column: span 2 / auto; }
-
-.span-col-1 { }
 
 .personal-content span {
     font-weight: bold;

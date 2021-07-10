@@ -1,6 +1,7 @@
 import { useState } from "react";
 import personalIcon from '../../Source/images/personal-img.png';
 import { TextField } from "@material-ui/core";
+import PasswordInput from "../PasswordInput/PasswordInput";
 import './PersonalData.css';
 
 const PersonalData = ({active, setActive}) => {
@@ -10,6 +11,16 @@ const PersonalData = ({active, setActive}) => {
     const [univer, setUniver] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const cancelFunction = () => {
+        setActive(false);
+        setPassword("");
+        setName("");
+        setSurname("");
+        setPatr("");
+        setUniver("");
+        setEmail("");
+    }
 
     return (
         <div
@@ -32,7 +43,7 @@ const PersonalData = ({active, setActive}) => {
                     />
                 </div>
 
-                <div className='span-col-1'>
+                <div>
                     <TextField
                         label="Имя"
                         className="personal-input"
@@ -45,7 +56,7 @@ const PersonalData = ({active, setActive}) => {
                     />
                 </div>
 
-                <div className='span-col-1'>
+                <div>
                     <TextField
                         label="Фамилия"
                         className="personal-input"
@@ -98,24 +109,16 @@ const PersonalData = ({active, setActive}) => {
                 </div>
 
                 <div className="span-col-2">
-                    <TextField
-                        label="Пароль"
-                        className="personal-input"
-                        variant="outlined"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
+                    <PasswordInput
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        setValue={setPassword}
                     />
                 </div>
 
-                <div>
-
-                </div>
+                <div />
 
                 <div className='personal-butt'>
-                    <button className='button-cancel'>
+                    <button className='button-cancel' onClick={() => cancelFunction()}>
                         Отменить
                     </button>
 
