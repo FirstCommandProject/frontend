@@ -40,10 +40,10 @@ const Description = () => {
                 </div>
 
                 {/*Код для PersonalData*/}
-                {/*<button onClick={() => setModalActive(true)}>модальное окно</button>*/}
-                {/*<Cab*/}
-                {/*    active={modalActive}*/}
-                {/*    setActive={setModalActive}/>*/}
+                <button onClick={() => setModalActive(true)}>модальное окно</button>
+                <Cab
+                    active={modalActive}
+                    setActive={setModalActive}/>
                 {/*Код для PersonalData*/}
 
             </div>
