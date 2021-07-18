@@ -61,7 +61,6 @@ const SignUp = () => {
         <div className="image-header-sign-up">
           <Link to='/' >
             <img
-                className="our-icon"
                 src={ourLogo}
                 alt="logo"/>
           </Link>

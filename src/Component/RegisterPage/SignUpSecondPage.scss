@@ -22,9 +22,10 @@
     flex-direction: column;
     background-color: #FFFFFF;
 
-    .image-header-sign-up {
-      width: 40px;
-      height: 40px;
+    .image-header-sign-up a img {
+      width: 10%;
+      max-width: 70px;
+      height: 60%;
     }
   
     .header-text-1 {
@@ -83,14 +84,63 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .main .sign-up {
-    width: 40vw;
+@media screen and (max-width: 1550px) {
+  .second-page-sign-up .left-second-page-sign-up {
+    .header-text-1 {
+      font-size: 35px;
+    }
+
+    .buttons-for-sign-up {
+      font-size: 20px;
+    }
   }
 }
 
-@media screen and (max-width: 715px) {
-  .main .sign-up {
-    width: 90vw;
+@media screen and (max-width: 850px) {
+  .second-page-sign-up {
+    .rigth-sign-up {
+      display: none;
+    } 
+
+    .left-second-page-sign-up {
+      width: 90%;
+      margin: 5% 10%;
+
+      .header-text-1 {
+        font-size: 45px;
+      }
+
+      .buttons-for-sign-up {
+        font-size: 24px;
+      }
+
+      .image-header-sign-up a img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .second-page-sign-up .left-second-page-sign-up .header-text-1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .first-page-sign-up .left-first-page-sign-up .header-text-1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .first-page-sign-up .left-first-page-sign-up { 
+    .header-text-1 {
+      font-size: 15px;
+    }
+
+    .buttons-for-sign-up {
+      font-size: 13px;
+    }
   }
 }
