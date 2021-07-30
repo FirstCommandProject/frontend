@@ -3,7 +3,6 @@
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-auto-columns: minmax(1fr, auto);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: white;
     text-align: center;
     font-size: 10vh;
@@ -17,28 +16,25 @@
 
 .wrapper-notFound img {
     position: relative;
-    top: 2%;
     width: 30%;
-    height: 85%;
 }
 
 .description-notFound {
-    margin-top: -6%;
+    margin-top: -5%;
 }
 
 .description-notFound span {
     font-weight: 800;
-    font-size: 60px;
-    font-family: Nunito;
+    font-size: 42px;
     color: #34363E;
 }
 
 .description-notFound p {
     margin: 0 auto;
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 500;
     color: #54585E;
-    width: 50%;
+    width: 45%;
 }
 
 .ellipse-notFound {
@@ -48,29 +44,23 @@
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     width: 25%;
-    height: 42%;
+    height: 45%;
 }
 
 .ellipse-notFound:hover {
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 1);
-    padding: 5px;
 }
 
 .back-notFound {
     display: flex;
     justify-content: center;
-    font-size: 24px;
-    padding: 1.5%;
+    font-size: 20px;
+    padding-top: 2.5%;
 }
 
 @media screen and (max-width: 1440px) {
     .ellipse-notFound {
-        height: 50%;
-    }
-
-    .back-notFound {
-        font-size: 22px;
-        padding: 2%;
+        height: 55%;
     }
 
     .wrapper-notFound img {
@@ -80,68 +70,77 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .description-notFound span {
-        font-size: 56px;
-    }
-
-    .description-notFound p {
-        font-size: 25px;
-        width: 60%;
-    }
-
-    .ellipse-notFound {
-        height: 35%;
-        width: 28%;
-    }
-
-    .back-notFound {
-        padding: 4%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .description-notFound span {
-        font-size: 52px;
-    }
-
-    .description-notFound p {
-        font-size: 22px;
-    }
-
-    .ellipse-notFound {
-        height: 32%;
-        width: 32%;
-    }
-
-    .back-notFound {
-        font-size: 20px;
-        padding: 4%;
-    }
-
     .wrapper-notFound img {
         width: 38%;
-        height: 85%;
+        height: 90%;
     }
-}
 
-@media screen and (max-width: 450px) {
     .description-notFound span {
         font-size: 38px;
     }
 
     .description-notFound p {
-        font-size: 20px;
+        font-size: 16px;
+        width: 50%;
     }
 
     .ellipse-notFound {
-        top: 18%;
-        height: 25%;
-        width: 45%;
+        top: 5%;
+        height: 50%;
+        width: 28%;
     }
 
     .back-notFound {
-        font-size: 18px;
+        padding: 3%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .description-notFound span {
+        font-size: 32px;
+    }
+
+    .description-notFound p {
+        width: 70%;
+        font-size: 16px;
+    }
+
+    .ellipse-notFound {
+        height: 35%;
+        width: 32%;
+    }
+
+    .back-notFound {
+        font-size: 16px;
         padding: 4%;
+    }
+
+    .wrapper-notFound img {
+        width:45%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .description-notFound span {
+        font-size: 30px;
+        position: relative;
+        top: 10%;
+    }
+
+    .description-notFound p {
+        position: relative;
+        top: 10%;
+        width: 80%;
+    }
+
+    .ellipse-notFound {
+        height: 25%;
+        width: 55%;
+    }
+
+    .back-notFound {
+        padding: 5%;
     }
 
     .wrapper-notFound img {
@@ -156,36 +155,40 @@
     }
 
     .description-notFound span {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .description-notFound p {
-        font-size: 18px;
+        font-size: 16px;
+        width: 90%;
     }
 
     .ellipse-notFound {
-        height: 23%;
-        width: 50%;
+        height: 25%;
+        width: 60%;
     }
 
     .back-notFound {
+        padding: 4%;
         font-size: 16px;
     }
 }
 
 @media screen and (max-width: 321px) {
     .description-notFound span {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .description-notFound p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .ellipse-notFound {
-        height: 21%;
-        width: 55%;
-        position: inherit;
-        vertical-align: top;
+        height: 23%;
+        width: 70%;
+    }
+
+    .back-notFound {
+        padding: 5%;
     }
 }
