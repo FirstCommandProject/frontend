@@ -32,10 +32,7 @@ const Description = () => {
 
                     <p>
                         Данная экспертная система была создана для упрощения подобра направления для поступающих на магистратуру
-
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                        Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
+                        Здесь дальше идет русский текст, потому что на английском текст становится почему-то жирным
                     </p>
                 </div>
 
