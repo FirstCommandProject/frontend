@@ -9,7 +9,7 @@ import AllInstitute from './Component/AllInstitute/Instite';
 import DescriptionFaculty from './Component/DescriptionFaculty/Faculty.js';
 import Cab from './Component/PersonalData/PersonalData.js';
 import PageNotFound from "./Component/PageNotFound/PageNotFound.js";
-import RestorePassword from './Component/RestorePassword/RestorePassword.js'
+import RestorePassword from './Component/RestorePassword/RestorePassword.js';
 
 const App = () => {
     return (

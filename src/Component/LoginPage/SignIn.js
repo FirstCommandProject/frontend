@@ -5,7 +5,7 @@ import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import PasswordInput from "../PasswordInput/PasswordInput";
 import ourLogo from '../../Source/images/NewLogo.jpg';
-import rigthImage from '../../Source/images/signInImage.jpg';
+import RigthImage from '../ImageForLogin/ImageForLogin.js';
 import "./SignIn.scss";
 
 function Alert(props) {
@@ -71,9 +71,9 @@ const SignIn = () => {
         <div className="image-header">
           <Link to='/' >
             <img
-                className="our-icon"
-                src={ourLogo}
-                alt="logo"/>
+              className="our-icon"
+              src={ourLogo}
+              alt="logo"/>
           </Link>
         </div>
         <h2 className="header-text">Вход в личный кабинет</h2>
@@ -134,9 +134,7 @@ const SignIn = () => {
         </Snackbar>
       </div>
       <div className='rigth'>
-        <img
-          src={rigthImage}
-          alt="rigth"/>
+        <RigthImage />
       </div>
     </div>
   );

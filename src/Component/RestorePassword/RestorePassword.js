@@ -3,14 +3,14 @@ import { useHistory, Link } from "react-router-dom";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import ourLogo from '../../Source/images/NewLogo.jpg';
-import rigthImage from '../../Source/images/signInImage.jpg';
+import RigthImage from '../ImageForLogin/ImageForLogin.js';
 import "./RestorePassword.scss";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const SignUp = () => {
+const RestorePassword = () => {
   const history = useHistory();
   const regexpEmail = /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const [email, setEmail] = useState("");
@@ -90,12 +90,10 @@ const SignUp = () => {
         </div>
       </div>
       <div className='rigth-restore-password'>
-        <img
-          src={rigthImage}
-          alt="rigth-restore-password"/>
+        <RigthImage />
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default RestorePassword;

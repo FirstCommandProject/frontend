@@ -3,7 +3,7 @@ import { useHistory, Link } from "react-router-dom";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import ourLogo from '../../Source/images/NewLogo.jpg';
-import rigthImage from '../../Source/images/signInImage.jpg';
+import RigthImage from '../ImageForLogin/ImageForLogin.js';
 import PasswordInput from "../PasswordInput/PasswordInput";
 import "./SignUp.scss";
 
@@ -122,9 +122,7 @@ const SignUp = () => {
         </div>
       </div>
       <div className='rigth-sign-up'>
-        <img
-          src={rigthImage}
-          alt="rigth-sign-up"/>
+        <RigthImage />
       </div>
     </div>
   );

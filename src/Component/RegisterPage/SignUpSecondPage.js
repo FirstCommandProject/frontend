@@ -4,7 +4,7 @@ import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import ourLogo from '../../Source/images/NewLogo.jpg';
-import rigthImage from '../../Source/images/signInImage.jpg';
+import RigthImage from '../ImageForLogin/ImageForLogin.js';
 import "./SignUpSecondPage.scss";
 
 function Alert(props) {
@@ -132,9 +132,7 @@ const SignUp = () => {
           </Snackbar>
       </div>
       <div className='rigth-sign-up'>
-        <img
-          src={rigthImage}
-          alt="rigth-sign-up"/>
+        <RigthImage />
       </div>
     </div>
   );
