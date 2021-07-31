@@ -66,6 +66,7 @@ const SignUp = () => {
             <TextField
               InputLabelProps={{
                 shrink: true,
+                className: "label"
               }}
               label="Имя"
               className="input"
