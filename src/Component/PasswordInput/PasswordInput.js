@@ -10,7 +10,14 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Visibility from '@material-ui/icons/Visibility';
 import './PasswordInput.scss'
 
-const InputAdornments = ({checkPassword, repeatPasswordError, passwordError, value, setValue}) => {
+const InputAdornments = ({
+  checkPassword, 
+  repeatPasswordError, 
+  passwordError, 
+  value, 
+  setValue, 
+  label="Пароль"
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
@@ -32,7 +39,7 @@ const InputAdornments = ({checkPassword, repeatPasswordError, passwordError, val
         variant="outlined" 
         style={{backgroundColor: 'white', padding: "0 3px", color: 'black'}}
       >
-        Пароль
+        {label}
       </InputLabel>
       <OutlinedInput
         type={showPassword ? 'text' : 'password'}

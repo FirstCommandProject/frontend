@@ -93,6 +93,7 @@ const SignUp = () => {
               repeatPasswordError={repeatPasswordError}
               value={repeatPassword}
               setValue={setRepeatPassword}
+              label="Повторите пароль"
             />
           </div>
           <div className="sign-up">
