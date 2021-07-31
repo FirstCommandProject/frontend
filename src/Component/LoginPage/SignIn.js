@@ -99,11 +99,15 @@ const SignIn = () => {
             />
           </div>
           <div className='memory'>
-            <input type="checkbox" className='checkbox'/>
-            <p className='left-text-checkbox'>Запомнить меня</p>
-            <Link to="/forgot_password">
-              Забыли пароль?
-            </Link>
+            <div className="left-box">
+              <input type="checkbox" className='checkbox'/>
+              <p className='left-text-checkbox'>Запомнить меня</p>
+            </div>
+            <div className="forgot-password">
+              <Link to="/forgot_password">
+                Забыли пароль?
+              </Link>
+            </div>
           </div>
           <div className="login">
             <Button
