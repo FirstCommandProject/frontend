@@ -100,7 +100,7 @@ const SignIn = () => {
           <div className='memory'>
             <input type="checkbox" className='checkbox'/>
             <p className='left-text-checkbox'>Запомнить меня</p>
-            <Link to="/sign/up">
+            <Link to="/forgot_password">
               Забыли пароль?
             </Link>
           </div>
