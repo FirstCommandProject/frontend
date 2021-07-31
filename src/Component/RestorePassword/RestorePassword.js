@@ -52,6 +52,7 @@ const RestorePassword = () => {
           <TextField
             InputLabelProps={{
               shrink: true,
+              className: "label"
             }}
             label="Почта"
             type="email"

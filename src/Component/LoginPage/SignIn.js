@@ -85,6 +85,7 @@ const SignIn = () => {
               variant="outlined"
               InputLabelProps={{
                 shrink: true,
+                className: "label"
               }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}

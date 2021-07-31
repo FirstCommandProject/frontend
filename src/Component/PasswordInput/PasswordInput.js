@@ -30,7 +30,7 @@ const InputAdornments = ({checkPassword, repeatPasswordError, passwordError, val
       <InputLabel 
         shrink 
         variant="outlined" 
-        style={{backgroundColor: 'white', padding: "0 3px"}}
+        style={{backgroundColor: 'white', padding: "0 3px", color: 'black'}}
       >
         Пароль
       </InputLabel>

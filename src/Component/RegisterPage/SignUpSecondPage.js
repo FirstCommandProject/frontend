@@ -78,6 +78,7 @@ const SignUp = () => {
             <TextField
               InputLabelProps={{
                 shrink: true,
+                className: "label"
               }}
               label="Фамилия"
               className="input"
@@ -90,6 +91,7 @@ const SignUp = () => {
             <TextField
               InputLabelProps={{
                 shrink: true,
+                className: "label"
               }}
               label="Отчество(необязательно)"
               className="input"
@@ -102,6 +104,7 @@ const SignUp = () => {
             <TextField
               InputLabelProps={{
                 shrink: true,
+                className: "label"
               }}
               label="ВУЗ"
               className="input"
