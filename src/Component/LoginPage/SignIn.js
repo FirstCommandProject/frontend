@@ -5,7 +5,7 @@ import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import PasswordInput from "../PasswordInput/PasswordInput";
 import ourLogo from '../../Source/images/NewLogo.jpg';
-import rigthImage from '../../Source/images/signInImage.jpg';
+import RigthImage from '../ImageForLogin/ImageForLogin.js';
 import "./SignIn.scss";
 
 function Alert(props) {
@@ -68,12 +68,12 @@ const SignIn = () => {
   return (
     <div className='all'>
       <div className="left">
-        <div className="image-header">
+        <div>
           <Link to='/' >
             <img
-                className="our-icon"
-                src={ourLogo}
-                alt="logo"/>
+              className="image-header"
+              src={ourLogo}
+              alt="logo"/>
           </Link>
         </div>
         <h2 className="header-text">Вход в личный кабинет</h2>
@@ -85,6 +85,7 @@ const SignIn = () => {
               variant="outlined"
               InputLabelProps={{
                 shrink: true,
+                className: "label"
               }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -98,11 +99,15 @@ const SignIn = () => {
             />
           </div>
           <div className='memory'>
-            <input type="checkbox" className='checkbox'/>
-            <p className='left-text-checkbox'>Запомнить меня</p>
-            <Link to="/sign/up">
-              Забыли пароль?
-            </Link>
+            <div className="left-box">
+              <input type="checkbox" className='checkbox'/>
+              <p className='left-text-checkbox'>Запомнить меня</p>
+            </div>
+            <div className="forgot-password">
+              <Link to="/forgot_password">
+                Забыли пароль?
+              </Link>
+            </div>
           </div>
           <div className="login">
             <Button
@@ -134,9 +139,7 @@ const SignIn = () => {
         </Snackbar>
       </div>
       <div className='rigth'>
-        <img
-          src={rigthImage}
-          alt="rigth"/>
+        <RigthImage />
       </div>
     </div>
   );
