@@ -15,15 +15,14 @@ const Description = () => {
 
     return (
         <>
-            <Header />
+            <!-- <Header /> -->
+
             <div className='wrapper-description'>
-                <div>
-                    <img
-                         className='img-description'
-                         alt='logo'
-                         src={descriptionPicture}
-                    />
-                </div>
+                <img
+                    className='img-description'
+                    alt='logo'
+                    src={descriptionPicture}
+                />
 
                 <div className='box-description'>
                     <span>
@@ -35,14 +34,6 @@ const Description = () => {
                         Здесь дальше идет русский текст, потому что на английском текст становится почему-то жирным
                     </p>
                 </div>
-
-                {/*Код для PersonalData*/}
-                <button onClick={() => setModalActive(true)}>модальное окно</button>
-                <Cab
-                    active={modalActive}
-                    setActive={setModalActive}/>
-                {/*Код для PersonalData*/}
-
             </div>
         </>
     );
