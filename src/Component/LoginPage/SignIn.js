@@ -68,10 +68,10 @@ const SignIn = () => {
   return (
     <div className='all'>
       <div className="left">
-        <div className="image-header">
+        <div>
           <Link to='/' >
             <img
-              className="our-icon"
+              className="image-header"
               src={ourLogo}
               alt="logo"/>
           </Link>

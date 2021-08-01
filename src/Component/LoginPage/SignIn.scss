@@ -23,19 +23,18 @@
     background-color: #FFFFFF;
     
     .image-header {
-      width: 40px;
-      height: 40px;
+      height: 30px;
     }
   
     .header-text {
       display: flex;
       font-style: normal;
-      color: #323449;
       font-weight: 550;
-      font-size: 45px;
+      font-size: 40px;
       line-height: 68px;
       margin-bottom: 2vh;
       margin-top: 5vh;
+      color: #323449;
     }
   
     .sign-in {
@@ -77,7 +76,7 @@
         box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         font-style: normal;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 33px;
         color: #FFFFFF;  
         text-transform: capitalize;
@@ -90,7 +89,7 @@
       align-items: center;
       font-style: normal;
       font-weight: 500;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 33px;
       margin: 0;
       
