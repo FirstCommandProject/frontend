@@ -66,61 +66,60 @@ const SignUp = () => {
           </Link>
         </div>
         <p className="header-text-1">Регистрация</p>
-          <div className="input-fields-sign-up">
-            <TextField
-              InputLabelProps={{
-                shrink: true,
-                className: "label"
-              }}
-              label="Почта"
-              type="email"
-              className="input"
-              variant="outlined"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onBlur={() => checkEmail()}
-            />
-          </div>
-          <div className="input-fields-sign-up">
-            <PasswordInput
-              value={password}
-              setValue={setPassword}
-            />
-          </div>
-          <div className="input-fields-sign-up">
-            <PasswordInput
-              checkPassword={checkRepeatPassword}
-              repeatPasswordError={repeatPasswordError}
-              value={repeatPassword}
-              setValue={setRepeatPassword}
-              label="Повторите пароль"
-            />
-          </div>
-          <div className="sign-up">
-            <Button
-              className="sign-up-btn"
-              variant="outlined"
-              onClick={() => history.push("/sign/up/2")}
-            >
-              Продолжить
-            </Button>
-          </div>
-          <Snackbar
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
+        <div className="input-fields-sign-up">
+          <TextField
+            InputLabelProps={{
+              shrink: true,
+              className: "label"
             }}
-            open={openError}
-            autoHideDuration={6000}
-            onClose={handleClose}
+            label="Почта"
+            className="input"
+            variant="outlined"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onBlur={() => checkEmail()}
+          />
+        </div>
+        <div className="input-fields-sign-up">
+          <PasswordInput
+            value={password}
+            setValue={setPassword}
+          />
+        </div>
+        <div className="input-fields-sign-up">
+          <PasswordInput
+            checkPassword={checkRepeatPassword}
+            repeatPasswordError={repeatPasswordError}
+            value={repeatPassword}
+            setValue={setRepeatPassword}
+            label="Повторите пароль"
+          />
+        </div>
+        <div className="sign-up">
+          <Button
+            className="sign-up-btn"
+            variant="outlined"
+            onClick={() => history.push("/sign/up/2")}
           >
-            <Alert severity={alert}>{errorText}</Alert>
-          </Snackbar>
-          <div className="buttons-for-sign-up">
-            <p>Есть аккаунт?</p>
-            <Link to="/login">
-              Войти
-            </Link>
+            Продолжить
+          </Button>
+        </div>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          open={openError}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
+          <Alert severity={alert}>{errorText}</Alert>
+        </Snackbar>
+        <div className="buttons-for-sign-up">
+          <p>Есть аккаунт?</p>
+          <Link to="/login">
+            Войти
+          </Link>
         </div>
       </div>
       <div className='rigth-sign-up'>

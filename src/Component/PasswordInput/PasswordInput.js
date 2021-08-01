@@ -51,6 +51,7 @@ const InputAdornments = ({
               aria-label='toggle password visibility'
               onClick={handleClickShowPassword}
               onMouseDown={handleMouseDownPassword}
+              className="icon-eye"
             >
               {showPassword ? <Visibility/> : <VisibilityOff/>}
             </IconButton>
