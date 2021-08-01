@@ -26,13 +26,15 @@ const PageNotFound = () => {
                     </p>
                 </div>
 
-                <NavLink to='/'>
-                    <div className='ellipse-notFound'>
-                        <div className='back-notFound'>
-                            Вернуться назад
+                <div>
+                    <NavLink to='/'>
+                        <div className='ellipse-notFound'>
+                            <div className='back-notFound'>
+                                Вернуться назад
+                            </div>
                         </div>
-                    </div>
-                </NavLink>
+                    </NavLink>
+                </div>
             </div>
         </>
     );

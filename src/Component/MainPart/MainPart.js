@@ -18,18 +18,19 @@ const MainPart = () => {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi assumenda at commodi
                             dolorem
                             et
-                            ex inventore itaque neque odit saepe sequi totam veritatis.
+                            ex inventore itaque neque odit saepe sequi totam
                         </p>
                     </div>
 
-                    <NavLink to='/my/test'>
-                        <div className='ellipse-main'>
-                            <div className='test-main'>
-                                Пройти тестирование
+                    <div>
+                        <NavLink to='/my/test'>
+                            <div className='ellipse-main'>
+                                <div className='test-main'>
+                                    Пройти тестирование
+                                </div>
                             </div>
-                        </div>
-                    </NavLink>
-
+                        </NavLink>
+                    </div>
                 </div>
 
                 <div className='wrapper-right'>
