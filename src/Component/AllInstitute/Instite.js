@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 import Header from "../Header/Header";
+import Faculty from "../DescriptionFaculty/Faculty";
 import "./Instite.css";
 
 
-function PseudoServer(){
-    const history = useHistory();
-    const path = "/my/faculty/";
+function PseudoServer() {
+    const [modalActive, setModalActive] = useState(false);
     const kafedras = [
         {
             name : "Литературовидение",
@@ -85,15 +85,18 @@ function PseudoServer(){
         <Header />
         <main className = "main">{
             kafedras.map((item, index) =>(
-                         <div onClick={() => history.push(path + index)} className="kafedras">
+                         <div onClick={() => setModalActive(true)} className="kafedras">
                              <p className="kafedras-name">{item.name}</p>
                              <p className="kafedras-balls">{item.balls}</p>
                              <p className = "kafedras-institute">{item.institute}</p>
                          </div>))
                              }
+            <Faculty active={modalActive}
+                     setActive={setModalActive} />
         </main>
         </div>
     );
 }
+
 
 export default PseudoServer;

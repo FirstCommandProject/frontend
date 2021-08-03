@@ -59,10 +59,6 @@
 }
 
 @media screen and (max-width: 1440px) {
-    .ellipse-notFound {
-        height: 55%;
-    }
-
     .wrapper-notFound img {
         width: 28%;
         height: 82%;

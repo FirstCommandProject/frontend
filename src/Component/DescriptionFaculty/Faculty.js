@@ -4,113 +4,119 @@ import icon3 from '../../Source/images/Icon3.png';
 import icon4 from '../../Source/images/Icon4.png';
 import './Faculty.css';
 
-const Faculty = () => {
+
+const Faculty = ({active, setActive}) => {
     return (
-        <div className='wrapper-faculty'>
-            <div className='top-faculty'>
-                <div className='name-faculty'>
-                    <img
-                        alt='logo'
-                        src={icon4}
-                    />
+        <div className={active ? 'wrapper-faculty active' : 'wrapper-faculty'}
+             onClick={() => setActive(false)}>
+            <div
+                className={active ? 'faculty-content active' : 'faculty-content'}
+                onClick={e => e.stopPropagation()}>
+                <div className='top-faculty'>
+                    <div className='name-faculty'>
+                        {/*<img*/}
+                        {/*    alt='logo'*/}
+                        {/*    src={icon4}*/}
+                        {/*/>*/}
 
-                    <div>
-                        <p>
-                            КАФЕДРА
-                        </p>
-                    </div>
-
-                    <span>
-                        Что вы получите?
-                    </span>
-
-                    <hr/>
-                </div>
-
-                <div className='box-faculty'>
-                    <div>
-                        <img
-                            alt='logo'
-                            src={icon1}
-                        />
+                        <div>
+                            <p>
+                                КАФЕДРА
+                            </p>
+                        </div>
 
                         <span>
-                            Some text
+                            Что вы получите?
                         </span>
 
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                            Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
-                        </p>
+                        <hr/>
                     </div>
 
-                    <div>
-                        <img
-                            alt='logo'
-                            src={icon2}
-                        />
+                    <div className='box-faculty'>
+                        <div>
+                            <img
+                                alt='logo'
+                                src={icon1}
+                            />
 
-                        <span>
-                            Ключевые области
-                        </span>
+                            <span>
+                                Some text
+                             </span>
 
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                            Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
-                        </p>
-                    </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
+                                Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
+                            </p>
+                        </div>
 
-                    <div>
-                        <img
-                            alt='logo'
-                            src={icon3}
-                        />
+                        <div>
+                            <img
+                                alt='logo'
+                                src={icon2}
+                            />
 
-                        <span>
-                            Трудоустройство
-                        </span>
+                            <span>
+                                Ключевые области
+                            </span>
 
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                            Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
-                        </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
+                                Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
+                            </p>
+                        </div>
+
+                        <div>
+                            <img
+                                alt='logo'
+                                src={icon3}
+                            />
+
+                            <span>
+                                Трудоустройство
+                            </span>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
+                                Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className='bottom-faculty'>
-                <div className='name-bottom'>
-                    <div>
-                        <p>
-                            ИНФОРМАЦИЯ
-                        </p>
+                <div className='bottom-faculty'>
+                    <div className='name-bottom'>
+                        <div>
+                            <p>
+                                ИНФОРМАЦИЯ
+                            </p>
+                        </div>
+
+                        <span>
+                            Специальные дисциплины программы
+                        </span>
+
+                        <hr/>
                     </div>
 
-                    <span>
-                        Специальные дисциплины программы
-                    </span>
+                    <div className='disciplines-faculty'>
+                        <div>
+                            <p>Алгоритмы и структуры данных</p>
+                        </div>
 
-                    <hr/>
-                </div>
+                        <div className='discipline-fac'>
+                            <p>Математические основы анализа больших данных</p>
+                        </div>
 
-                <div className='disciplines-faculty'>
-                    <div>
-                        <p>Алгоритмы и структуры данных</p>
-                    </div>
+                        <div>
+                            <p>Методы интеллектуального анализа данных</p>
+                        </div>
 
-                    <div className='discipline-fac'>
-                        <p>Математические основы анализа больших данных</p>
-                    </div>
-
-                    <div>
-                        <p>Методы интеллектуального анализа данных</p>
-                    </div>
-
-                    <div className='discipline-fac'>
-                        <p>Технологии анализа больших данных</p>
+                        <div className='discipline-fac'>
+                            <p>Технологии анализа больших данных</p>
+                        </div>
                     </div>
                 </div>
             </div>
