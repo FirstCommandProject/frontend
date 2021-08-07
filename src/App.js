@@ -21,7 +21,7 @@ const App = () => {
                 <Route path="/sign/up/2" component={SecondRegisterPage} />
                 <Route path="/forgot_password" component={RestorePassword} />
                 <Route path='/departments' component={AllInstitute} />
-                <Route path='/my/faculty/' component={DescriptionFaculty} />
+                {/* <Route path='/my/faculty/' component={DescriptionFaculty} /> */}
                 <Route path='/about' component={Description} />
                 <Route path='/cab' component={Cab} />
                 <Route component={PageNotFound} />

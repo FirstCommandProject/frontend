@@ -1,7 +1,6 @@
 .wrapper-faculty {
     display: grid;
     grid-template-rows: 0.9fr 1fr;
-    grid-auto-rows: minmax(1fr, auto);
     font-size: 10vh;
     width: 100%;
     height: 100%;
@@ -10,40 +9,38 @@
 .top-faculty {
     display: grid;
     grid-template-rows: 1fr 1.5fr;
-    grid-auto-rows: minmax(1fr, auto);
     background-color: #F4F7FF;
 }
 
 .name-faculty {
     margin: 0 auto;
     position: relative;
-    top: 16%;
+    top: 5%;
 }
 
 .name-faculty img {
     width: 30%;
     position: absolute;
-    margin: -8vh  -68vh;
+    margin: -10% -27vw;
 }
 
 .name-faculty div {
     background-color: #DBEDFE;
     border-radius: 12px;
     margin: 0 auto;
-    width: 25%;
+    width: 45%;
+    text-align: center;
 }
 
 .name-faculty div p {
-    padding: 8%;
     font-weight: 600;
     font-size: 20px;
     color: #3877CD;
-    text-align: center;
 }
 
 .name-faculty span {
     display: inline-block;
-    font-size: 60px;
+    font-size: 34px;
     vertical-align: top;
     color: #323449;
 }
@@ -54,7 +51,7 @@
     border-radius: 2px;
     height: 3px;
     width: 55%;
-    position: relative;
+    margin-top: 0;
 }
 
 .box-faculty {
@@ -63,6 +60,7 @@
     grid-auto-columns: minmax(1fr, auto);
     align-self: center;
     justify-items: center;
+    margin-bottom: 15vh;
 }
 
 .box-faculty div {
@@ -98,6 +96,7 @@
     grid-template-rows: 1fr 2fr;
     background-color: white;
     width: 100%;
+    margin-bottom: 10vh;
 }
 
 .name-bottom {
@@ -110,11 +109,11 @@
     background-color: #DBEDFE;
     border-radius: 12px;
     margin: 0 auto;
-    width: 17%;
+    justify-content: center;
+    width: 28%;
 }
 
 .name-bottom div p {
-    padding: 8%;
     font-weight: 600;
     font-size: 20px;
     color: #3877CD;
@@ -123,7 +122,7 @@
 
 .name-bottom span {
     display: inline-block;
-    font-size: 60px;
+    font-size: 34px;
     vertical-align: top;
     color: #323449;
 }
@@ -134,27 +133,38 @@
     border-radius: 2px;
     height: 3px;
     width: 35%;
-    position: relative;
 }
 
 .disciplines-faculty {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    grid-auto-rows: minmax(1fr, auto);
     box-shadow: 1px 6px 25px 1px rgba(0, 0, 0, 0.12);
     font-size: 34px;
     align-self: center;
     justify-items: center;
     border-radius: 10px;
-    color: #323449;
     margin: 0 auto;
     width: 80%;
     text-align: center;
+    margin-bottom: 15vh;
 }
 
 .discipline-fac {
+    text-align: center;
+    align-self: center;
+    justify-items: center;
+    font-size: 20px;
     width: 100%;
     background-color: #F4F7FF;
+}
+
+.discipline-fac-1 {
+    text-align: center;
+    align-self: center;
+    justify-items: center;
+    font-size: 20px;
+    width: 100%;
+    background-color: #FFFFFF;
 }
 
 @media screen and (max-width: 1440px) {
@@ -178,16 +188,12 @@
         font-size: 22px;
     }
 
-    .name-bottom div {
-        width: 20%;
-    }
-
     .name-bottom div p {
         font-size: 18px;
     }
 
     .name-bottom span {
-        font-size: 45px;
+        font-size: 30px;
     }
 
     .disciplines-faculty {
@@ -204,7 +210,7 @@
     }
 
     .name-faculty span {
-        font-size: 50px;
+        font-size: 30px;
     }
 
     .name-faculty img {
@@ -228,7 +234,7 @@
     }
 
     .name-bottom span {
-        font-size: 36px;
+        font-size: 22px;
     }
 
     .disciplines-faculty {
@@ -264,7 +270,7 @@
     }
 
     .name-faculty span {
-        font-size: 42px;
+        font-size: 28px;
     }
 
     .box-faculty {
@@ -297,7 +303,7 @@
 
     .name-bottom span {
         text-align: center;
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .disciplines-faculty {
@@ -315,7 +321,7 @@
     }
 
     .name-faculty span {
-        font-size: 36px;
+        font-size: 23px;
     }
 
     .name-faculty div p {

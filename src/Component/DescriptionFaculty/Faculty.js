@@ -97,7 +97,7 @@ const Faculty = () => {
                 </div>
 
                 <div className='disciplines-faculty'>
-                    <div>
+                    <div className='discipline-fac-1'>
                         <p>Алгоритмы и структуры данных</p>
                     </div>
 
@@ -105,7 +105,7 @@ const Faculty = () => {
                         <p>Математические основы анализа больших данных</p>
                     </div>
 
-                    <div>
+                    <div className='discipline-fac-1'>
                         <p>Методы интеллектуального анализа данных</p>
                     </div>
 

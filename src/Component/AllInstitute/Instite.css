@@ -31,3 +31,26 @@
   min-height: 100vh;
   background-color: #F4F4F4;
 }
+
+.modal-window {
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'center';
+  border: none;
+}
+
+.window-main {
+  background-color: gray;
+  border: none;
+  width: 70vw;
+  max-height: 1000px;
+  margin-left: 15vw;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 900px) { 
+  .window-main {
+    width: 95vw;
+    margin-left: 2.5vw;
+  }
+}

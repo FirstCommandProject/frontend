@@ -7,8 +7,7 @@ import './Header.css';
 
 const Header = () => {
     const { width } = useWindowDimensions();
-    console.log(width);
-
+    
     return (    
         <div className="main-header">
             {width > 620 
