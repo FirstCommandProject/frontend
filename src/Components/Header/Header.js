@@ -1,6 +1,6 @@
 import react from "react";
 import { NavLink } from "react-router-dom";
-import ourLogo from '../../Source/images/NewLogo.png';
+import ourLogo from '../../assets/branding/logo.png';
 import useWindowDimensions from '../windowSizeHook/windowSize.js';
 import BurgerMenu from '../BurgerMenu/Burger.js';
 import './Header.css';

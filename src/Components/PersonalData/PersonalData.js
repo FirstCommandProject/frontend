@@ -1,7 +1,7 @@
-import { useState } from "react";
-import personalIcon from '../../Source/images/personal-img.png';
-import { TextField } from "@material-ui/core";
-import PasswordInput from "../PasswordInput/PasswordInput";
+import { useState } from 'react';
+import personalIcon from '../../assets/icons/personal-img.png';
+import { TextField } from '@material-ui/core';
+import PasswordInput from '../PasswordTextField/PasswordTextField';
 import './PersonalData.css';
 
 const PersonalData = ({active, setActive}) => {

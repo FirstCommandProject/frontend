@@ -1,6 +1,6 @@
 import React from "react";
-import centerImage from "../../Source/images/centerImage.svg"
-import "./ImageForLogin.scss";
+import centerImage from "../../assets/illustrations/centerImage.svg"
+import "./SignImage.scss";
 
 const ImageForLogin = () => {
   return (

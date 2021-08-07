@@ -1,7 +1,7 @@
-import icon1 from '../../Source/images/Icon1.png'
-import icon2 from '../../Source/images/Icon2.png';
-import icon3 from '../../Source/images/Icon3.png';
-import icon4 from '../../Source/images/Icon4.png';
+import icon1 from '../../assets/icons/Icon1.png'
+import icon2 from '../../assets/icons/Icon2.png';
+import icon3 from '../../assets/icons/Icon3.png';
+import icon4 from '../../assets/icons/Icon4.png';
 import './Faculty.css';
 
 const Faculty = () => {

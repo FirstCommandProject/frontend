@@ -3,8 +3,8 @@ import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-import ourLogo from '../../Source/images/NewLogo.png';
-import RigthImage from '../ImageForLogin/ImageForLogin.js';
+import ourLogo from '../../../assets/branding/logo.png';
+import RigthImage from '../../../Components/SignImage/SignImage.js';
 import "./SignUpSecondPage.scss";
 
 function Alert(props) {

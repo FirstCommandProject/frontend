@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import Header from "../Header/Header";
-import gifNotFound from '../../Source/images/pageNotFound.gif';
-import './PageNotFound.css';
+import Header from "../../Components/Header/Header";
+import gifNotFound from '../../assets/illustrations/pageNotFound.gif';
+import './404.css';
 
 const PageNotFound = () => {
     return (

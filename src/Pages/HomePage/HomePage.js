@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import MainPicture from '../../Source/images/main-img.png';
-import Header from "../Header/Header";
-import './MainPart.css';
+import MainPicture from '../../assets/illustrations/main-img.png';
+import Header from "../../Components/Header/Header";
+import './HomePage.css';
 
 const MainPart = () => {
     return (

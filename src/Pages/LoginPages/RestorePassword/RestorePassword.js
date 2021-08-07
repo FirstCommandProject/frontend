@@ -2,25 +2,21 @@ import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-import ourLogo from '../../Source/images/NewLogo.png';
-import RigthImage from '../ImageForLogin/ImageForLogin.js';
-import PasswordInput from "../PasswordInput/PasswordInput";
-import "./SignUp.scss";
+import ourLogo from '../../../assets/branding/logo.png';
+import RigthImage from '../../../Components/SignImage/SignImage.js';
+import "./RestorePassword.scss";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const SignUp = () => {
+const RestorePassword = () => {
   const history = useHistory();
   const regexpEmail = /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
   const [openError, setError] = useState(false);
   const [errorText, setErrorText] = useState(false);
   const [alert, setAlert] = useState("");
-  const [repeatPasswordError, setRepeatPasswordError] = useState(false);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -41,38 +37,25 @@ const SignUp = () => {
     }
   };
 
-  const checkRepeatPassword = (e) => {
-    if (password !== repeatPassword) {
-      setAlert("error");
-      setErrorText("Пароли не совпадают!");
-      setError(true);
-      setRepeatPasswordError(true);
-    } else {
-      setAlert("success");
-      setErrorText("Пароли совпадают!");
-      setError(true);
-      setRepeatPasswordError(false);
-    }
-  };
-
   return (
-    <div className='first-page-sign-up'>
-      <div className="left-first-page-sign-up">
-        <div className="image-header-sign-up">
+    <div className='restore-password'>
+      <div className="left-restore-password">
+        <div className="image-header-restore-password">
           <Link to='/' >
             <img
-                src={ourLogo}
-                alt="logo"/>
+              src={ourLogo}
+              alt="logo"/>
           </Link>
         </div>
-        <p className="header-text-1">Регистрация</p>
-        <div className="input-fields-sign-up">
+        <p className="header-text-1">Забыли пароль?</p>
+        <div className="input-fields-restore-password">
           <TextField
             InputLabelProps={{
               shrink: true,
               className: "label"
             }}
             label="Почта"
+            type="email"
             className="input"
             variant="outlined"
             value={email}
@@ -80,28 +63,13 @@ const SignUp = () => {
             onBlur={() => checkEmail()}
           />
         </div>
-        <div className="input-fields-sign-up">
-          <PasswordInput
-            value={password}
-            setValue={setPassword}
-          />
-        </div>
-        <div className="input-fields-sign-up">
-          <PasswordInput
-            checkPassword={checkRepeatPassword}
-            repeatPasswordError={repeatPasswordError}
-            value={repeatPassword}
-            setValue={setRepeatPassword}
-            label="Повторите пароль"
-          />
-        </div>
-        <div className="sign-up">
+        <div className="restore-password-for-button">
           <Button
-            className="sign-up-btn"
+            className="restore-password-btn"
             variant="outlined"
             onClick={() => history.push("/sign/up/2")}
           >
-            Продолжить
+            Восстановить пароль
           </Button>
         </div>
         <Snackbar
@@ -115,18 +83,18 @@ const SignUp = () => {
         >
           <Alert severity={alert}>{errorText}</Alert>
         </Snackbar>
-        <div className="buttons-for-sign-up">
-          <p>Есть аккаунт?</p>
-          <Link to="/login">
-            Войти
+        <div className="buttons-for-restore-password">
+          <p>Нет аккаунта?</p>
+          <Link to="/sign/up">
+            Создать аккаунт
           </Link>
         </div>
       </div>
-      <div className='rigth-sign-up'>
+      <div className='rigth-restore-password'>
         <RigthImage />
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default RestorePassword;

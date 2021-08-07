@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Visibility from '@material-ui/icons/Visibility';
-import './PasswordInput.scss'
+import './PasswordTextField.scss'
 
 const InputAdornments = ({
   checkPassword, 
