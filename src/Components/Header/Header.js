@@ -19,29 +19,26 @@ const Header = () => {
                         alt="logo"/>
                 </NavLink>
 
-                <div className='right-header'>
-                    <div className="buttons">
-                        <ul>
-                            <li className='butt'>
-                                <NavLink to='/about' activeClassName='active-header'>О проекте</NavLink>
-                            </li>
+                
+                
+                <ul className="nav">
+                    <li className='nav-button'>
+                        <NavLink to='/about' activeClassName='active-header'>О проекте</NavLink>
+                    </li>
 
-                            <li className='butt'>
-                                <NavLink to='/departments' activeClassName='active-header'>Кафедры</NavLink>
-                            </li>
+                    <li className='nav-button'>
+                        <NavLink to='/departments' activeClassName='active-header'>Кафедры</NavLink>
+                    </li>
 
-                            <li className='butt'>
-                                <NavLink to='/login' activeClassName='active-header'>Вход</NavLink>
-                            </li>
+                    <li className='nav-button'>
+                        <NavLink to='/login' activeClassName='active-header'>Вход</NavLink>
+                    </li>
+                </ul>
 
-                            <li>
-                                <div className='ellipse-header'>
-                                    <NavLink to='/sign/up' activeClassName='active-header'>Регистрация</NavLink>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <div class='round-button'>
+                    <NavLink to='/sign/up' className="round-button-link" activeClassName='active-header'>Регистрация</NavLink>
                 </div>
+                
             </>
             : <BurgerMenu pageWrapId={"page-wrap"} />
         }
