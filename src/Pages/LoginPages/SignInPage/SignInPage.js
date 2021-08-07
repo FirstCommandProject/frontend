@@ -3,10 +3,12 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-import PasswordInput from "../../../Components/PasswordTextField/PasswordTextField";
-import ourLogo from '../../../assets/branding/logo.png';
-import RigthImage from '../../../Components/SignImage/SignImage.js';
-import "./SignIn.scss";
+
+import appLogo from '../../../assets/branding/logo.png';
+
+import PasswordTextField from "../../../Components/PasswordTextField/PasswordTextField";
+import SignImage from '../../../Components/SignImage/SignImage.js';
+import "./SignInPage.scss";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -72,7 +74,7 @@ const SignIn = () => {
           <Link to='/' >
             <img
               className="image-header"
-              src={ourLogo}
+              src={appLogo}
               alt="logo"/>
           </Link>
         </div>
@@ -93,7 +95,7 @@ const SignIn = () => {
             />
           </div>
           <div className="input-fields">
-            <PasswordInput
+            <PasswordTextField
               value={password}
               setValue={setPassword}
             />
@@ -139,7 +141,7 @@ const SignIn = () => {
         </Snackbar>
       </div>
       <div className='rigth'>
-        <RigthImage />
+        <SignImage/>
       </div>
     </div>
   );

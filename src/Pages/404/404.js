@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+
 import Header from "../../Components/Header/Header";
-import gifNotFound from '../../assets/illustrations/pageNotFound.gif';
+import NotFoundPicture from '../../assets/illustrations/404.gif';
 import './404.css';
 
-const PageNotFound = () => {
+const NotFoundPage = () => {
     return (
         <>
             <Header/>
@@ -11,7 +12,7 @@ const PageNotFound = () => {
                 <div>
                     <img
                         alt='logo'
-                        src={gifNotFound}
+                        src={NotFoundPicture}
                     />
                 </div>
 
@@ -36,8 +37,6 @@ const PageNotFound = () => {
             </div>
         </>
     );
-
 }
 
-
-export default PageNotFound;
+export default NotFoundPage;

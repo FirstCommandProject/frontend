@@ -3,7 +3,6 @@
     grid-template-columns: repeat(2, [col] 1fr);
     grid-auto-rows: minmax(1fr, auto);
     background-color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 10vh;
     height: 90vh;
 }
@@ -22,22 +21,27 @@
 .box-description span {
     position: relative;
     top: 26%;
+
+    font-style: normal;
     font-weight: 800;
     font-size: 60px;
-    padding-right: 30%;
+    line-height: 82px;
+
     color: #34363E;
-    font-family: Nunito;
 }
 
 .box-description p {
     position: relative;
-    top: 27%;
+
+
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 600;
     font-size: 24px;
-    text-align: left;
-    width: 80%;
-    padding-right: 15%;
+    line-height: 33px;
+    text-align: center;
+
     color: #54585E;
-    line-height: 1.4em;
 }
 
 @media screen and (max-width: 1024px) {

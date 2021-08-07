@@ -1,17 +1,8 @@
-/*Код для PersonalData*/
-import { useState } from "react";
-/*Код для PersonalData*/
-
-import descriptionPicture from '../../assets/illustrations/description-img.png';
+import aboutPagePicture from '../../assets/illustrations/aboutPagePicture.png';
 import Header from "../../Components/Header/Header";
 import './AboutPage.css';
 
-const Description = () => {
-
-    {/*Код для PersonalData*/}
-    const [modalActive, setModalActive] = useState(false);
-    {/*Код для PersonalData*/}
-
+const AboutPage = () => {
     return (
         <>
             <Header />
@@ -20,7 +11,7 @@ const Description = () => {
                     <img
                          className='img-description'
                          alt='logo'
-                         src={descriptionPicture}
+                         src={aboutPagePicture}
                     />
                 </div>
 
@@ -32,9 +23,7 @@ const Description = () => {
                     <p>
                         Данная экспертная система была создана для упрощения подобра направления для поступающих на магистратуру
 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                        Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
                     </p>
                 </div>
             </div>
@@ -43,4 +32,4 @@ const Description = () => {
 }
 
 
-export default Description;
+export default AboutPage;

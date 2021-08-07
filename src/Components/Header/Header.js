@@ -1,6 +1,6 @@
 import react from "react";
 import { NavLink } from "react-router-dom";
-import ourLogo from '../../assets/branding/logo.png';
+import appLogo from '../../assets/branding/logo.png';
 import useWindowDimensions from '../windowSizeHook/windowSize.js';
 import BurgerMenu from '../BurgerMenu/Burger.js';
 import './Header.css';
@@ -15,7 +15,7 @@ const Header = () => {
                 <NavLink to='/' >
                     <img
                         className="our-icon"
-                        src={ourLogo}
+                        src={appLogo}
                         alt="logo"/>
                 </NavLink>
 

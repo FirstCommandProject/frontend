@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-import ourLogo from '../../../assets/branding/logo.png';
-import RigthImage from '../../../Components/SignImage/SignImage.js';
+import axios from "axios";
+
+import appLogo from '../../../assets/branding/logo.png';
+
+import SignImage from '../../../Components/SignImage/SignImage.js';
 import "./SignUpSecondPage.scss";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const SignUp = () => {
+const SignUpSecondPage = () => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [secondName, setSecondName] = useState("");
@@ -57,7 +59,7 @@ const SignUp = () => {
         <div className="image-header-sign-up">
           <Link to='/' >
             <img
-                src={ourLogo}
+                src={appLogo}
                 alt="logo"/>
           </Link>
         </div>
@@ -136,10 +138,10 @@ const SignUp = () => {
           </Snackbar>
       </div>
       <div className='rigth-sign-up'>
-        <RigthImage />
+        <SignImage/>
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default SignUpSecondPage;

@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import MainPicture from '../../assets/illustrations/main-img.png';
+import HomePagePicture from '../../assets/illustrations/homePagePicture.png';
+
 import Header from "../../Components/Header/Header";
 import './HomePage.css';
 
-const MainPart = () => {
+const HomePage = () => {
     return (
         <>
             <Header/>
@@ -15,10 +16,7 @@ const MainPart = () => {
                         </span>
 
                         <p className='description-main'>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi assumenda at commodi
-                            dolorem
-                            et
-                            ex inventore itaque neque odit saepe sequi totam veritatis.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi assumenda at commodi dolorem et ex inventore itaque neque odit saepe sequi totam veritatis.
                         </p>
                     </div>
 
@@ -29,14 +27,13 @@ const MainPart = () => {
                             </div>
                         </div>
                     </NavLink>
-
                 </div>
 
                 <div className='wrapper-right'>
                     <img
                          className='img-main'
                          alt='logo'
-                         src={MainPicture}
+                         src={HomePagePicture}
                     />
                 </div>
             </div>
@@ -45,4 +42,4 @@ const MainPart = () => {
 }
 
 
-export default MainPart;
+export default HomePage;
