@@ -1,4 +1,3 @@
-import react from "react";
 import { NavLink } from "react-router-dom";
 import ourLogo from '../../Source/images/NewLogo.png';
 import useWindowDimensions from '../windowSizeHook/windowSize.js';
@@ -7,7 +6,7 @@ import './Header.css';
 
 const Header = () => {
     const { width } = useWindowDimensions();
-    
+
     return (    
         <div className="main-header">
             {width > 620 

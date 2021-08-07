@@ -1,5 +1,4 @@
 import React from 'react'
-import { useHistory } from "react-router-dom";
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Header from "../Header/Header";

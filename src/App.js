@@ -6,7 +6,6 @@ import LoginPage from "./Component/LoginPage/SignIn";
 import Main from './Component/MainPart/MainPart.js';
 import Description from './Component/DescriptionPage/Description.js';
 import AllInstitute from './Component/AllInstitute/Instite';
-import DescriptionFaculty from './Component/DescriptionFaculty/Faculty.js';
 import Cab from './Component/PersonalData/PersonalData.js';
 import PageNotFound from "./Component/PageNotFound/PageNotFound.js";
 import RestorePassword from './Component/RestorePassword/RestorePassword.js';
@@ -21,7 +20,6 @@ const App = () => {
                 <Route path="/sign/up/2" component={SecondRegisterPage} />
                 <Route path="/forgot_password" component={RestorePassword} />
                 <Route path='/departments' component={AllInstitute} />
-                {/* <Route path='/my/faculty/' component={DescriptionFaculty} /> */}
                 <Route path='/about' component={Description} />
                 <Route path='/cab' component={Cab} />
                 <Route component={PageNotFound} />
