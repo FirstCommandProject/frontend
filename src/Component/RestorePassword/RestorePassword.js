@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-import ourLogo from '../../Source/images/NewLogo.jpg';
+import ourLogo from '../../Source/images/NewLogo.png';
 import RigthImage from '../ImageForLogin/ImageForLogin.js';
 import "./RestorePassword.scss";
 

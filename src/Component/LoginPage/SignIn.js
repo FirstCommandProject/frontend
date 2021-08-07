@@ -4,7 +4,7 @@ import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import PasswordInput from "../PasswordInput/PasswordInput";
-import ourLogo from '../../Source/images/NewLogo.jpg';
+import ourLogo from '../../Source/images/NewLogo.png';
 import RigthImage from '../ImageForLogin/ImageForLogin.js';
 import "./SignIn.scss";
 
