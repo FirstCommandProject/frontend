@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import HomePagePicture from '../../assets/illustrations/homePagePicture.png';
+
+import Lottie from 'lottie-react-web'
+
+import HomePagePicture from '../../assets/lottie/welcome.json';
 
 import Header from "../../Components/Header/Header";
 import './HomePage.css';
@@ -7,34 +10,30 @@ import './HomePage.css';
 const HomePage = () => {
     return (
         <>
-            <Header/>
+            {<Header/>}
             <div className='wrapper-main'>
                 <div className='wrapper-left'>
-                    <div className='greeting-main'>
-                        <span className='greeting-main'>
-                            Добро пожаловать!
-                        </span>
+                    <span className='greeting-main'>
+                        Добро пожаловать!
+                    </span>
 
-                        <p className='description-main'>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi assumenda at commodi dolorem et ex inventore itaque neque odit saepe sequi totam veritatis.
-                        </p>
-                    </div>
+                    <p className='description-main'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi assumenda at commodi dolorem et ex inventore itaque neque odit saepe sequi totam veritatis.
+                    </p>
 
                     <NavLink to='/my/test'>
-                        <div className='ellipse-main'>
-                            <div className='test-main'>
-                                Пройти тестирование
-                            </div>
-                        </div>
+                        <button className="button"><span>Пройти тестирование</span></button>
                     </NavLink>
                 </div>
 
                 <div className='wrapper-right'>
-                    <img
-                         className='img-main'
-                         alt='logo'
-                         src={HomePagePicture}
-                    />
+                    <div className='lottie-shadow'>
+                        <Lottie
+                            options={{
+                                animationData: HomePagePicture
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
         </>
