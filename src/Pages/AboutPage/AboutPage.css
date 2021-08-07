@@ -8,51 +8,62 @@
 }
 
 .img-description {
-    width: 70%;
-    height: 70%;
-    padding: 12% 1% 1% 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-description img{
+    width: 72%;
+    height: 72%;
 }
 
 .box-description {
-    grid-column: col 2 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
 }
 
-.box-description span {
-    position: relative;
-    top: 26%;
+.box-description h2 {
+    font-family: 'Nunito', sans-serif;
 
     font-style: normal;
     font-weight: 800;
     font-size: 60px;
-    line-height: 82px;
+
+    margin: 0 0 15px 0;
 
     color: #34363E;
 }
 
 .box-description p {
-    position: relative;
+    width: 80%;
 
-
-    font-family: Nunito;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 33px;
     text-align: center;
 
+    margin: 0 0 25px 0;
+
     color: #54585E;
 }
 
+.box-description p:last-child {
+    margin: 0;
+}
+
 @media screen and (max-width: 1024px) {
-    .img-description {
+    .img-description img{
         width: 75%;
         height: 60%;
-        position: relative;
-        top: 20%;
     }
 
-    .box-description span {
+    .box-description h2 {
         font-size: 55px;
     }
 
@@ -62,12 +73,12 @@
 }
 
 @media screen and (max-width: 768px) {
-    .img-description {
+    .img-description img{
         width: 78%;
         height: 45%;
     }
 
-    .box-description span {
+    .box-description h2 {
         font-size: 48px;
     }
 
@@ -81,40 +92,36 @@
         display: list-item;
     }
 
-    .img-description {
+    .img-description img{
         width: 60%;
     }
 
-    .box-description span {
-        margin-left: 30%;
+    .box-description h2 {
         font-size: 35px;
     }
 
     .box-description p {
-        width: 80%;
-        margin-left: 15%;
         font-size: 16px;
     }
 }
 
 @media screen and (max-width: 376px) {
-    .box-description span {
+    .box-description h2 {
         font-size: 32px;
     }
 
     .box-description p {
-        width: 80%;
+    
         font-size: 16px;
-        margin-left: 10%;
     }
 }
 
 @media screen and (max-width: 321px) {
-    .img-description {
+    .img-description img{
         width: 70%;
     }
 
-    .box-description span {
+    .box-description h2 {
         font-size: 27px;
     }
 
