@@ -1,38 +1,35 @@
 import { NavLink } from "react-router-dom";
+import Lottie from 'lottie-react-web'
+
+import NotFoundAnimation from '../../assets/lottie/404.json';
 
 import Header from "../../Components/Header/Header";
-import NotFoundPicture from '../../assets/illustrations/404.gif';
 import './404.css';
 
 const NotFoundPage = () => {
     return (
         <>
-            <Header/>
-            <div className='wrapper-notFound'>
-                <div>
-                    <img
-                        alt='logo'
-                        src={NotFoundPicture}
+            {<Header/>}
+            <div className='wrapper-main-not-found'>
+                <div className='wrapper-lottie'>
+                    <Lottie
+                        options={{
+                            animationData: NotFoundAnimation
+                        }}
                     />
                 </div>
 
-                <div className='description-notFound'>
-                    <span>
-                        Что-то пошло не так
-                    </span>
+                <span className='title-not-found'>
+                    Что-то пошло не так
+                </span>
 
-                    <p>
-                        Кажется, что страница которую вы ищите, была перемещена,
-                        переименована или даже удалена!
-                    </p>
-                </div>
+                <p className='summary-not-found'>
+                    Кажется, что страница которую вы ищите, была перемещена,
+                    переименована или даже удалена!
+                </p>
 
                 <NavLink to='/'>
-                    <div className='ellipse-notFound'>
-                        <div className='back-notFound'>
-                            Вернуться назад
-                        </div>
-                    </div>
+                    <button className="button-back"><span>Вернуться</span></button>
                 </NavLink>
             </div>
         </>
