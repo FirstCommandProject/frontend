@@ -1,14 +1,17 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import RegisterPage from "./Component/RegisterPage/SignUp";
-import SecondRegisterPage from "./Component/RegisterPage/SignUpSecondPage";
-import LoginPage from "./Component/LoginPage/SignIn";
-import Main from './Component/MainPart/MainPart.js';
-import Description from './Component/DescriptionPage/Description.js';
-import AllInstitute from './Component/AllInstitute/Instite';
-import Cab from './Component/PersonalData/PersonalData.js';
-import PageNotFound from "./Component/PageNotFound/PageNotFound.js";
-import RestorePassword from './Component/RestorePassword/RestorePassword.js';
+
+import RegisterPage from "./Pages/LoginPages/SignUpPage/SignUpFirstPage";
+import SecondRegisterPage from "./Pages/LoginPages/SignUpPage/SignUpSecondPage";
+import LoginPage from "./Pages/LoginPages/SignInPage/SignInPage";
+import RestorePassword from './Pages/LoginPages/RestorePasswordPage/RestorePasswordPage.js';
+
+import Main from './Pages/HomePage/HomePage.js';
+import Description from './Pages/AboutPage/AboutPage.js';
+import PageNotFound from "./Pages/404/404.js";
+import AllInstitute from './Components/AllInstitute/Instite';
+import DescriptionFaculty from './Components/DescriptionFaculty/Faculty.js';
+import Cab from './Components/PersonalData/PersonalData.js';
 
 const App = () => {
     return (
