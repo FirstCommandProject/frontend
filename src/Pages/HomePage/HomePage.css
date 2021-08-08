@@ -103,6 +103,11 @@
 
 
 @media screen and (max-width: 1024px) {
+    .wrapper-right {
+        display: flex;
+        justify-content: center;
+    }
+
     .greeting-main {
         font-size: 48px;
     }

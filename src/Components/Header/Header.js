@@ -36,7 +36,7 @@ const Header = () => {
                 </ul>
 
                 <div class='round-button'>
-                    <NavLink to='/sign/up' className="round-button-link" activeClassName='active-header'>Регистрация</NavLink>
+                    <NavLink to='/sign/up' activeClassName='active-header'>Регистрация</NavLink>
                 </div>
                 
             </>
