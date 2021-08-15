@@ -4,7 +4,7 @@ import Lottie from 'lottie-react-web'
 
 import HomePagePicture from '../../assets/lottie/welcome.json';
 
-import Header from "../../Components/Header/Header";
+import Header from "../../Components/MainHeader/MainHeader";
 import './HomePage.css';
 
 const HomePage = () => {
