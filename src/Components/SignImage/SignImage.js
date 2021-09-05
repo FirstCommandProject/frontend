@@ -16,7 +16,7 @@ const ImageForLogin = () => {
       <img
         className="center-image"
         src={centerImage}
-        alt="center-image"/>
+        alt="center"/>
     </div>
   );
 };
