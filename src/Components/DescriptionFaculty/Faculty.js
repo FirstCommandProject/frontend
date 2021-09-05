@@ -9,10 +9,10 @@ const Faculty = () => {
         <div className='wrapper-faculty'>
             <div className='top-faculty'>
                 <div className='name-faculty'>
-                    <img
-                        alt='logo'
-                        src={icon4}
-                    />
+                    {/*<img*/}
+                    {/*    alt='logo'*/}
+                    {/*    src={icon4}*/}
+                    {/*/>*/}
 
                     <div>
                         <p>
