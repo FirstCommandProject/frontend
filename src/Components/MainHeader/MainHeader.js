@@ -10,7 +10,7 @@ const Header = () => {
     
     return (    
         <div className="mainPage-header">
-            {width > 620 
+            {width > 1010 
             ? <>
                 <NavLink to='/' >
                     <img
@@ -21,23 +21,23 @@ const Header = () => {
 
                 
                 <div className="main-header-background">
-                    <ul className="nav">
-                        <li className='nav-button'>
+                    <ul className="nav-main-header">
+                        <li className='nav-button-main-header'>
                             <NavLink to='/about' activeClassName='active-header'>О проекте</NavLink>
                         </li>
 
-                        <li className='nav-button'>
+                        <li className='nav-button-main-header'>
                             <NavLink to='/departments' activeClassName='active-header'>Кафедры</NavLink>
                         </li>
 
-                        <li className='nav-button'>
+                        <li className='nav-button-main-header'>
                             <NavLink to='/login' activeClassName='active-header'>Вход</NavLink>
                         </li>
-                    </ul>
 
-                    <div class='round-button'>
-                        <NavLink to='/sign/up' activeClassName='active-header'>Регистрация</NavLink>
-                    </div>
+                        <li className='round-button-main-header'>
+                            <NavLink to='/sign/up' activeClassName='active-header'>Регистрация</NavLink>
+                        </li>
+                    </ul>
                 </div>
                 
             </>

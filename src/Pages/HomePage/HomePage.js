@@ -10,7 +10,7 @@ import './HomePage.css';
 const HomePage = () => {
     return (
         <>
-            {<Header/>}
+            <Header />
             <div className='wrapper-main'>
                 <div className='wrapper-left'>
                     <span className='greeting-main'>
