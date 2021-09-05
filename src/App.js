@@ -25,7 +25,6 @@ const App = () => {
                 <Route path="/forgot_password" component={RestorePassword} />
                 <Route path='/departments' component={AllInstitute} />
                 <Route path='/about' component={Description} />
-                <Route path='/cab' component={Cab} />
                 <Route path='/my/test' component={TestPage} />
                 <Route component={PageNotFound} />
             </Switch>

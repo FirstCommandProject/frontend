@@ -1,85 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Header from "../Header/Header";
 import DescriptionFaculty from "../DescriptionFaculty/Faculty.js";
 import "./Instite.css";
 
-function PseudoServer(){
-    const [open, setOpen] = React.useState(false);
+const AllInstitute = () => {
+    const [open, setOpen] = useState(false);
 
     const kafedras = [
         {
-            name : "Литературовидение",
-            institute: "ИРТСУ",
-            balls: "Средний балл: 10"
+            id: 1,
+            name : "Информационное и программное обеспечение автоматизированных систем",
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
+            price: 10000,
+            years: 2,
+            form: 'Очная',
         },
         {
-            name : "Имя",
-            institute: "ИКТИБ",
-            balls: "Средний балл: 250"
+            id: 2,
+            name : "Эргодизайн пользовательского интерфейса",
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
+            price: 10000,
+            years: 2,
+            form: 'Очная',
         },
         {
-            name: 'Психология',
-            institute : "ИКТИБ",
-            balls : "Средний балл: 150"
-
+            id: 3,
+            name: 'Эргодизайн пользовательского интерфейса',
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
+            price: 10000,
+            years: 2,
+            form: 'Очная',
         },
         {
-            name : "Имя",
-            institute: "ИКТИБ",
-            balls: "Средний балл: 250"
+            id: 4,
+            name : "Информационное и программное обеспечение автоматизированных систем",
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
+            price: 10000,
+            years: 2,
+            form: 'Очная',
         },
         {
-            name: 'Психология',
-            institute : "ИКТИБ",
-            balls : "Средний балл: 150"
-
+            id: 5,
+            name: 'Эргодизайн пользовательского интерфейса',
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
+            price: 10000,
+            years: 2,
+            form: 'Очная',
         },
-        {
-            name : "Имя",
-            institute: "ИКТИБ",
-            balls: "Средний балл: 250"
-        },
-        {
-            name: 'Психология',
-            institute : "ИКТИБ",
-            balls : "Средний балл: 150"
-
-        },
-        {
-            name : "Имя",
-            institute: "ИКТИБ",
-            balls: "Средний балл: 250"
-        },
-        {
-            name: 'Психология',
-            institute : "ИКТИБ",
-            balls : "Средний балл: 150"
-
-        },
-        {
-            name : "Имя",
-            institute: "ИКТИБ",
-            balls: "Средний балл: 250"
-        },
-        {
-            name: 'Психология',
-            institute : "ИКТИБ",
-            balls : "Средний балл: 150"
-
-        },
-        {
-            name : "Имя",
-            institute: "ИКТИБ",
-            balls: "Средний балл: 250"
-        },
-        {
-            name: 'Психология',
-            institute : "ИКТИБ",
-            balls : "Средний балл: 150"
-
-        }
     ];
 
     const handleOpen = () => {
@@ -94,15 +63,29 @@ function PseudoServer(){
         <>
             <div className="page-container">
                 <Header />
-                <main className = "main">{
-                    kafedras.map((item, index) =>(
-                        <div onClick={handleOpen} className="kafedras">
+                <div className = "main">
+                    {kafedras.map((item, index) => (
+                        <div 
+                            className="kafedras" 
+                            key={`kafedrs-id-${item.id}`}
+                        >
                             <p className="kafedras-name">{item.name}</p>
-                            <p className="kafedras-balls">{item.balls}</p>
-                            <p className = "kafedras-institute">{item.institute}</p>
+                            <p className="kafedras-institute">{item.desription}</p>
+                            <div className="kefedras-bottom">
+                                <p className="kafedras-bottom-p">{item.years} года</p>
+                                <p className="kafedras-bottom-p">{item.form}</p>
+                                <p className="kafedras-bottom-p">${item.price}</p>
+                            </div>
+                            <div
+                                className="about-button"
+                                onClick={handleOpen} 
+                            >
+                                <p className="about-button-p">Подробнее</p>
+                            </div>
                         </div>
-                    ))}
-                </main>
+                    ))
+                    }
+                </div>
             </div>
             <Modal
                 open={open}
@@ -122,4 +105,4 @@ function PseudoServer(){
     );
 }
 
-export default PseudoServer;
+export default AllInstitute;
