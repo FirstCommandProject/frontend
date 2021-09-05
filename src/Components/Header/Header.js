@@ -10,7 +10,7 @@ const Header = () => {
     
     return (    
         <div className="main-header">
-            {width > 620 
+            {width > 800 
             ? <>
                 <NavLink to='/' >
                     <img
@@ -33,12 +33,11 @@ const Header = () => {
                     <li className='nav-button'>
                         <NavLink to='/login' activeClassName='active-header'>Вход</NavLink>
                     </li>
-                </ul>
 
-                <div class='round-button'>
-                    <NavLink to='/sign/up' activeClassName='active-header'>Регистрация</NavLink>
-                </div>
-                
+                    <li className='round-button'>
+                        <NavLink to='/sign/up' activeClassName='active-header'>Регистрация</NavLink>
+                    </li>
+                </ul>
             </>
             : <BurgerMenu pageWrapId={"page-wrap"} />
         }
