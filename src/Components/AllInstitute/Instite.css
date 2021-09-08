@@ -88,10 +88,3 @@
   border: none;
   outline: none;
 }
-
-@media screen and (max-width: 900px) { 
-  .window-main {
-    width: 95vw;
-    margin-left: 2.5vw;
-  }
-}
