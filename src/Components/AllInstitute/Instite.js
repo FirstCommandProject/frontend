@@ -76,11 +76,10 @@ const AllInstitute = () => {
                                 <p className="kafedras-bottom-p">{item.form}</p>
                                 <p className="kafedras-bottom-p">${item.price}</p>
                             </div>
-                            <div
-                                className="about-button"
-                                onClick={handleOpen} 
-                            >
-                                <p className="about-button-p">Подробнее</p>
+                            <div className="about-button">
+                                <p onClick={handleOpen}
+                                   className="about-button-p">Подробнее
+                                </p>
                             </div>
                         </div>
                     ))
@@ -100,7 +99,7 @@ const AllInstitute = () => {
                 <div className="window-main">
                     <DescriptionFaculty />
                 </div>
-        </Modal>
+            </Modal>
       </>
     );
 }

@@ -5,116 +5,116 @@ import icon4 from '../../assets/icons/Icon4.png';
 import './Faculty.css';
 
 const Faculty = () => {
+    const photo = [icon1, icon2, icon3];
+
+    const offers = [
+        {
+            id: 1,
+            name: "Some text",
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae."
+        },
+        {
+            id: 2,
+            name: "Ключевые области",
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae."
+        },
+        {
+            id: 3,
+            name: "Трудоустройство",
+            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae."
+        },
+    ];
+
+    const textTable = [
+        {
+            id: 1,
+            description: "Алгоритмы и структуры данных"
+        },
+        {
+            id: 2,
+            description: "Математические основы анализа больших данных"
+        },
+        {
+            id: 3,
+            description: "Методы интеллектуального анализа данных"
+        },
+        {
+            id: 3,
+            description: "Технологии анализа больших данных"
+        },
+    ];
+
+    function checkCount(count) {
+        if (count % 2 == 0) {
+            return 'discipline-fac-1';
+        } else {
+            return 'discipline-fac';
+        }
+    }
+
     return (
-        <div className='wrapper-faculty'>
-            <div className='top-faculty'>
-                <div className='name-faculty'>
-                    <img
-                        alt='logo'
-                        src={icon4}
-                    />
+        <>
+            <div className='photo-faculty'>
+                <img
+                    alt='logo'
+                    src={icon4}
+                />
+            </div>
 
-                    <div>
-                        <p>
-                            КАФЕДРА
-                        </p>
-                    </div>
+            <div className='wrapper-faculty'>
+                <div className='top-faculty'>
+                    <div className='name-faculty'>
+                        <div>
+                            <p> КАФЕДРА </p>
+                        </div>
 
-                    <span>
+                        <span>
                         Что вы получите?
                     </span>
 
-                    <hr/>
-                </div>
-
-                <div className='box-faculty'>
-                    <div>
-                        <img
-                            alt='logo'
-                            src={icon1}
-                        />
-
-                        <span>
-                            Some text
-                        </span>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                            Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
-                        </p>
+                        <hr/>
                     </div>
 
-                    <div>
-                        <img
-                            alt='logo'
-                            src={icon2}
-                        />
+                    <div className='box-faculty'>
+                        {offers.map((item, index) => (
+                            <div>
+                                <img
+                                    alt='logo'
+                                    src={photo[index]}
+                                />
 
-                        <span>
-                            Ключевые области
-                        </span>
+                                <span> {item.name} </span>
 
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                            Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
-                        </p>
-                    </div>
-
-                    <div>
-                        <img
-                            alt='logo'
-                            src={icon3}
-                        />
-
-                        <span>
-                            Трудоустройство
-                        </span>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nulla dictum at tortor adipiscing sapien, at ornare sit pretium.
-                            Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
-                        </p>
+                                <p> {item.desription} </p>
+                            </div>
+                        ))
+                        }
                     </div>
                 </div>
-            </div>
 
-            <div className='bottom-faculty'>
-                <div className='name-bottom'>
-                    <div>
-                        <p>
-                            ИНФОРМАЦИЯ
-                        </p>
-                    </div>
+                <div className='bottom-faculty'>
+                    <div className='name-bottom'>
+                        <div>
+                            <p> ИНФОРМАЦИЯ </p>
+                        </div>
 
-                    <span>
+                        <span>
                         Специальные дисциплины программы
                     </span>
 
-                    <hr/>
-                </div>
-
-                <div className='disciplines-faculty'>
-                    <div className='discipline-fac-1'>
-                        <p>Алгоритмы и структуры данных</p>
+                        <hr/>
                     </div>
 
-                    <div className='discipline-fac'>
-                        <p>Математические основы анализа больших данных</p>
-                    </div>
-
-                    <div className='discipline-fac-1'>
-                        <p>Методы интеллектуального анализа данных</p>
-                    </div>
-
-                    <div className='discipline-fac'>
-                        <p>Технологии анализа больших данных</p>
+                    <div className='disciplines-faculty'>
+                        {textTable.map((t, count) =>
+                            <div className={checkCount(count)}>
+                                <p> {t.description} </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

@@ -15,34 +15,36 @@
 .name-faculty {
     margin: 0 auto;
     position: relative;
-    top: 5%;
+    top: 20%;
 }
 
-.name-faculty img {
-    width: 30%;
+.photo-faculty img {
     position: absolute;
-    margin: -10% -27vw;
+    left: 0;
+    height: 65%;
 }
 
 .name-faculty div {
     background-color: #DBEDFE;
-    border-radius: 12px;
+    border-radius: 10px;
     margin: 0 auto;
-    width: 45%;
+    width: 35%;
     text-align: center;
 }
 
 .name-faculty div p {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     color: #3877CD;
+    padding: 2%;
 }
 
 .name-faculty span {
     display: inline-block;
-    font-size: 34px;
-    vertical-align: top;
+    font-size: 40px;
+    vertical-align: center;
     color: #323449;
+    font-weight: 600;
 }
 
 .name-faculty hr {
@@ -50,8 +52,9 @@
     background-color: #6787C1;
     border-radius: 2px;
     height: 3px;
-    width: 55%;
-    margin-top: 0;
+    margin-top: 5%;
+    width: 60%;
+    margin-left: 20%;
 }
 
 .box-faculty {
@@ -77,11 +80,10 @@
 }
 
 .box-faculty span {
-    text-indent: 6%;
     position: relative;
     top: 40%;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .box-faculty p {
@@ -93,7 +95,7 @@
 
 .bottom-faculty {
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 2.3fr;
     background-color: white;
     width: 100%;
     margin-bottom: 10vh;
@@ -102,7 +104,7 @@
 .name-bottom {
     margin: 0 auto;
     position: relative;
-    top: 6%;
+    top: 20%;
 }
 
 .name-bottom div {
@@ -115,16 +117,16 @@
 
 .name-bottom div p {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     color: #3877CD;
-    text-align: center;
+    padding: 2%;
 }
 
 .name-bottom span {
     display: inline-block;
-    font-size: 34px;
-    vertical-align: top;
+    font-size: 35px;
     color: #323449;
+    font-weight: 600;
 }
 
 .name-bottom hr {
@@ -132,105 +134,139 @@
     background-color: #6787C1;
     border-radius: 2px;
     height: 3px;
-    width: 35%;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 5%;
 }
 
 .disciplines-faculty {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: minmax(1fr, auto);
     box-shadow: 1px 6px 25px 1px rgba(0, 0, 0, 0.12);
-    font-size: 34px;
     align-self: center;
     justify-items: center;
     border-radius: 10px;
+    color: #323449;
     margin: 0 auto;
     width: 80%;
     text-align: center;
-    margin-bottom: 15vh;
 }
 
 .discipline-fac {
-    text-align: center;
-    align-self: center;
-    justify-items: center;
-    font-size: 20px;
     width: 100%;
     background-color: #F4F7FF;
+    font-size: 25px;
+    padding: 1.5%;
 }
 
 .discipline-fac-1 {
-    text-align: center;
-    align-self: center;
-    justify-items: center;
-    font-size: 20px;
+    font-size: 25px;
     width: 100%;
     background-color: #FFFFFF;
-}
-
-@media screen and (max-width: 1440px) {
-    .name-faculty img {
-        width: 25%;
-        position: absolute;
-        margin: -8vh  -68vh;
-    }
+    padding: 1.5%;
 }
 
 @media screen and (max-width: 1024px) {
-    .name-faculty img {
-        margin: -9vh -36vh;
-    }
-
-    .top-faculty {
-        height: 100%;
-    }
-
-    .box-faculty span {
-        font-size: 22px;
-    }
-
-    .name-bottom div p {
-        font-size: 18px;
-    }
-
-    .name-bottom span {
-        font-size: 30px;
-    }
-
-    .disciplines-faculty {
-        font-size: 30px;
+    .box-faculty img {
+        width: 18%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .top-faculty {
-        grid-template-rows: 1fr 1.9fr;
-    }
-    .name-faculty div p {
-        font-size: 18px;
-    }
-
-    .name-faculty span {
-        font-size: 30px;
-    }
-
-    .name-faculty img {
-        margin: -8vh -23vh;
-    }
-
-    .box-faculty img {
-        width: 18%;
-    }
-
     .box-faculty span {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .box-faculty p {
         font-size: 14px;
     }
 
+    .bottom-faculty {
+        grid-template-rows: 1fr 2.8fr;
+    }
+
+    .discipline-fac {
+        font-size: 22px;
+    }
+
+    .discipline-fac-1 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .top-faculty {
+        grid-template-rows: 1fr 3fr;
+    }
+
+    .photo-faculty img {
+        height: 50%;
+    }
+
+    .name-faculty span {
+        font-size: 35px;
+    }
+
+    .name-faculty div p {
+        font-size: 16px;
+    }
+
+    .box-faculty {
+        grid-template-columns: 1fr;
+        grid-row-gap: 3%;
+    }
+
+    .box-faculty img {
+        width: 16%;
+    }
+
+    .box-faculty span {
+        font-size: 22px;
+    }
+
+    .box-faculty p {
+        font-size: 16px;
+    }
+
+    .bottom-faculty {
+        grid-template-rows: 1fr 2.8fr;
+    }
+
+    .name-bottom span {
+        font-size: 25px;
+    }
+
+    .name-bottom div {
+        width: 40%;
+    }
+
     .name-bottom div p {
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .discipline-fac {
+        padding: 2%;
+        font-size: 18px;
+    }
+
+    .discipline-fac-1 {
+        padding: 2%;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .top-faculty {
+        grid-template-rows: 1fr 3.5fr;
+    }
+
+    .name-faculty span {
+        font-size: 32px;
+    }
+
+    .bottom-faculty {
+        grid-template-rows: 1fr 1.5fr;
     }
 
     .name-bottom span {
@@ -238,134 +274,41 @@
     }
 
     .disciplines-faculty {
-        font-size: 26px;
-    }
-
-    .bottom-faculty {
-        grid-template-rows: 1fr 2.3fr;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .wrapper-faculty {
-        height: 100vh;
-        grid-template-rows: 2fr 1fr;
-    }
-
-    .top-faculty {
-        grid-template-rows: 1fr 3.5fr;
-    }
-
-    .name-faculty {
-        height: 100%;
-    }
-
-    .name-faculty img {
-        width: 31%;
-        margin: -8vh -3.5vh;
-    }
-
-    .name-faculty div p {
-        font-size: 14px;
-    }
-
-    .name-faculty span {
-        font-size: 28px;
-    }
-
-    .box-faculty {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-row-gap: 3%;
         margin-bottom: 20%;
     }
-
-    .box-faculty img {
-        width: 15%;
-    }
-
-    .box-faculty span {
-        font-size: 20px;
-    }
-
-    .name-bottom {
-        top: 20%;
-    }
-
-    .name-bottom div {
-        width: 32%;
-    }
-
-    .name-bottom div p {
-        padding: 8%;
-        font-size: 14px;
-    }
-
-    .name-bottom span {
-        text-align: center;
-        font-size: 24px;
-    }
-
-    .disciplines-faculty {
-        font-size: 20px;
-    }
-
-    .bottom-faculty {
-        grid-template-rows: 1fr 2.2fr;
-    }
 }
 
-@media screen and (max-width: 376px) {
-    .top-faculty {
-        grid-template-rows: 1fr 3.8fr;
-    }
-
-    .name-faculty span {
-        font-size: 23px;
-    }
-
-    .name-faculty div p {
-        font-size: 13px;
-    }
-
-    .name-faculty img {
-        width: 32%;
-    }
-
-    .name-bottom div p {
-        font-size: 12px;
-    }
-
-    .name-bottom span {
-        font-size: 28px;
-    }
+::-webkit-scrollbar {
+    width: 10px;
+    height: auto;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #0080ff;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #09123c), color-stop(1.00, #0e3e8d));
+    background: -webkit-linear-gradient(#09123c, #0e3e8d);
+    background: -moz-linear-gradient(#09123c, #0e3e8d);
+    background: -o-linear-gradient(#09123c, #0e3e8d);
+    background: -ms-linear-gradient(#09123c, #0e3e8d);
+    background: linear-gradient(#09123c, #0e3e8d);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0000a0;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #000000;
 }
 
-@media screen and (max-width: 321px) {
-    .name-faculty img {
-        width: 33%;
-    }
-    .name-faculty span {
-        font-size: 32px;
-    }
-
-    .name-faculty div p {
-        font-size: 11px;
-    }
-
-    .name-bottom span {
-        font-size: 24px;
-    }
-
-    .name-bottom div p {
-        font-size: 10px;
-    }
-
-    .disciplines-faculty {
-        font-size: 17px;
-    }
-
-    .bottom-faculty {
-        grid-template-rows: 1fr 2fr;
-    }
+::-webkit-scrollbar-track {
+    background: #e2e2e2;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
 }
