@@ -278,8 +278,9 @@
     }
 }
 
+
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
     height: auto;
 }
 ::-webkit-scrollbar-button {
@@ -289,25 +290,23 @@
 ::-webkit-scrollbar-thumb {
     background: #0080ff;
     border: 0px none #ffffff;
-    border-radius: 50px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #09123c), color-stop(1.00, #0e3e8d));
-    background: -webkit-linear-gradient(#09123c, #0e3e8d);
-    background: -moz-linear-gradient(#09123c, #0e3e8d);
-    background: -o-linear-gradient(#09123c, #0e3e8d);
-    background: -ms-linear-gradient(#09123c, #0e3e8d);
-    background: linear-gradient(#09123c, #0e3e8d);
+    border-radius: 20px;
+    background: -webkit-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
+    background: -moz-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
+    background: -o-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
+    background: -ms-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
+    background: linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #0000a0;
+    background: #3877CD;
 }
 ::-webkit-scrollbar-thumb:active {
-    background: #000000;
+    background: #215BFD;
 }
-
 ::-webkit-scrollbar-track {
-    background: #e2e2e2;
+    background-color: #d5ddde;
     border: 0px none #ffffff;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 ::-webkit-scrollbar-corner {
     background: transparent;
