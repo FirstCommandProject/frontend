@@ -284,29 +284,23 @@
     height: auto;
 }
 ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
 }
 ::-webkit-scrollbar-thumb {
     background: #0080ff;
-    border: 0px none #ffffff;
-    border-radius: 20px;
-    background: -webkit-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
-    background: -moz-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
-    background: -o-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
-    background: -ms-linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
-    background: linear-gradient(to top, #62b5ab 20%, #6e95cc 60%, #3877CD 100%);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #3877CD;
-}
-::-webkit-scrollbar-thumb:active {
-    background: #215BFD;
+    border: 0 none #ffffff;
+    border-radius: 0 50px 50px 0;
+    background: -webkit-linear-gradient(to top, #82c3ff 30%, #3877CD 60%, #0080ff 100%);
+    background: -moz-linear-gradient(to top, #82c3ff 30%, #3877CD 60%, #0080ff 100%);
+    background: -o-linear-gradient(to top, #82c3ff 30%, #3877CD 60%, #0080ff 100%);
+    background: -ms-linear-gradient(to top, #82c3ff 30%, #3877CD 60%, #0080ff 100%);
+    background: linear-gradient(to top, #82c3ff 30%, #5e97e5 70%, #0080ff 100%);
 }
 ::-webkit-scrollbar-track {
     background-color: #d5ddde;
-    border: 0px none #ffffff;
-    border-radius: 20px;
+    border: 0 none #ffffff;
+    border-radius: 0 50px 50px 0;
 }
 ::-webkit-scrollbar-corner {
     background: transparent;
