@@ -28,6 +28,8 @@ const SignUpSecondPage = () => {
       const res = await axios.post(
         `${process.env.REACT_APP_SERVER_ENDPOINT}/registration`,
         {
+          email: `test-${Math.floor(Math.random() * 1000000)}`,
+          password: 'test',
           firstName,
           secondName,
           thirdName,

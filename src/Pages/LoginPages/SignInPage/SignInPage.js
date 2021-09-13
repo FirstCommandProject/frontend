@@ -32,12 +32,9 @@ const SignIn = () => {
           password,
         }
       );
-      if (res.data.isAdmin) {
-        localStorage.setItem("admin", JSON.stringify(res.data));
-        history.push("/admin_page");
-      } else {
-        localStorage.setItem("user", JSON.stringify(res.data));
-        history.push("/home_page");
+      if (res.data.length) {
+        // localStorage.setItem("user", JSON.stringify(res.data));
+        history.push("/my/test");
       }
     } catch (e) {
       setAlert("Ошибка");
