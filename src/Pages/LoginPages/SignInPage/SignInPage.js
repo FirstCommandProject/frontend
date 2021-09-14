@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-
 import appLogo from '../../../assets/branding/logo.png';
 
 import PasswordTextField from "../../../Components/PasswordTextField/PasswordTextField";
@@ -32,12 +31,13 @@ const SignIn = () => {
           password,
         }
       );
-      if (res.data.length) {
-        // localStorage.setItem("user", JSON.stringify(res.data));
+      if (res.data.statusCode === '200') {
+        localStorage.clear();
+        localStorage.setItem("user", JSON.stringify(res.data));
         history.push("/my/test");
       }
     } catch (e) {
-      setAlert("Ошибка");
+      setAlert("Warning");
       setErrorText("Неправильный E-mail или пароль");
       setError(true);
     }
@@ -131,7 +131,7 @@ const SignIn = () => {
             horizontal: "right",
           }}
           open={openError}
-          autoHideDuration={6000}
+          autoHideDuration={3000}
           onClose={handleClose}
         >
           <Alert severity={alert}>{errorText}</Alert>

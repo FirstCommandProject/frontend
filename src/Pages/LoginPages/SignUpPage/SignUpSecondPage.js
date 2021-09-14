@@ -28,19 +28,22 @@ const SignUpSecondPage = () => {
       const res = await axios.post(
         `${process.env.REACT_APP_SERVER_ENDPOINT}/registration`,
         {
-          email: `test-${Math.floor(Math.random() * 1000000)}`,
-          password: 'test',
+          email: localStorage.getItem('email'),
+          password: localStorage.getItem('password'),
           firstName,
           secondName,
           thirdName,
           university,
         }
       );
-      setAlert("success");
-      setErrorText("Пользователь успешно создан!");
-      setError(true);
-      localStorage.setItem("user", JSON.stringify(res.data));
-      history.push("/my");
+      if(res.data.statusCode === '200') {
+        localStorage.clear();
+        setAlert("success");
+        setErrorText("Пользователь успешно создан!");
+        setError(true);
+        localStorage.setItem("user", JSON.stringify(res.data.data));
+        history.push("/my/test");
+      }
     } catch (e) {
       setAlert("Ошибка");
       setErrorText("Такой пользователь уже существует!");
@@ -133,7 +136,7 @@ const SignUpSecondPage = () => {
               horizontal: "right",
             }}
             open={openError}
-            autoHideDuration={6000}
+            autoHideDuration={3000}
             onClose={handleClose}
           >
             <Alert severity={alert}>{errorText}</Alert>

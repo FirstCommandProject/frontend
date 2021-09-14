@@ -43,7 +43,7 @@ const SignUpFirstPage = () => {
     }
   };
 
-  const checkRepeatPassword = (e) => {
+  const checkRepeatPassword = () => {
     if (password !== repeatPassword) {
       setAlert("error");
       setErrorText("Пароли не совпадают!");
@@ -56,6 +56,16 @@ const SignUpFirstPage = () => {
       setRepeatPasswordError(false);
     }
   };
+
+  const nextPage = () => {
+    if (password === repeatPassword) {
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+      history.push("/sign/up/2");
+    } else { 
+      checkRepeatPassword();
+    }
+  }
 
   return (
     <div className='first-page-sign-up'>
@@ -90,8 +100,6 @@ const SignUpFirstPage = () => {
         </div>
         <div className="input-fields-sign-up">
           <PasswordTextField
-            checkPassword={checkRepeatPassword}
-            repeatPasswordError={repeatPasswordError}
             value={repeatPassword}
             setValue={setRepeatPassword}
             label="Повторите пароль"
@@ -101,7 +109,7 @@ const SignUpFirstPage = () => {
           <Button
             className="sign-up-btn"
             variant="outlined"
-            onClick={() => history.push("/sign/up/2")}
+            onClick={() => nextPage()}
           >
             Продолжить
           </Button>
@@ -112,7 +120,7 @@ const SignUpFirstPage = () => {
             horizontal: "right",
           }}
           open={openError}
-          autoHideDuration={6000}
+          autoHideDuration={3000}
           onClose={handleClose}
         >
           <Alert severity={alert}>{errorText}</Alert>
