@@ -45,7 +45,7 @@ const Faculty = () => {
     ];
 
     function checkCount(count) {
-        if (count % 2 == 0) {
+        if (count % 2 === 0) {
             return 'discipline-fac-1';
         } else {
             return 'discipline-fac';
