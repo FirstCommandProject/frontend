@@ -49,7 +49,7 @@ const AuthorizedHeader = () => {
                     </li>
                 </ul>
             </>
-            : <BurgerMenu pageWrapId={"page-wrap"} />
+            : <BurgerMenu pageWrapId={"page-wrap"} isAuth />
         }
         <Modal
             open={isModal}

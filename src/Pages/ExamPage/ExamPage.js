@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Redirect } from 'react-router-dom'
 import Header from "../../Components/AuthorizedHeader/AuthorizedHeader";
 import { Button } from "@material-ui/core";
 import Radio from '@material-ui/core/Radio';
@@ -13,6 +14,10 @@ const NotFoundPage = () => {
     const OnChangeAnswer = (event) => {
       setValue(event.target.value);
     };
+
+    if (!localStorage.getItem('user')) {
+        return <Redirect to="/login"/>
+    }
     
     return (
         <>
