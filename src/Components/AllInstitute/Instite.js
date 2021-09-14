@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
+import axios from "axios";
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Header from "../Header/Header";
@@ -7,6 +8,25 @@ import "./Instite.css";
 
 const AllInstitute = () => {
     const [open, setOpen] = useState(false);
+
+    const kafedrasBE = useMemo(async() => {
+        const res = await axios.get(
+            `${process.env.REACT_APP_SERVER_ENDPOINT}/departments`
+          );
+        return res.data.data;
+    }, []);
+
+    const oneKafedr = useMemo(async() => {
+        if (open) {
+            const res = await axios.get(
+                `${process.env.REACT_APP_SERVER_ENDPOINT}/departments`, {
+                    id: open
+                }
+              );
+            return res.data.data;
+        }
+        return {};
+    }, [open]);
 
     const kafedras = [
         {
@@ -51,8 +71,8 @@ const AllInstitute = () => {
         },
     ];
 
-    const handleOpen = () => {
-        setOpen(true);
+    const handleOpen = (id) => {
+        setOpen(id);
       };
     
     const handleClose = () => {
@@ -77,7 +97,7 @@ const AllInstitute = () => {
                                 <p className="kafedras-bottom-p">${item.price}</p>
                             </div>
                             <div className="about-button">
-                                <p onClick={handleOpen}
+                                <p onClick={() => handleOpen(item.id)}
                                    className="about-button-p">Подробнее
                                 </p>
                             </div>
