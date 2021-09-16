@@ -15,8 +15,9 @@ const NotFoundPage = () => {
     const [value, setValue] = useState('');
     const [countQuestion, setCountQuestion] = useState(1)
     const [questionBE, setQuestionBE] = useState([{}]);
+    const [session, setSession] = useState({});
     const history = useHistory();
-
+    
     // get first data
     useEffect(() => {
         getDefaultSession();
@@ -34,13 +35,24 @@ const NotFoundPage = () => {
     }
 
     const getQuestion = async() => {
-        const res = await axios.post(
-            `${process.env.REACT_APP_SERVER_ENDPOINT}/test`, 
-            {
-                id: countQuestion
-            }
-          );
-        setQuestionBE([res.data.data]);
+        if(countQuestion === 1) {
+            const res = await axios.post(
+                `${process.env.REACT_APP_SERVER_ENDPOINT}/test`, 
+                {
+                    id: countQuestion
+                }
+            );
+            setQuestionBE([res.data.data]);
+        } else {
+            const res = await axios.post(
+                `${process.env.REACT_APP_SERVER_ENDPOINT}/relevant-question`, 
+                {
+                    answered: [],
+                    weights: session.weights
+                }
+            );
+            setQuestionBE([res.data.data]);
+        }
     }
 
     const getDefaultSession = async () => {
@@ -48,7 +60,7 @@ const NotFoundPage = () => {
             `${process.env.REACT_APP_SERVER_ENDPOINT}/default-session`
         );
         if (res.data.statusCode === '200') {
-            localStorage.setItem("session", res.data.data);
+            setSession(res.data.data);
         }
     }
 
@@ -60,7 +72,7 @@ const NotFoundPage = () => {
         const res = await axios.post(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/answer-question`,
             {
-                session: localStorage.getItem('session'),
+                session,
                 answer: +value,
                 id: countQuestion
             }
@@ -68,7 +80,7 @@ const NotFoundPage = () => {
         if (res.data.statusCode === '200') {
             setCountQuestion((prev) => prev + 1);
             setValue('');
-            localStorage.setItem("session", res.data.data);
+            setSession(res.data.data);
         }
     }
 
@@ -76,7 +88,7 @@ const NotFoundPage = () => {
         const res = await axios.post(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/answer-question`,
             {
-                session: localStorage.getItem('session'),
+                session,
                 answer: +value,
                 id: countQuestion
             }
