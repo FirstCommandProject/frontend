@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from "axios";
+import Skeleton from '@material-ui/lab/Skeleton';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Header from "../Header/Header";
@@ -8,68 +9,41 @@ import "./Instite.css";
 
 const AllInstitute = () => {
     const [open, setOpen] = useState(false);
+    const [kafedrasBE, setKafedrasBE] = useState([]);
+    const [oneKafedr, setOneKafedr] = useState([]);
 
-    const kafedrasBE = useMemo(async() => {
-        const res = await axios.get(
-            `${process.env.REACT_APP_SERVER_ENDPOINT}/departments`
-          );
-        return res.data.data;
-    }, []);
+    const getKafedrasBE = async() => {
+        const res = await axios.post(
+            `${process.env.REACT_APP_SERVER_ENDPOINT}/departments`, {
+                id: -1
+            }
+        );
+        if (res.data.statusCode === '200') {
+            setKafedrasBE(res.data.data);
+        }
+    };
 
-    const oneKafedr = useMemo(async() => {
+    useEffect(() => {
+        getKafedrasBE();
+    }, [])
+
+    const getOneKafedr = async() => {
         if (open) {
-            const res = await axios.get(
+            const res = await axios.post(
                 `${process.env.REACT_APP_SERVER_ENDPOINT}/departments`, {
                     id: open
                 }
               );
-            return res.data.data;
+            if (res.data.statusCode === '200') {
+                setOneKafedr(res.data.data);
+            }
         }
         return {};
-    }, [open]);
+    };
 
-    const kafedras = [
-        {
-            id: 1,
-            name : "Информационное и программное обеспечение автоматизированных систем",
-            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
-            price: 10000,
-            years: 2,
-            form: 'Очная',
-        },
-        {
-            id: 2,
-            name : "Эргодизайн пользовательского интерфейса",
-            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
-            price: 10000,
-            years: 2,
-            form: 'Очная',
-        },
-        {
-            id: 3,
-            name: 'Эргодизайн пользовательского интерфейса',
-            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
-            price: 10000,
-            years: 2,
-            form: 'Очная',
-        },
-        {
-            id: 4,
-            name : "Информационное и программное обеспечение автоматизированных систем",
-            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
-            price: 10000,
-            years: 2,
-            form: 'Очная',
-        },
-        {
-            id: 5,
-            name: 'Эргодизайн пользовательского интерфейса',
-            desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.",
-            price: 10000,
-            years: 2,
-            form: 'Очная',
-        },
-    ];
+    useEffect(() => {
+        getOneKafedr();
+    }, [open])
 
     const handleOpen = (id) => {
         setOpen(id);
@@ -84,7 +58,7 @@ const AllInstitute = () => {
             <div className="page-container">
                 <Header />
                 <div className = "main">
-                    {kafedras.map((item, index) => (
+                    {kafedrasBE.length? kafedrasBE.map((item, index) => (
                         <div 
                             className="kafedras" 
                             key={`kafedrs-id-${item.id}`}
@@ -103,8 +77,17 @@ const AllInstitute = () => {
                             </div>
                         </div>
                     ))
-                    }
+                    :null}
                 </div>
+                {!kafedrasBE.length
+                    ?<div>
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                    </div>
+                    : null
+                }
             </div>
             <Modal
                 open={open}
@@ -117,7 +100,7 @@ const AllInstitute = () => {
                 }}
             >
                 <div className="window-main">
-                    <DescriptionFaculty />
+                    <DescriptionFaculty data={oneKafedr} />
                 </div>
             </Modal>
       </>

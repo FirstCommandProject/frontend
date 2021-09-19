@@ -4,7 +4,8 @@ import icon3 from '../../assets/icons/Icon3.png';
 import icon4 from '../../assets/icons/Icon4.png';
 import './Faculty.css';
 
-const Faculty = () => {
+const Faculty = ({ data }) => {
+    console.log(data);
     const photo = [icon1, icon2, icon3];
 
     const offers = [
@@ -39,7 +40,7 @@ const Faculty = () => {
             description: "Методы интеллектуального анализа данных"
         },
         {
-            id: 3,
+            id: 4,
             description: "Технологии анализа больших данных"
         },
     ];
