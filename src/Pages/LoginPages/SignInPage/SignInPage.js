@@ -33,7 +33,8 @@ const SignIn = () => {
       );
       if (res.data.statusCode === '200') {
         localStorage.clear();
-        localStorage.setItem("user", JSON.stringify(res.data));
+        localStorage.setItem("user", JSON.stringify(res.data.data));
+        localStorage.setItem("email", JSON.stringify(res.data.data?.email));
         history.push("/my/test");
       }
     } catch (e) {

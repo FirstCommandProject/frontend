@@ -10,9 +10,8 @@ import Main from './Pages/HomePage/HomePage.js';
 import Description from './Pages/AboutPage/AboutPage.js';
 import PageNotFound from "./Pages/404/404.js";
 import AllInstitute from './Components/AllInstitute/Instite';
-import DescriptionFaculty from './Components/DescriptionFaculty/Faculty.js';
-import Cab from './Components/PersonalData/PersonalData.js';
 import TestPage from './Pages/ExamPage/ExamPage.js';
+import ResultsPage from './Pages/ResultsPage/ResultsPage';
 
 const App = () => {
     return (
@@ -26,6 +25,7 @@ const App = () => {
                 <Route path='/departments' component={AllInstitute} />
                 <Route path='/about' component={Description} />
                 <Route path='/my/test' component={TestPage} />
+                <Route path='/my/results' component={ResultsPage} />
                 <Route component={PageNotFound} />
             </Switch>
         </div>

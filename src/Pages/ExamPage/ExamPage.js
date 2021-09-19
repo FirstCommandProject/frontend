@@ -13,45 +13,26 @@ import './ExamPage.scss';
 
 const NotFoundPage = () => {
     const [value, setValue] = useState('');
-    const [countQuestion, setCountQuestion] = useState(1)
+    const [answered, setAnswered] = useState([])
     const [questionBE, setQuestionBE] = useState([{}]);
     const [session, setSession] = useState({});
+    const [idQuestion, setIdQuestion] = useState(undefined);
     const history = useHistory();
     
-    // get first data
-    useEffect(() => {
-        getDefaultSession();
-        getQuestion();
-    }, [])
-
-    // get question
-    useEffect(() => {
-        getQuestion();
-    }, [countQuestion]);
-
-    // check auth
-    if (!localStorage.getItem('user')) {
-        return <Redirect to="/login"/>
-    }
-
     const getQuestion = async() => {
-        if(countQuestion === 1) {
-            const res = await axios.post(
-                `${process.env.REACT_APP_SERVER_ENDPOINT}/test`, 
-                {
-                    id: countQuestion
-                }
-            );
-            setQuestionBE([res.data.data]);
-        } else {
+        if (Object.keys(session).length !== 0) {
             const res = await axios.post(
                 `${process.env.REACT_APP_SERVER_ENDPOINT}/relevant-question`, 
                 {
-                    answered: [],
+                    answered,
                     weights: session.weights
                 }
             );
-            setQuestionBE([res.data.data]);
+            if (res.data.statusCode === '200') {
+                setQuestionBE([res.data.data]);
+                setAnswered((prev) => [...prev, res.data.data.id]);
+                setIdQuestion(res.data.data.id);
+            }
         }
     }
 
@@ -60,8 +41,23 @@ const NotFoundPage = () => {
             `${process.env.REACT_APP_SERVER_ENDPOINT}/default-session`
         );
         if (res.data.statusCode === '200') {
-            setSession(res.data.data);
+            setSession(JSON.parse(res.data.data));
         }
+    }
+    console.log(session);
+    // get first data
+    useEffect(() => {
+        getDefaultSession();
+    }, [])
+
+    // get question
+    useEffect(() => {
+        getQuestion();
+    }, [session]);
+
+    // check auth
+    if (!localStorage.getItem('user')) {
+        return <Redirect to="/login"/>
     }
 
     const OnChangeAnswer = (event) => {
@@ -74,30 +70,28 @@ const NotFoundPage = () => {
             {
                 session,
                 answer: +value,
-                id: countQuestion
+                id: idQuestion
             }
         );
         if (res.data.statusCode === '200') {
-            setCountQuestion((prev) => prev + 1);
             setValue('');
             setSession(res.data.data);
         }
     }
 
     const onFinish = async () => {
-        const res = await axios.post(
-            `${process.env.REACT_APP_SERVER_ENDPOINT}/answer-question`,
+        setValue('');
+        const finishRes = await axios.post(
+            `${process.env.REACT_APP_SERVER_ENDPOINT}/last-user-answer`,
             {
-                session,
-                answer: +value,
-                id: countQuestion
+                session: session.weights,
+                time: "2021-08-25 10:22:23",
+                email: localStorage.getItem("email")
             }
         );
-        if (res.data.statusCode === '200') {
+        if (finishRes.data.statusCode === '200') {
             history.push("/my/results");
-            setValue('');
         }
-        history.push('/my/results');
     }
     
     return (
@@ -106,7 +100,7 @@ const NotFoundPage = () => {
             {questionBE.length && questionBE.map((question, index) => 
                 <div className="question" key={`question-${index}`}>
                     <div className="question-number">
-                        Вопрос номер {countQuestion}
+                        Вопрос номер {answered.length}
                     </div>
                     <div className="question-text">
                         {question.title
