@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import date from 'date-and-time';
 import axios from "axios";
 import { Redirect } from 'react-router-dom'
 import Skeleton from '@material-ui/lab/Skeleton';
@@ -85,7 +86,7 @@ const NotFoundPage = () => {
             `${process.env.REACT_APP_SERVER_ENDPOINT}/last-user-answer`,
             {
                 session: session.weights,
-                time: "2021-08-25 10:22:23",
+                time: date.format(new Date(), 'YYYY-MM-DD HH:mm:ss'),
                 email: localStorage.getItem("email")
             }
         );
