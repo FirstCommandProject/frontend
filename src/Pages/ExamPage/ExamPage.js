@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import date from 'date-and-time';
 import axios from "axios";
@@ -45,7 +45,7 @@ const NotFoundPage = () => {
             setSession(JSON.parse(res.data.data));
         }
     }
-    console.log(session);
+
     // get first data
     useEffect(() => {
         getDefaultSession();
@@ -112,20 +112,18 @@ const NotFoundPage = () => {
                             <Skeleton />
                             <Skeleton />
                         </div>
-                    }
-                        {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. */}
+                        }
                     </div>
                     <div className="question-radio">
-                    <FormControl component="fieldset">
-                        <RadioGroup value={value} onChange={OnChangeAnswer}>
-                            <FormControlLabel selected value="1" control={<Radio />} label="Да" />
-                            <FormControlLabel value="0.5" control={<Radio />} label="Скорее да" />
-                            <FormControlLabel value="0" control={<Radio />} label="Не знаю" />
-                            <FormControlLabel value="-0.5" control={<Radio />} label="Скорее нет" />
-                            <FormControlLabel value="-1" control={<Radio />} label="Нет" />
-                        </RadioGroup>
-                    </FormControl>
+                        <FormControl component="fieldset">
+                            <RadioGroup value={value} onChange={OnChangeAnswer}>
+                                <FormControlLabel selected value="1" control={<Radio />} label="Да" />
+                                <FormControlLabel value="0.5" control={<Radio />} label="Скорее да" />
+                                <FormControlLabel value="0" control={<Radio />} label="Не знаю" />
+                                <FormControlLabel value="-0.5" control={<Radio />} label="Скорее нет" />
+                                <FormControlLabel value="-1" control={<Radio />} label="Нет" />
+                            </RadioGroup>
+                        </FormControl>
                     </div>
                     <div className="buttons">
                         <Button className="button-finish" onClick={onFinish}>
