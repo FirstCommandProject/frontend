@@ -64,7 +64,7 @@ const AllInstitute = () => {
                             key={`kafedrs-id-${item.id}`}
                         >
                             <p className="kafedras-name">{item.name}</p>
-                            <p className="kafedras-institute">{item.desription}</p>
+                            <p className="kafedras-institute">{item.description}</p>
                             <div className="kefedras-bottom">
                                 <p className="kafedras-bottom-p">{item.years} года</p>
                                 <p className="kafedras-bottom-p">{item.form}</p>
