@@ -7,7 +7,12 @@ import './Faculty.css';
 const Faculty = ({ data }) => {
     console.log(data);
     const photo = [icon1, icon2, icon3];
-
+    // if(data.offers) {
+    //     JSON.parse(data.offers).forEach((value) => console.log(value));
+    // }
+    // if(data.textTable) {
+    //     JSON.parse(data.textTable).forEach((value) => console.log(value));
+    // }
     const offers = [
         {
             id: 1,

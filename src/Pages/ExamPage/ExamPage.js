@@ -18,6 +18,7 @@ const NotFoundPage = () => {
     const [questionBE, setQuestionBE] = useState([{}]);
     const [session, setSession] = useState({});
     const [idQuestion, setIdQuestion] = useState(undefined);
+    const [totalCount, setTotalCount] = useState(0);
     const history = useHistory();
     
     const getQuestion = async() => {
@@ -43,6 +44,7 @@ const NotFoundPage = () => {
         );
         if (res.data.statusCode === '200') {
             setSession(JSON.parse(res.data.data));
+            setTotalCount(res.data.totalCount);
         }
     }
 
@@ -101,7 +103,7 @@ const NotFoundPage = () => {
             {questionBE.length && questionBE.map((question, index) => 
                 <div className="question" key={`question-${index}`}>
                     <div className="question-number">
-                        Вопрос номер {answered.length}
+                        Вопрос номер {answered.length} из {totalCount}
                     </div>
                     <div className="question-text">
                         {question.title

@@ -68,7 +68,7 @@ const AllInstitute = () => {
                             <div className="kefedras-bottom">
                                 <p className="kafedras-bottom-p">{item.years} года</p>
                                 <p className="kafedras-bottom-p">{item.form}</p>
-                                <p className="kafedras-bottom-p">${item.price}</p>
+                                <p className="kafedras-bottom-p">{item.place} мест</p>
                             </div>
                             <div className="about-button">
                                 <p onClick={() => handleOpen(item.id)}
