@@ -4,6 +4,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Header from "../Header/Header";
+import AuthorizedHeader from '../AuthorizedHeader/AuthorizedHeader';
 import DescriptionFaculty from "../DescriptionFaculty/Faculty.js";
 import "./Instite.css";
 
@@ -56,7 +57,7 @@ const AllInstitute = () => {
     return (
         <>
             <div className="page-container">
-                <Header />
+            {localStorage.getItem('user')?<AuthorizedHeader /> :<Header />}
                 <div className = "main">
                     {kafedrasBE.length? kafedrasBE.map((item, index) => (
                         <div 
@@ -65,15 +66,17 @@ const AllInstitute = () => {
                         >
                             <p className="kafedras-name">{item.name}</p>
                             <p className="kafedras-institute">{item.description}</p>
-                            <div className="kefedras-bottom">
-                                <p className="kafedras-bottom-p">{item.years} года</p>
-                                <p className="kafedras-bottom-p">{item.form}</p>
-                                <p className="kafedras-bottom-p">{item.place} мест</p>
-                            </div>
-                            <div className="about-button">
-                                <p onClick={() => handleOpen(item.id)}
-                                   className="about-button-p">Подробнее
-                                </p>
+                            <div className="bottom-content">
+                                <div className="kefedras-bottom">
+                                    <p className="kafedras-bottom-p">{item.years} года</p>
+                                    <p className="kafedras-bottom-p">{item.form}</p>
+                                    <p className="kafedras-bottom-p">{item.place} мест</p>
+                                </div>
+                                <div className="about-button">
+                                    <p onClick={() => handleOpen(item.id)}
+                                    className="about-button-p">Подробнее
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     ))
