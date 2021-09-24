@@ -1,5 +1,6 @@
 import react, { useEffect } from "react";
 import axios from 'axios';
+import DiagramRes from "./DiagramResult";
 import Header from "../../Components/Header/Header";
 
 const AboutPage = () => {
@@ -23,6 +24,7 @@ const AboutPage = () => {
     return (
         <>
             <Header />
+            <DiagramRes />
         </>
     );
 }
