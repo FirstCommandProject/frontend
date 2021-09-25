@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import date from 'date-and-time';
 import axios from "axios";
-import { Redirect } from 'react-router-dom'
-import Skeleton from '@material-ui/lab/Skeleton';
-import Header from "../../Components/AuthorizedHeader/AuthorizedHeader";
 import { Button } from "@material-ui/core";
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import { Redirect } from 'react-router-dom'
+import SkeletonHelper from '../../Components/Skeleton/Skeleton';
+import Header from "../../Components/AuthorizedHeader/AuthorizedHeader";
 import './ExamPage.scss';
 
 const NotFoundPage = () => {
@@ -30,7 +30,7 @@ const NotFoundPage = () => {
                     weights: session.weights
                 }
             );
-            if (res.data.statusCode === '200') {
+            if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
                 setQuestionBE([res.data.data]);
                 setAnswered((prev) => [...prev, res.data.data.id]);
                 setIdQuestion(res.data.data.id);
@@ -42,7 +42,7 @@ const NotFoundPage = () => {
         const res = await axios.get(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/default-session`
         );
-        if (res.data.statusCode === '200') {
+        if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             setSession(JSON.parse(res.data.data));
             setTotalCount(res.data.totalCount);
         }
@@ -76,7 +76,7 @@ const NotFoundPage = () => {
                 id: idQuestion
             }
         );
-        if (res.data.statusCode === '200') {
+        if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             setValue('');
             setSession(res.data.data);
         }
@@ -84,7 +84,7 @@ const NotFoundPage = () => {
 
     const onFinish = async () => {
         setValue('');
-        const finishRes = await axios.post(
+        const res = await axios.post(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/last-user-answer`,
             {
                 session: session.weights,
@@ -92,7 +92,7 @@ const NotFoundPage = () => {
                 email: localStorage.getItem("email")
             }
         );
-        if (finishRes.data.statusCode === '200') {
+        if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             history.push("/my/results");
         }
     }
@@ -108,12 +108,7 @@ const NotFoundPage = () => {
                     <div className="question-text">
                         {question.title
                         ? question.title 
-                        : <div>
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                        </div>
+                        : <SkeletonHelper />
                         }
                     </div>
                     <div className="question-radio">

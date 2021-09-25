@@ -36,12 +36,13 @@ const SignUpSecondPage = () => {
           university,
         }
       );
-      if(res.data.statusCode === '200') {
+      if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
         localStorage.clear();
         setAlert("success");
         setErrorText("Пользователь успешно создан!");
         setError(true);
         localStorage.setItem("user", JSON.stringify(res.data.data));
+        localStorage.setItem("email", JSON.stringify(res.data.data?.email));
         history.push("/my/test");
       }
     } catch (e) {
