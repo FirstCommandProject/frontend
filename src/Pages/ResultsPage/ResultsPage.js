@@ -1,8 +1,12 @@
-import react, { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { CircularProgress } from '@material-ui/core';
 import axios from 'axios';
+import DiagramRes from "../../Components/DiagramResult/DiagramResult";
 import Header from "../../Components/Header/Header";
+import AuthorizedHeader from "../../Components/AuthorizedHeader/AuthorizedHeader";
 
 const AboutPage = () => {
+    const [result, setResult] = useState([]);
 
     const getResults = async() => {
         const res = await axios.post(
@@ -11,8 +15,10 @@ const AboutPage = () => {
               email: localStorage.getItem('email')
             }
           );
-        if (res.data.statusCode === '200') {
-            alert(res.data.data)
+        if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
+            if (res.data.data && res.data.data.scores) {
+                setResult(JSON.parse(res.data.data?.scores));
+            }
         }
     }
 
@@ -22,7 +28,10 @@ const AboutPage = () => {
 
     return (
         <>
-            <Header />
+            {localStorage.getItem('user')? <AuthorizedHeader /> :<Header />}
+            {result.length
+            ? <DiagramRes scores={result} />
+            : <CircularProgress />}
         </>
     );
 }
