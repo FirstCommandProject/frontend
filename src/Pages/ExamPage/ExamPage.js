@@ -44,8 +44,7 @@ const NotFoundPage = () => {
         );
         if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             setSession(JSON.parse(res.data.data));
-            // setTotalCount(res.data.totalCount);
-            setTotalCount(2)
+            setTotalCount(res.data.totalCount);
         }
     }
 
