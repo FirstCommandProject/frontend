@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { TextField, Button } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
 import axios from "axios";
 import appLogo from '../../../assets/branding/logo.png';
 import AlertHelper from "../../../Components/Alert/Alert";

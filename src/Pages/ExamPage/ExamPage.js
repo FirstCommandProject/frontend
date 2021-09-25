@@ -44,7 +44,8 @@ const NotFoundPage = () => {
         );
         if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             setSession(JSON.parse(res.data.data));
-            setTotalCount(res.data.totalCount);
+            // setTotalCount(res.data.totalCount);
+            setTotalCount(2)
         }
     }
 
@@ -55,7 +56,12 @@ const NotFoundPage = () => {
 
     // get question
     useEffect(() => {
-        getQuestion();
+        if ((answered.length < totalCount) || answered.length === 0) {
+            getQuestion();
+        } else {
+            setAnswered((prev) => [...prev, {}]);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [session]);
 
     // check auth
@@ -79,11 +85,13 @@ const NotFoundPage = () => {
         if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             setValue('');
             setSession(res.data.data);
+            setQuestionBE([{}]);
         }
     }
 
     const onFinish = async () => {
         setValue('');
+        setQuestionBE([{}]);
         const res = await axios.post(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/last-user-answer`,
             {
@@ -103,7 +111,11 @@ const NotFoundPage = () => {
             {questionBE.length && questionBE.map((question, index) => 
                 <div className="question" key={`question-${index}`}>
                     <div className="question-number">
-                        Вопрос номер {answered.length} из {totalCount}
+                        {answered.length <= totalCount && 
+                            <span>
+                                Вопрос номер {answered.length} из {totalCount}
+                            </span>
+                        }
                     </div>
                     <div className="question-text">
                         {question.title
@@ -111,24 +123,27 @@ const NotFoundPage = () => {
                         : <SkeletonHelper />
                         }
                     </div>
-                    <div className="question-radio">
-                        <FormControl component="fieldset">
-                            <RadioGroup value={value} onChange={OnChangeAnswer}>
-                                <FormControlLabel selected value="1" control={<Radio />} label="Да" />
-                                <FormControlLabel value="0.5" control={<Radio />} label="Скорее да" />
-                                <FormControlLabel value="0" control={<Radio />} label="Не знаю" />
-                                <FormControlLabel value="-0.5" control={<Radio />} label="Скорее нет" />
-                                <FormControlLabel value="-1" control={<Radio />} label="Нет" />
-                            </RadioGroup>
-                        </FormControl>
-                    </div>
+                    {answered.length <= totalCount && 
+                        <div className="question-radio">
+                            <FormControl component="fieldset">
+                                <RadioGroup value={value} onChange={OnChangeAnswer}>
+                                    <FormControlLabel selected value="1" control={<Radio />} label="Да" />
+                                    <FormControlLabel value="0.5" control={<Radio />} label="Скорее да" />
+                                    <FormControlLabel value="0" control={<Radio />} label="Не знаю" />
+                                    <FormControlLabel value="-0.5" control={<Radio />} label="Скорее нет" />
+                                    <FormControlLabel value="-1" control={<Radio />} label="Нет" />
+                                </RadioGroup>
+                            </FormControl>
+                        </div>
+                    }
                     <div className="buttons">
                         <Button className="button-finish" onClick={onFinish}>
                             Закончить
                         </Button>
-                        <Button className="button-next" onClick={() => addAnswer(index)}>
+                        {answered.length <= totalCount && <Button className="button-next" onClick={() => addAnswer(index)}>
                             Далее
                         </Button>
+                        }
                         {/* <Button className="button-backward">
                             Назад
                         </Button> */}

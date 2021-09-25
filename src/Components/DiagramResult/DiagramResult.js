@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     VictoryBar, VictoryChart, VictoryLabel,
     VictoryTheme, VictoryPolarAxis, VictoryStack
@@ -7,37 +7,25 @@ import _ from 'lodash';
 
 
 const directions = {
-    // 0: "Математическое моделирование в инженерных науках", 
-    // 30: "Прикладная математика для высокопроизводительных вычеслительных систем", 
-    // 60: "Высокопроизводительные вычислительные системы и квантовая обработка информация", 
-    // 90: "Интеллектуальные системы",
-    // 120: "Информационное и программное обеспечение автоматизированных систем", 
-    // 150: "Разработка информационных систем и Web-приложений", 
-    // 180: "Системная интеграция и управление бизнес-процессами", 
-    // 210: "IT-managment", 
-    // 240: "Машинное обучение и технологии больших данных", 
-    // 270: "Эргодизайн пользовательского интерфейса", 
-    // 300: "Методы и средства разработки программного обеспечения", 
-    // 330: "Управление киберфизическимим системами"
-    0: "01.04.02", 
-    30: "01.04.02", 
-    60: "09.04.01", 
-    90: "09.04.01",
-    120: "09.04.01", 
-    150: "09.04.01", 
-    180: "09.04.01", 
-    210: "09.04.01", 
-    240: "09.04.03", 
-    270: "09.04.03", 
-    300: "09.04.04", 
-    330: "09.04.03"
+    0: "Математическое моделирование", 
+    30: "Прикладная математика", 
+    60: "Высокопроизводительные системы", 
+    90: "Умные системы",
+    120: "Автоматизированные системы",
+    150: "Информационные системы", 
+    180: "Бизнес-процессы", 
+    210: "IT-managment", 
+    240: "Машинное обучение", 
+    270: "Эргодизайн", 
+    300: "Разработка ПО", 
+    330: "Киберфизические системы"
 };
 
-const mainColor = {base: "#0090ff", highlight: "#3877CD"};
+const mainColor = {base: "#0090ff", highlight: "#215BFD"};
 
-const centerColor = {base: "#DBEDFE", highlight: "green"};
+const centerColor = {base: "#6787C1", highlight: "green"};
 
-const innerRadius = 15;
+const innerRadius = 10;
 
 function CompassCenter({ origin }) {
     const circleStyle = {
@@ -58,7 +46,7 @@ function CenterLabel(props) {
     const text = [`${directions[datum._x] || ' '}`];
     const baseStyle = { fill: color.highlight };
     const style = [
-        {...baseStyle, fontSize: 4, fontWeight: "bold"},
+        {...baseStyle, fontSize: 4},
         {...baseStyle, fontSize: 4}
     ];
 
@@ -79,29 +67,28 @@ const DiagramRes = ({ scores }) => {
 
     return (
         <VictoryChart
-            height={300}
-            width={500}
+            height={200}
+            width={400}
             polar
-            animate={{duration: 500, onLoad: {duration: 500}}}
             theme={VictoryTheme.material}
             innerRadius={innerRadius}
-            domainPadding={{y: 10}}
-            events={[{
-                childName: "all",
-                target: "data",
-                eventHandlers: {
-                    onMouseOver: () => {
-                        return [
-                            {target: "labels", mutation: () => ({active: true})}
-                        ];
-                    },
-                    onMouseOut: () => {
-                        return [
-                            {target: "labels", mutation: () => ({active: false})}
-                        ];
-                    }
-                }
-            }]}
+            domainPadding={{y: 5}}
+            // events={[{
+            //     childName: "all",
+            //     target: "data",
+            //     eventHandlers: {
+            //         onMouseOver: () => {
+            //             return [
+            //                 {target: "labels", mutation: () => ({active: true})}
+            //             ];
+            //         },
+            //         onMouseOut: () => {
+            //             return [
+            //                 {target: "labels", mutation: () => ({active: false})}
+            //             ];
+            //         }
+            //     }
+            // }]}
         >
             {/* внутренние круговые */}
             <VictoryPolarAxis
@@ -115,6 +102,10 @@ const DiagramRes = ({ scores }) => {
                 labelPlacement="parallel"
                 tickValues={_.keys(directions).map((k) => +k)}
                 tickFormat={_.values(directions)}
+                style={{
+                    tickLabels: {fontSize: 4, padding: 8},
+                    axis: {stroke: "#2A8FF0"}
+                  }}
             />
             {data.length &&
                 <VictoryStack>
@@ -122,13 +113,12 @@ const DiagramRes = ({ scores }) => {
                         style={{
                             data: {
                                 fill: ({active}) => active ? mainColor.highlight : mainColor.base,
-                                width: 20
+                                width: 10
                             }
                         }}
                         data={data}
                         x="x"
                         y="y"
-                        label='adsd'
                         labelComponent={<CenterLabel color={mainColor}/>}
                     />
                 </VictoryStack>

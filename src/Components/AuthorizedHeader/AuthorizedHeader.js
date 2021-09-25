@@ -1,8 +1,7 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import appLogo from '../../assets/branding/logo.png';
-import Backdrop from '@material-ui/core/Backdrop';
-import Modal from '@material-ui/core/Modal';
+import { Backdrop, Modal } from '@material-ui/core';
 import useWindowDimensions from '../windowSizeHook/windowSize.js';
 import BurgerMenu from '../BurgerMenu/Burger.js';
 import Account from '../PersonalData/PersonalData';

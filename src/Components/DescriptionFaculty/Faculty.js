@@ -1,4 +1,4 @@
-import react, { useState } from 'react'
+import { useState } from 'react'
 import { CircularProgress } from '@material-ui/core';
 import icon1 from '../../assets/icons/Icon1.png'
 import icon2 from '../../assets/icons/Icon2.png';

@@ -101,7 +101,7 @@ const SignIn = () => {
             <Button
               className="login-btn"
               variant="outlined"
-              // disabled={checkDisabled}
+              disabled={checkDisabled}
               onClick={() => loginUser()}
             >
               Вход

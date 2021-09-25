@@ -4,6 +4,7 @@ import axios from 'axios';
 import DiagramRes from "../../Components/DiagramResult/DiagramResult";
 import Header from "../../Components/Header/Header";
 import AuthorizedHeader from "../../Components/AuthorizedHeader/AuthorizedHeader";
+import './ResultsPage.css';
 
 const AboutPage = () => {
     const [result, setResult] = useState([]);
@@ -29,9 +30,11 @@ const AboutPage = () => {
     return (
         <>
             {localStorage.getItem('user')? <AuthorizedHeader /> :<Header />}
-            {result.length
-            ? <DiagramRes scores={result} />
-            : <CircularProgress />}
+            <div className="content-result">
+                {result.length
+                ? <DiagramRes scores={result} />
+                : <CircularProgress />}
+            </div>
         </>
     );
 }

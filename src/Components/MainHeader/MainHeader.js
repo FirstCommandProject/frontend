@@ -1,4 +1,3 @@
-import react from "react";
 import { NavLink } from "react-router-dom";
 import appLogo from '../../assets/branding/logo.png';
 import useWindowDimensions from '../windowSizeHook/windowSize.js';

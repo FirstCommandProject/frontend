@@ -44,6 +44,7 @@ const AllInstitute = () => {
 
     useEffect(() => {
         getOneKafedr();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [open])
 
     const handleOpen = (id) => {
