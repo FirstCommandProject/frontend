@@ -23,7 +23,7 @@ const directions = {
 
 const mainColor = {base: "#0090ff", highlight: "#215BFD"};
 
-const centerColor = {base: "#6787C1", highlight: "green"};
+const centerColor = {base: "#0090ff", highlight: "white"};
 
 const innerRadius = 10;
 
