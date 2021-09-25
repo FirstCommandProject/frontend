@@ -30,7 +30,7 @@ const NotFoundPage = () => {
                     weights: session.weights
                 }
             );
-            if (res.data.statusCode === '200') {
+            if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
                 setQuestionBE([res.data.data]);
                 setAnswered((prev) => [...prev, res.data.data.id]);
                 setIdQuestion(res.data.data.id);
@@ -42,7 +42,7 @@ const NotFoundPage = () => {
         const res = await axios.get(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/default-session`
         );
-        if (res.data.statusCode === '200') {
+        if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             setSession(JSON.parse(res.data.data));
             setTotalCount(res.data.totalCount);
         }
@@ -76,7 +76,7 @@ const NotFoundPage = () => {
                 id: idQuestion
             }
         );
-        if (res.data.statusCode === '200') {
+        if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             setValue('');
             setSession(res.data.data);
         }
@@ -84,7 +84,7 @@ const NotFoundPage = () => {
 
     const onFinish = async () => {
         setValue('');
-        const finishRes = await axios.post(
+        const res = await axios.post(
             `${process.env.REACT_APP_SERVER_ENDPOINT}/last-user-answer`,
             {
                 session: session.weights,
@@ -92,7 +92,7 @@ const NotFoundPage = () => {
                 email: localStorage.getItem("email")
             }
         );
-        if (finishRes.data.statusCode === '200') {
+        if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             history.push("/my/results");
         }
     }
