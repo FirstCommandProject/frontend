@@ -33,15 +33,15 @@ const directions = {
     330: "09.04.03"
 };
 
-const orange = {base: "#0080ff", highlight: "#3877CD"};
+const mainColor = {base: "#0090ff", highlight: "#3877CD"};
 
-const red = {base: "#DBEDFE", highlight: "green"};
+const centerColor = {base: "#DBEDFE", highlight: "green"};
 
 const innerRadius = 15;
 
 function CompassCenter({ origin }) {
     const circleStyle = {
-        stroke: red.base, strokeWidth: 2, fill: orange.base
+        stroke: centerColor.base, strokeWidth: 2, fill: centerColor.highlight
     };
 
     return (
@@ -58,8 +58,8 @@ function CenterLabel(props) {
     const text = [`${directions[datum._x] || ' '}`];
     const baseStyle = { fill: color.highlight };
     const style = [
-        {...baseStyle, fontSize: 10, fontWeight: "bold"},
-        {...baseStyle, fontSize: 8}
+        {...baseStyle, fontSize: 4, fontWeight: "bold"},
+        {...baseStyle, fontSize: 4}
     ];
 
     return active ?
@@ -121,7 +121,7 @@ const DiagramRes = ({ scores }) => {
                     <VictoryBar
                         style={{
                             data: {
-                                fill: ({active}) => active ? orange.highlight : orange.base,
+                                fill: ({active}) => active ? mainColor.highlight : mainColor.base,
                                 width: 20
                             }
                         }}
@@ -129,7 +129,7 @@ const DiagramRes = ({ scores }) => {
                         x="x"
                         y="y"
                         label='adsd'
-                        labelComponent={<CenterLabel color={orange}/>}
+                        labelComponent={<CenterLabel color={mainColor}/>}
                     />
                 </VictoryStack>
             }

@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from "axios";
+import { TextField } from "@material-ui/core";
 import personalIcon from '../../assets/icons/personal-img.png';
-import { TextField } from '@material-ui/core';
 import PasswordInput from '../PasswordTextField/PasswordTextField';
 import './PersonalData.css';
 
-const PersonalData = ({active, setActive}) => {
+const PersonalData = ({active, setActive, setError, setErrorText, setAlert}) => {
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [patr, setPatr] = useState("");
@@ -20,6 +21,53 @@ const PersonalData = ({active, setActive}) => {
         setPatr("");
         setUniver("");
         setEmail("");
+    }
+    
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.email) {
+            setPassword("qwerty");
+            setName(user?.firstName);
+            setSurname(user?.secondName);
+            setPatr(user?.patronymic);
+            setUniver(user?.university);
+            setEmail(user?.email);
+        }
+    }, [])
+
+    const onFinish = async() => {
+        try {
+            const res = await axios.post(
+                `${process.env.REACT_APP_SERVER_ENDPOINT}/change-user-information`,
+                {
+                  email: localStorage.getItem('email'),
+                  new_email: email,
+                  new_password: password,
+                  new_name: name,
+                  new_surname: surname,
+                  new_patronymic: patr,
+                  new_university: univer
+                }
+            );
+            if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
+                localStorage.clear();
+                setAlert("success");
+                setErrorText("Данные пользователя успешно обновлены!");
+                setError(true);
+                localStorage.setItem("user", JSON.stringify(res.data.data));
+                localStorage.setItem("email", res.data.data?.email);
+                cancelFunction();
+            } else {
+                setAlert("Error");
+                setErrorText("Данные не были обновлены!");
+                setError(true);
+            }
+        } catch {
+            setAlert("Error");
+            setErrorText("Данные не были обновлены!");
+            setError(true);
+        }
+        
     }
 
     return (
@@ -118,11 +166,11 @@ const PersonalData = ({active, setActive}) => {
                 <div />
 
                 <div className='personal-butt'>
-                    <button className='button-cancel' onClick={() => cancelFunction()}>
+                    <button className='button-cancel' onClick={cancelFunction}>
                         Отменить
                     </button>
 
-                    <button className='button-save'>
+                    <button className='button-save' onClick={onFinish}>
                         Сохранить
                     </button>
                 </div>

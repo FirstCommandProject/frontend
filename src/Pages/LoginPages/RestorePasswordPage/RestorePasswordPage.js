@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { TextField, Button, Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
-
+import { TextField, Button } from "@material-ui/core";
 import appLogo from '../../../assets/branding/logo.png';
-
+import AlertHelper from "../../../Components/Alert/Alert";
 import SignImage from '../../../Components/SignImage/SignImage.js';
 import "./RestorePasswordPage.scss";
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 const RestorePasswordPage = () => {
   const history = useHistory();
@@ -19,13 +13,6 @@ const RestorePasswordPage = () => {
   const [openError, setError] = useState(false);
   const [errorText, setErrorText] = useState(false);
   const [alert, setAlert] = useState("");
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setError(false);
-  };
 
   const checkEmail = (e) => {
     if (!email.match(regexpEmail)) {
@@ -74,17 +61,6 @@ const RestorePasswordPage = () => {
             Восстановить пароль
           </Button>
         </div>
-        <Snackbar
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          open={openError}
-          autoHideDuration={6000}
-          onClose={handleClose}
-        >
-          <Alert severity={alert}>{errorText}</Alert>
-        </Snackbar>
         <div className="buttons-for-restore-password">
           <p>Нет аккаунта?</p>
           <Link to="/sign/up">
@@ -92,6 +68,7 @@ const RestorePasswordPage = () => {
           </Link>
         </div>
       </div>
+      <AlertHelper isOpen={openError} text={errorText} alertColor={alert} onClose={setError} />
       <div className='rigth-restore-password'>
         <SignImage/>
       </div>

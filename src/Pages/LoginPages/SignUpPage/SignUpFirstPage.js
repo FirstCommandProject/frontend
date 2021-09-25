@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { TextField, Button, Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
+import { TextField, Button } from "@material-ui/core";
 
 import appLogo from '../../../assets/branding/logo.png';
 
 import SignImage from '../../../Components/SignImage/SignImage.js';
 import PasswordTextField from "../../../Components/PasswordTextField/PasswordTextField";
 import "./SignUpFirstPage.scss";
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+import AlertHelper from "../../../Components/Alert/Alert";
 
 const SignUpFirstPage = () => {
   const history = useHistory();
@@ -23,13 +19,6 @@ const SignUpFirstPage = () => {
   const [errorText, setErrorText] = useState(false);
   const [alert, setAlert] = useState("");
   const [repeatPasswordError, setRepeatPasswordError] = useState(false);
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setError(false);
-  };
 
   const checkEmail = (e) => {
     if (!email.match(regexpEmail)) {
@@ -114,17 +103,7 @@ const SignUpFirstPage = () => {
             Продолжить
           </Button>
         </div>
-        <Snackbar
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          open={openError}
-          autoHideDuration={3000}
-          onClose={handleClose}
-        >
-          <Alert severity={alert}>{errorText}</Alert>
-        </Snackbar>
+        <AlertHelper isOpen={openError} text={errorText} alertColor={alert} onClose={setError} />
         <div className="buttons-for-sign-up">
           <p>Есть аккаунт?</p>
           <Link to="/login">

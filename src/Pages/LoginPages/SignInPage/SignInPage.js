@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import { TextField, Button, Snackbar } from "@material-ui/core";
-import MuiAlert from "@material-ui/lab/Alert";
+import { TextField, Button } from "@material-ui/core";
 import appLogo from '../../../assets/branding/logo.png';
-
 import PasswordTextField from "../../../Components/PasswordTextField/PasswordTextField";
 import SignImage from '../../../Components/SignImage/SignImage.js';
+import AlertHelper from "../../../Components/Alert/Alert";
 import "./SignInPage.scss";
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 const SignIn = () => {
   const history = useHistory();
@@ -34,7 +29,7 @@ const SignIn = () => {
       if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
         localStorage.clear();
         localStorage.setItem("user", JSON.stringify(res.data.data));
-        localStorage.setItem("email", JSON.stringify(res.data.data?.email));
+        localStorage.setItem("email", res.data.data?.email);
         history.push("/my/test");
       }
     } catch (e) {
@@ -42,13 +37,6 @@ const SignIn = () => {
       setErrorText("Неправильный E-mail или пароль");
       setError(true);
     }
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setError(false);
   };
 
   const checkEmail = (e) => {
@@ -126,17 +114,7 @@ const SignIn = () => {
             Создать аккаунт
           </Link>
         </div>
-        <Snackbar
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          open={openError}
-          autoHideDuration={3000}
-          onClose={handleClose}
-        >
-          <Alert severity={alert}>{errorText}</Alert>
-        </Snackbar>
+        <AlertHelper isOpen={openError} text={errorText} alertColor={alert} onClose={setError} />
       </div>
       <div className='rigth'>
         <SignImage/>

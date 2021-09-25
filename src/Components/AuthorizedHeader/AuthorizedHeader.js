@@ -6,11 +6,15 @@ import Modal from '@material-ui/core/Modal';
 import useWindowDimensions from '../windowSizeHook/windowSize.js';
 import BurgerMenu from '../BurgerMenu/Burger.js';
 import Account from '../PersonalData/PersonalData';
+import AlertHelper from '../Alert/Alert';
 import './AuthorizedHeader.css';
 
 const AuthorizedHeader = () => {
     const { width } = useWindowDimensions();
     const [isModal , setIsModal] = useState(false);
+    const [openError, setError] = useState(false);
+    const [errorText, setErrorText] = useState(false);
+    const [alert, setAlert] = useState("");
     
     return (    
         <div className="main-header-authorized-header">
@@ -61,9 +65,15 @@ const AuthorizedHeader = () => {
                 timeout: 1000,
             }}
         >
-            <Account active={isModal} setActive={setIsModal} />
+            <Account 
+                active={isModal} 
+                setActive={setIsModal} 
+                setError={setError} 
+                setErrorText={setErrorText} 
+                setAlert={setAlert} 
+            />
         </Modal>
-        
+        <AlertHelper isOpen={openError} text={errorText} alertColor={alert} onClose={setError} />
         </div>
     );
 }

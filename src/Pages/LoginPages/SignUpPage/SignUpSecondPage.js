@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { TextField, Button, Snackbar } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import axios from "axios";
-
 import appLogo from '../../../assets/branding/logo.png';
-
+import AlertHelper from "../../../Components/Alert/Alert";
 import SignImage from '../../../Components/SignImage/SignImage.js';
 import "./SignUpSecondPage.scss";
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 const SignUpSecondPage = () => {
   const history = useHistory();
@@ -42,21 +37,14 @@ const SignUpSecondPage = () => {
         setErrorText("Пользователь успешно создан!");
         setError(true);
         localStorage.setItem("user", JSON.stringify(res.data.data));
-        localStorage.setItem("email", JSON.stringify(res.data.data?.email));
+        localStorage.setItem("email", res.data.data?.email);
         history.push("/my/test");
       }
     } catch (e) {
-      setAlert("Ошибка");
+      setAlert("Error");
       setErrorText("Такой пользователь уже существует!");
       setError(true);
     }
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setError(false);
   };
 
   return (
@@ -131,17 +119,7 @@ const SignUpSecondPage = () => {
               Создать аккаунт
             </Button>
           </div>
-          <Snackbar
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={openError}
-            autoHideDuration={3000}
-            onClose={handleClose}
-          >
-            <Alert severity={alert}>{errorText}</Alert>
-          </Snackbar>
+          <AlertHelper isOpen={openError} text={errorText} alertColor={alert} onClose={setError} />
       </div>
       <div className='rigth-sign-up'>
         <SignImage/>
