@@ -1,3 +1,8 @@
+.main-div-faculty {
+    background-color: #F4F7FF;
+    height: 100%;
+}
+
 .wrapper-faculty {
     display: grid;
     grid-template-rows: 0.9fr 1fr;
@@ -165,6 +170,13 @@
     width: 100%;
     background-color: #FFFFFF;
     padding: 1.5%;
+}
+
+.circular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 @media screen and (max-width: 1024px) {

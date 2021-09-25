@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import date from 'date-and-time';
 import axios from "axios";
-import { Redirect } from 'react-router-dom'
-import Skeleton from '@material-ui/lab/Skeleton';
-import Header from "../../Components/AuthorizedHeader/AuthorizedHeader";
 import { Button } from "@material-ui/core";
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import { Redirect } from 'react-router-dom'
+import SkeletonHelper from '../../Components/Skeleton/Skeleton';
+import Header from "../../Components/AuthorizedHeader/AuthorizedHeader";
 import './ExamPage.scss';
 
 const NotFoundPage = () => {
@@ -108,12 +108,7 @@ const NotFoundPage = () => {
                     <div className="question-text">
                         {question.title
                         ? question.title 
-                        : <div>
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                        </div>
+                        : <SkeletonHelper />
                         }
                     </div>
                     <div className="question-radio">

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import Skeleton from '@material-ui/lab/Skeleton';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Header from "../Header/Header";
 import AuthorizedHeader from '../AuthorizedHeader/AuthorizedHeader';
 import DescriptionFaculty from "../DescriptionFaculty/Faculty.js";
+import SkeletonHelper from '../Skeleton/Skeleton';
 import "./Instite.css";
 
 const AllInstitute = () => {
     const [open, setOpen] = useState(false);
     const [kafedrasBE, setKafedrasBE] = useState([]);
-    const [oneKafedr, setOneKafedr] = useState([]);
+    const [oneKafedr, setOneKafedr] = useState({});
 
     const getKafedrasBE = async() => {
         const res = await axios.post(
@@ -52,6 +52,7 @@ const AllInstitute = () => {
     
     const handleClose = () => {
         setOpen(false);
+        setOneKafedr({});
     };
 
     return (
@@ -83,12 +84,7 @@ const AllInstitute = () => {
                     :null}
                 </div>
                 {!kafedrasBE.length
-                    ?<div>
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                    </div>
+                    ? <SkeletonHelper />
                     : null
                 }
             </div>
