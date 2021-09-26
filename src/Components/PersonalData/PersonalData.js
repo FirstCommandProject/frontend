@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { TextField } from "@material-ui/core";
 import personalIcon from '../../assets/icons/personal-img.png';
@@ -12,6 +13,7 @@ const PersonalData = ({active, setActive, setError, setErrorText, setAlert}) => 
     const [univer, setUniver] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const history = useHistory();
 
     const cancelFunction = () => {
         setActive(false);
@@ -70,6 +72,12 @@ const PersonalData = ({active, setActive, setError, setErrorText, setAlert}) => 
         
     }
 
+    const onLogOut = () => {
+        localStorage.clear();
+        cancelFunction();
+        history.push('/login')
+    }
+
     return (
         <div
             className={active ? "wrapper-personal active" : "wrapper-personal"}
@@ -87,7 +95,8 @@ const PersonalData = ({active, setActive, setError, setErrorText, setAlert}) => 
                 <div>
                     <img
                         src={personalIcon}
-                        alt='logo'
+                        alt='logOutIcon'
+                        onClick={onLogOut}
                     />
                 </div>
 
