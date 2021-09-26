@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
-import Header from "../Header/Header";
-import AuthorizedHeader from '../AuthorizedHeader/AuthorizedHeader';
-import DescriptionFaculty from "../DescriptionFaculty/Faculty.js";
-import SkeletonHelper from '../Skeleton/Skeleton';
+import Header from "../../Components/Header/Header";
+import AuthorizedHeader from '../../Components/AuthorizedHeader/AuthorizedHeader';
+import DescriptionFaculty from "../../Components/DescriptionFaculty/Faculty.js";
+import SkeletonHelper from '../../Components/Skeleton/Skeleton';
 import "./Instite.css";
 
 const AllInstitute = () => {
@@ -90,7 +90,7 @@ const AllInstitute = () => {
                 }
             </div>
             <Modal
-                open={open}
+                open={!!open}
                 className="modal-window"
                 onClose={handleClose}
                 closeAfterTransition

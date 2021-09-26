@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Redirect, useHistory } from "react-router";
 import { CircularProgress } from '@material-ui/core';
 import axios from 'axios';
 import DiagramRes from "../../Components/DiagramResult/DiagramResult";
@@ -8,6 +9,7 @@ import './ResultsPage.css';
 
 const AboutPage = () => {
     const [result, setResult] = useState([]);
+    const history = useHistory();
 
     const getResults = async() => {
         const res = await axios.post(
@@ -19,6 +21,8 @@ const AboutPage = () => {
         if (res && res.data && res.data.statusCode && res.data.statusCode === '200') {
             if (res.data.data && res.data.data.scores) {
                 setResult(JSON.parse(res.data.data?.scores));
+            } else {
+                history.push('/my/test')
             }
         }
     }
@@ -26,6 +30,11 @@ const AboutPage = () => {
     useEffect(() => {
         getResults();
     }, []);
+
+    // check auth
+    if (!localStorage.getItem('user')) {
+        return <Redirect to="/login"/>
+    }
 
     return (
         <>

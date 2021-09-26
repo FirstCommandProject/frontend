@@ -9,7 +9,7 @@ import RestorePassword from './Pages/LoginPages/RestorePasswordPage/RestorePassw
 import Main from './Pages/HomePage/HomePage.js';
 import Description from './Pages/AboutPage/AboutPage.js';
 import PageNotFound from "./Pages/404/404.js";
-import AllInstitute from './Components/AllInstitute/Instite';
+import AllInstitute from './Pages/AllInstitute/Instite';
 import TestPage from './Pages/ExamPage/ExamPage.js';
 import ResultsPage from './Pages/ResultsPage/ResultsPage';
 

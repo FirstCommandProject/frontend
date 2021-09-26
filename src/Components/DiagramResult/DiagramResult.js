@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import {
     VictoryBar, VictoryChart, VictoryLabel,
     VictoryTheme, VictoryPolarAxis, VictoryStack
 } from 'victory';
 import _ from 'lodash';
-
+import { Table, TableBody, TableCell, TableHead, TableRow, Paper, TableContainer, Modal, Backdrop }  from '@material-ui/core';
+import DescriptionFaculty from "../DescriptionFaculty/Faculty.js";
+import './DiagramResult.css';
 
 const directions = {
     0: "Математическое моделирование", 
@@ -58,6 +61,38 @@ function CenterLabel(props) {
         ) : null;
 }
 
+const TableResult = ({ rows, handleOpen }) => {
+
+    return (
+        <TableContainer component={Paper} style={{ maxWidth: 600, marginBottom: 20 }}>
+            <Table size="small" style={{ maxWidth: 600 }}>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>
+                            Имя кафедры
+                        </TableCell>
+                        <TableCell align="center">
+                            Заинтересованность
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {rows.map((row, i) => (
+                        <TableRow key={`row-${i}`}>
+                            <TableCell onClick={() => handleOpen(i + 1)} className="table-cell">
+                                {row.name}
+                            </TableCell>
+                            <TableCell align="center">
+                                {row.score}
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+    )
+}
+
 
 const DiagramRes = ({ scores }) => {
     const data = scores.map((value, index) => ({
@@ -65,66 +100,103 @@ const DiagramRes = ({ scores }) => {
         y: value.score
     }));
 
-    return (
-        <VictoryChart
-            height={200}
-            width={400}
-            polar
-            theme={VictoryTheme.material}
-            innerRadius={innerRadius}
-            domainPadding={{y: 5}}
-            // events={[{
-            //     childName: "all",
-            //     target: "data",
-            //     eventHandlers: {
-            //         onMouseOver: () => {
-            //             return [
-            //                 {target: "labels", mutation: () => ({active: true})}
-            //             ];
-            //         },
-            //         onMouseOut: () => {
-            //             return [
-            //                 {target: "labels", mutation: () => ({active: false})}
-            //             ];
-            //         }
-            //     }
-            // }]}
-        >
-            {/* внутренние круговые */}
-            <VictoryPolarAxis
-                dependentAxis
-                labelPlacement="vertical"
-                style={{axis: {stroke: "none"}}}
-                tickFormat={() => ""}
-            />
-            {/* подписи справа */}
-            <VictoryPolarAxis
-                labelPlacement="parallel"
-                tickValues={_.keys(directions).map((k) => +k)}
-                tickFormat={_.values(directions)}
-                style={{
-                    tickLabels: {fontSize: 4, padding: 8},
-                    axis: {stroke: "#2A8FF0"}
-                  }}
-            />
-            {data.length &&
-                <VictoryStack>
-                    <VictoryBar
-                        style={{
-                            data: {
-                                fill: ({active}) => active ? mainColor.highlight : mainColor.base,
-                                width: 10
-                            }
-                        }}
-                        data={data}
-                        x="x"
-                        y="y"
-                        labelComponent={<CenterLabel color={mainColor}/>}
-                    />
-                </VictoryStack>
+    const rows = scores.map((value, index) => ({
+        name: directions[index * 30],
+        score: `${_.round(value.score, 1)} / 7`
+    }));
+
+    const [open, setOpen] = useState(false);
+    const [oneKafedr, setOneKafedr] = useState({});
+
+    const getOneKafedr = async() => {
+        if (open) {
+            const res = await axios.post(
+                `${process.env.REACT_APP_SERVER_ENDPOINT}/departments`, {
+                    id: open
+                }
+              );
+            if (res.data.statusCode === '200') {
+                setOneKafedr(res.data.data);
             }
-            <CompassCenter />
-        </VictoryChart>
+        }
+        return {};
+    };
+
+    useEffect(() => {
+        getOneKafedr();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [open])
+
+    const handleOpen = (id) => {
+        setOpen(id);
+      };
+    
+    const handleClose = () => {
+        setOpen(false);
+        setOneKafedr({});
+    };
+    
+    return (
+        <>
+            <VictoryChart
+                height={200}
+                width={400}
+                polar
+                theme={VictoryTheme.material}
+                innerRadius={innerRadius}
+                domainPadding={{y: 5}}
+            >
+                {/* внутренние круговые */}
+                <VictoryPolarAxis
+                    dependentAxis
+                    labelPlacement="vertical"
+                    style={{axis: {stroke: "none"}}}
+                    tickFormat={() => ""}
+                />
+                {/* подписи справа */}
+                <VictoryPolarAxis
+                    labelPlacement="parallel"
+                    tickValues={_.keys(directions).map((k) => +k)}
+                    tickFormat={_.values(directions)}
+                    style={{
+                        tickLabels: {fontSize: 4, padding: 8},
+                        axis: {stroke: "#2A8FF0"}
+                    }}
+                />
+                {data.length &&
+                    <VictoryStack>
+                        <VictoryBar
+                            style={{
+                                data: {
+                                    fill: ({active}) => active ? mainColor.highlight : mainColor.base,
+                                    width: 10
+                                }
+                            }}
+                            data={data}
+                            x="x"
+                            y="y"
+                            labelComponent={<CenterLabel color={mainColor}/>}
+                        />
+                    </VictoryStack>
+                }
+                <CompassCenter />
+            </VictoryChart>
+            <TableResult rows={rows} handleOpen={handleOpen} />
+            <Modal
+                open={!!open}
+                className="modal-window"
+                onClose={handleClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <div className="window-main">
+                    <DescriptionFaculty data={oneKafedr} />
+                </div>
+            </Modal>
+        </>
     );
 }
 
