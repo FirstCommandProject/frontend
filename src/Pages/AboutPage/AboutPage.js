@@ -22,10 +22,10 @@ const AboutPage = () => {
                     </h2>
 
                     <p>
-                        Данная экспертная система была создана для упрощения подобра направления для поступающих на магистратуру
+                        Данная экспертная система была создана для упрощения подбора направления для поступающих на магистратуру
                     </p>
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum at tortor adipiscing sapien, at ornare sit pretium. Luctus lacus hac sit interdum elit, nibh adipiscing velit vitae.
+                        Для тестового режима мы внесли в базу данных 12 направлений магистратуры и вопросы, выявляющие интерес к данным сферам обучения 
                     </p>
                 </div>
             </div>

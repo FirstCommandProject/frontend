@@ -18,7 +18,7 @@ const HomePage = () => {
                     </span>
 
                     <p className='description-main'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, animi assumenda at commodi dolorem et ex inventore itaque neque odit saepe sequi totam veritatis.
+                        Перед прохождением тестирования необходимо авторизоваться в системе. После авторизации вы сразу сможете приступить к тестирвоанию
                     </p>
 
                     <NavLink to='/my/test'>

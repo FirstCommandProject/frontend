@@ -25,7 +25,7 @@ const mainColor = {base: "#0090ff", highlight: "#215BFD"};
 
 const centerColor = {base: "#0090ff", highlight: "white"};
 
-const innerRadius = 10;
+const innerRadius = 7;
 
 function CompassCenter({ origin }) {
     const circleStyle = {
