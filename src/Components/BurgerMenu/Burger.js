@@ -15,7 +15,7 @@ const BurgerMenu = (props) => {
   return (
     <>
       {props.isAuth ? (
-        <Menu {...props}>
+        <Menu {...props} disableAutoFocus >
           <a className="menu-item" href="/about">
             О проекте
           </a>

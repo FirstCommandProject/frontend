@@ -46,3 +46,9 @@
     text-align: center;
     color: #fff;
 }
+
+@media screen and (max-width: 1000px) { 
+    .main-header-authorized-header {
+        padding: 0;
+    }
+}
