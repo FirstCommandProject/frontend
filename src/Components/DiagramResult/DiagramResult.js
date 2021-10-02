@@ -69,7 +69,7 @@ const TableResult = ({ rows, handleOpen }) => {
                 <TableHead>
                     <TableRow>
                         <TableCell>
-                            Имя кафедры
+                            Название направления
                         </TableCell>
                         <TableCell align="center">
                             Заинтересованность
