@@ -42,15 +42,19 @@ const Faculty = ({ data }) => {
                 <div className='wrapper-faculty'>
                     <div className='top-faculty'>
                         <div className='name-faculty'>
-                            <div>
-                                <p> КАФЕДРА </p>
+                            <div className='name'>
+                                <p> НАПРАВЛЕНИЕ </p>
                             </div>
 
                             <span>
-                            Что вы получите?
-                        </span>
+                                <a target="_blank" href={data.link}>
+                                    {data.name}
+                                </a>
+                            </span>
 
-                            <hr/>
+                            <div>
+                                <hr/>
+                            </div>
                         </div>
 
                         <div className='box-faculty'>
