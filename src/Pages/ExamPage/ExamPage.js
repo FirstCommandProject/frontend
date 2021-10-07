@@ -12,7 +12,7 @@ import SkeletonHelper from '../../Components/Skeleton/Skeleton';
 import Header from "../../Components/AuthorizedHeader/AuthorizedHeader";
 import './ExamPage.scss';
 
-const NotFoundPage = () => {
+const TestPage = () => {
     const [value, setValue] = useState('');
     const [answered, setAnswered] = useState([])
     const [questionBE, setQuestionBE] = useState([{}]);
@@ -153,4 +153,4 @@ const NotFoundPage = () => {
     );
 }
 
-export default NotFoundPage;
+export default TestPage;
